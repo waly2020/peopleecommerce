@@ -1,0 +1,250 @@
+/* margin de la page
+    ____________
+    | ________ |
+    |m|      |m|
+    | |______| |
+    |__________|
+*/
+@font-face {
+  font-family: "titre-h1";
+  src: url("../../fonts/lineto-brown-bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "titre-h2";
+  src: url("../../fonts/lineto-brown-light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "para";
+  src: url("../../fonts/lineto-brown-regular.woff2") format("woff2");
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "titre-h1";
+}
+
+h2 {
+  font-family: "titre-h2";
+}
+
+p,
+button,
+li,
+a {
+  font-family: "para";
+}
+
+header {
+  width: 100%;
+  height: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 70px 1fr;
+  background: rgb(21, 22, 105);
+  margin-bottom: 40px;
+}
+header .menu {
+  grid-column: 1/span 2;
+  padding: 0 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .menu .logo {
+  width: 150px;
+  height: 60%;
+  font-size: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .menu .logo img {
+  width: 100%;
+}
+header .menu .links {
+  display: flex;
+  height: 100%;
+}
+header .menu .links > li {
+  position: relative;
+  min-width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .menu .links li {
+  list-style-type: none;
+  color: #fff;
+  transition: 0.3s 0.3s;
+}
+header .menu .links li:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+header .menu .links li:hover .sous {
+  transform: translateY(100%) scale(1);
+}
+header .menu .links li a {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 0 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .menu .links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  border-radius: 4px;
+  background: #fff;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+header .menu .links li a:hover::after {
+  width: 80%;
+}
+header .menu .links .sous {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%) scale(0);
+  background: #fff;
+  width: 150px;
+  transition: 0.3s;
+  z-index: 100;
+}
+header .menu .links .sous li {
+  width: 100%;
+  height: 60px;
+}
+header .menu .links .sous a {
+  color: #000;
+}
+header .menu .links .sous a::after {
+  background: purple;
+}
+header .texte_header,
+header .articles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .articles .article {
+  position: relative;
+  width: 80%;
+}
+header .articles .article img {
+  width: 100%;
+}
+header .articles .article .buy {
+  position: absolute;
+  width: 250px;
+  right: 5%;
+  bottom: 5%;
+  background: #fff;
+  padding: 20px 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+header .articles .article .buy .titre {
+  position: relative;
+  text-align: center;
+  width: 80%;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+header .articles .article .buy .titre::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  border-radius: 4px;
+  background: purple;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+header .articles .article .buy .prix {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+header .articles .article .buy button {
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  background: purple;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+header .texte_header .txt h1 {
+  font-size: 3.9em;
+  color: #fff;
+  line-height: 80px;
+}
+header .texte_header .txt h1 span {
+  display: inline-block;
+  font-size: inherit;
+  font-size: 2.3em;
+  color: orange;
+}
+header .texte_header button {
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  background: purple;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 18px;
+}
+
+.body {
+  padding: 0 10vw;
+  width: 100%;
+}
+.body .cetegories {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+.body .cetegories .style {
+  background: rebeccapurple;
+}
+
+/*# sourceMappingURL=style.css.map */

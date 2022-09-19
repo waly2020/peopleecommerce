@@ -1,0 +1,19 @@
+{
+  "name": "peopleecommerce",
+  "version": "1.0.0",
+  "description": "site ecommerce de people",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "waly le dev",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "g": "^2.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.20"
+  }
+}
