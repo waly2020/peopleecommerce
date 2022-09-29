@@ -1,0 +1,71 @@
+@mixin flex-center($direction : row, $content : center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: center;
+}
+
+@mixin shadow($size : 3px, $alpha : .3) {
+    box-shadow: 0 0 $size calc($size / 2) rgba(0, 0, 0, $alpha);
+}
+
+@mixin button-style($bgd : red, $width : 122px) {
+    width: $width;
+    height: 43px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: $bgd;
+    outline: none;
+    cursor: pointer;
+}
+
+@mixin before ($color : #fff, $width : 100%) {
+    &::after {
+        content: "";
+        position: absolute;
+        width: $width;
+        height: 4px;
+        border-radius: 4px;
+        background: $color;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .3s;
+    }
+}
+
+@mixin border-radius($radius : 10px) {
+    border-radius: $radius $radius 0 0;
+}
+
+@mixin style-h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 2em;
+    padding: 5px 0;
+    color: #8f8f8f;
+    text-transform: uppercase;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 90%;
+        height: 4px;
+        border-radius: 4px;
+        bottom: 0;
+        left: 0;
+        background-color: #8f8f8f;
+    }
+}
+
+@mixin style-header($background : orange, $height : 700px) {
+    width: 100%;
+    height: $height;
+    background: $background;
+    background-repeat: no-repeat;
+    background-position-x: -300px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 70px 1fr;
+}

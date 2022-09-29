@@ -156,91 +156,66 @@ footer button {
 
 header {
   width: 100%;
-  height: 700px;
-  background: url("../../images/background/wave.png");
+  height: 400px;
+  background: #001165;
   background-repeat: no-repeat;
   background-position-x: -300px;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   grid-template-rows: 70px 1fr;
 }
-
-.sous-titre {
-  position: relative;
-  display: inline-block;
-  font-size: 2em;
-  padding: 5px 0;
-  color: #8f8f8f;
-  text-transform: uppercase;
-}
-.sous-titre::after {
-  position: absolute;
-  content: "";
-  width: 90%;
-  height: 4px;
-  border-radius: 4px;
-  bottom: 0;
-  left: 0;
-  background-color: #8f8f8f;
-}
-
-.textes {
-  padding-left: 8vw;
-  display: flex;
-  align-items: center;
-}
-.textes h1 {
-  color: #fff;
-  font-size: 3em;
-}
-.textes h1 span {
-  font-size: 2em;
-}
-.textes p {
-  color: #fff;
-}
-.textes button {
-  margin-top: 20px;
-}
-.textes .btn-article {
-  width: 140px;
-  height: 43px;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  background-color: orange;
-  outline: none;
-  cursor: pointer;
-  margin-right: 15px;
-}
-.textes .btn-abone {
-  width: 122px;
-  height: 43px;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  background-color: red;
-  outline: none;
-  cursor: pointer;
-}
-
-.image {
-  align-self: center;
+header .titre-b {
+  grid-column: 1/span 2;
   justify-self: center;
-  width: 100%;
-  height: 100%;
+  align-self: center;
 }
-.image img {
-  width: 100%;
+header .titre-b h1 {
+  color: #fff;
+  font-size: 5em;
 }
 
-main {
+#recherche {
   width: 100%;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 10px;
+  margin: auto;
+  height: 50px;
+}
+#recherche input,
+#recherche button,
+#recherche select {
+  border: none;
+  outline: none;
+  border-bottom: solid 3px #001165;
+}
+#recherche form {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+}
+#recherche form button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #001165;
+}
+#recherche form button img {
+  width: 30%;
+}
+#recherche form input {
+  padding: 0 8px;
+  background: rgba(0, 0, 0, 0.1);
+}
+#recherche select {
+  padding: 0 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.articles {
   margin: 40px 0;
-}
-
-.articles h2 {
-  margin-left: 8vw;
 }
 .articles .contener-articles {
   width: 100%;
@@ -279,93 +254,4 @@ main {
   font-size: 1.2em;
 }
 
-.liens-plus {
-  margin: 50px 0;
-  text-align: center;
-}
-.liens-plus a {
-  position: relative;
-  display: inline-block;
-  padding: 8px 0;
-  color: #555;
-  font-size: 1.4em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.liens-plus a::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 4px;
-  background: #555;
-  bottom: 0;
-  left: 0;
-  transition: 0.3s;
-}
-.liens-plus a:hover {
-  color: #001165;
-}
-.liens-plus a:hover::after {
-  background: #001165;
-  width: 100%;
-}
-
-.services {
-  width: 100%;
-  background: #f5f5f5;
-  padding: 0 8vw;
-}
-.services h2 {
-  margin-top: 30px;
-}
-.services .contener-services {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 280px);
-  gap: 40px;
-  justify-content: center;
-  padding: 40px 0;
-}
-.services .contener-services .service {
-  width: 280px;
-  height: 320px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-}
-.services .contener-services .service .icone-sevice .icone {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border: solid 3px #707070;
-  border-radius: 50%;
-}
-.services .contener-services .service .icone-sevice p {
-  text-align: center;
-  text-transform: uppercase;
-  color: #555;
-  margin-top: 10px;
-}
-.services .contener-services .service .description-service {
-  color: #333;
-  text-align: center;
-}
-.services .contener-services .service button {
-  width: 122px;
-  height: 43px;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  background-color: orange;
-  outline: none;
-  cursor: pointer;
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=boutique.css.map */

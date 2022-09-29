@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/css/style.css">
+    <title>people</title>
+</head>
+
+<body>
+    <!-- start header -->
+    <header>
+        <!-- start nav -->
+        <%- include("./components/navigation") %>
+            <!-- end nav -->
+            <!-- div texte -->
+            <div class="textes">
+                <div class="texte">
+                    <h1>BIENVENUE SUR <span>PEOPLE</span></h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, vitae!</p>
+                    <div class="btns-header">
+                        <a href="#"><button class="btn-article">voir les articles</button></a>
+                        <button class="btn-abone">s'abonnee</button>
+                    </div>
+                </div>
+            </div>
+            <!-- end div texte -->
+            <!-- div image -->
+            <div class="image">
+                <img src="images/background/casque.png" alt="visuel du site">
+            </div>
+            <!-- end div image -->
+    </header>
+    <!-- end header -->
+    <!-- start main -->
+    <main>
+        <!-- start section article -->
+        <section class="articles">
+            <h2 class="sous-titre">Nos Articles</h2>
+            <div class="contener-articles">
+                <% for (let i=0; i < 8; i++){ %>
+                    <div class="carte-article">
+                        <div class="img-article">
+                            <img src="images/haut.png" alt="">
+                        </div>
+                        <div class="info-article">
+                            <p class="titre-article">
+                                <%= res[i].titre %>
+                            </p>
+                            <p class="prix">
+                                <%= res[i].prix %>F
+                            </p>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+                <p class="liens-plus"><a href="#">plus d'articles </a></p>
+        </section>
+        <!-- end section article -->
+        <!-- section services -->
+        <section class="services">
+            <h2 class="sous-titre">NOS Services</h2>
+            <div class="contener-services">
+                <!-- start carte service -->
+                <div class="service">
+                    <div class="icone-sevice">
+                        <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
+                        <p>Livraison</p>
+                    </div>
+                    <p class="description-service">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto nisi
+                        deserunt sunt modi?
+                    </p>
+                    <button class="btn-service">Contacter</button>
+                </div>
+                <!-- end carte service -->
+                <!-- start carte service -->
+                <div class="service">
+                    <div class="icone-sevice">
+                        <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
+                        <p>Livraison</p>
+                    </div>
+                    <p class="description-service">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto nisi
+                        deserunt sunt modi?
+                    </p>
+                    <button class="btn-service">Contacter</button>
+                </div>
+                <!-- end carte service -->
+                <!-- start carte service -->
+                <div class="service">
+                    <div class="icone-sevice">
+                        <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
+                        <p>Livraison</p>
+                    </div>
+                    <p class="description-service">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto nisi
+                        deserunt sunt modi?
+                    </p>
+                    <button class="btn-service">Contacter</button>
+                </div>
+                <!-- end carte service -->
+                <!-- start carte service -->
+                <div class="service">
+                    <div class="icone-sevice">
+                        <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
+                        <p>Livraison</p>
+                    </div>
+                    <p class="description-service">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto nisi
+                        deserunt sunt modi?
+                    </p>
+                    <button class="btn-service">Contacter</button>
+                </div>
+                <!-- end carte service -->
+            </div>
+            <p class="liens-plus"><a href="#">plus de services </a></p>
+
+        </section>
+        <!-- end section services -->
+    </main>
+    <!-- end main  -->
+    <!-- start footer  -->
+    <%- include('./components/footer') %>
+        <!-- end footer -->
+</body>
+
+</html>

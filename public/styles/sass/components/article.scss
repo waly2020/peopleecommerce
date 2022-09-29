@@ -1,0 +1,43 @@
+    .contener-articles {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 300px);
+        justify-content: center;
+        gap: 20px;
+        padding: 0 $margin-page;
+        margin-top: 40px;
+
+        .carte-article {
+            width: 300px;
+            height: 460px;
+            background: #fff;
+            box-shadow: 0 0 4px 1px #ddd;
+            border-radius: 5px;
+            display: grid;
+            grid-template-rows: 400px 1fr;
+            cursor: pointer;
+
+            .img-article {
+                align-self: center;
+                justify-self: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            p {
+                text-align: center;
+            }
+
+            .titre-article {
+                font-size: 1.3em;
+                color: #aaa;
+            }
+
+            .prix {
+                font-size: 1.2em;
+            }
+
+        }
+    }

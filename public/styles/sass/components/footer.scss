@@ -1,0 +1,53 @@
+// start footer
+footer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 30px;
+    padding: 50px $margin-page;
+    background: $footer-color;
+
+    li {
+        list-style-type: none;
+        color: #fff;
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+
+    .titre {
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .informations {
+        img {
+            margin-right: 5px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    }
+
+    .resaux {
+        display: grid;
+        grid-template-columns: repeat(4, 31px);
+        grid-template-rows: 31px;
+        gap: 10px;
+        justify-content: flex-start;
+
+        .titre {
+            grid-column: 1 / span 4;
+        }
+    }
+
+    button {
+        @include button-style;
+    }
+}
+
+// end footer
