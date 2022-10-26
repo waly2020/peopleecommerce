@@ -10,13 +10,14 @@
 }
 
 @mixin button-style($bgd : red, $width : 122px) {
-    width: $width;
+    min-width: $width;
     height: 43px;
     border: none;
     border-radius: 4px;
     color: #fff;
     background-color: $bgd;
     outline: none;
+    padding: 0 15px;
     cursor: pointer;
 }
 
@@ -68,4 +69,18 @@
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 70px 1fr;
+}
+
+@mixin btnDisplayPaniers($bgd : $main-color, $width : 70px, $wImg : 50%) {
+    position: fixed;
+    width: $width;
+    height: $width;
+    background: $bgd;
+    border-radius: 50%;
+    cursor: pointer;
+    @include flex-center;
+
+    img {
+        width: $wImg;
+    }
 }

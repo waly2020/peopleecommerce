@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/css/connexions.css">
+    <title>connexion</title>
+</head>
+
+<body>
+    <div class="forms">
+        <% if (form == 'connexion') { %>
+            <form action="/login" method="post" class="connexion active">
+                <div class="logo-form">
+                    <p>PEOPLE.</p>
+                </div>
+                <input type="text" name="username" id="username" placeholder="Votre nom..." required>
+                <input type="tel" name="usernum" id="usernum" placeholder="074937621">
+                <button type="submit">Se connecter</button>
+            </form>
+        <% } else {%>
+            <form action="/create" method="post" class="creation active">
+                <div class="logo-form">
+                    <p>PEOPLE.</p>
+                </div>
+                <input type="text" name="name" id="name" placeholder="Votre nom..." required>
+                <input type="tel" name="numero" id="numero" placeholder="074937621">
+                <button type="submit">Cree mon compte</button>
+            </form>
+        <% } %> 
+    </div>
+    <%- include('./components/footer') %>
+</body>
+
+</html>

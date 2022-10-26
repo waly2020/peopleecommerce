@@ -16,39 +16,29 @@
                 <h1>BOUTIQUE</h1>
             </div>
     </header>
-    <section class="articles">
-        <div id="recherche">
-            <select name="categories" id="categories">
-                <option value="tout">Tout</option>
-                <option value="vetements">Vetement</option>
-                <option value="electronique">electronique</option>
-            </select>
-            <form action="#">
-                <input type="search" name="search" id="search" placeholder="recherche...">
-                <button type="submit">
-                    <img src="../images/svg/rech.svg" alt="">
-                </button>
-            </form>
-        </div>
-        <div class="contener-articles">
-            <% for (let i=0; i < res.length; i++){ %>
-                <div class="carte-article">
-                    <div class="img-article">
-                        <img src="images/haut.png" alt="">
-                    </div>
-                    <div class="info-article">
-                        <p class="titre-article">
-                            <%= res[i].titre %>
-                        </p>
-                        <p class="prix">
-                            <%= res[i].prix %>F
-                        </p>
-                    </div>
-                </div>
-            <% } %>
-        </div>
-    </section>
-    <%- include('./components/footer') %>
+    <%- include('./components/addUser') %>
+    <%- include("./components/panier") %>
+        <section class="articles">
+            <div id="recherche">
+                <select name="categories" id="categories">
+                    <option value="tout">Tout</option>
+                    <option value="vetements">Vetement</option>
+                    <option value="electronique">electronique</option>
+                </select>
+                <form action="#">
+                    <input type="search" name="search" id="search" placeholder="recherche...">
+                    <button type="submit">
+                        <img src="../images/svg/rech.svg" alt="">
+                    </button>
+                </form>
+            </div>
+                <%- include('./components/articles') %>
+        </section>
+        <%- include('./components/footer') %>
+        <script src="../js/variables.js"></script>
+        
+            <script src="../js/animations.js"></script>
+            <script src="../js/apiQuery.js"></script>
 </body>
 
 </html>

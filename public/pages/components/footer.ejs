@@ -16,15 +16,19 @@
     </ul>
     <ul class="resaux">
         <li class="titre">Suivez nous !</li>
-        <li><img src="images/svg/fbk.svg" alt=""></li>
-        <li><img src="images/svg/fbk.svg" alt=""></li>
-        <li><img src="images/svg/fbk.svg" alt=""></li>
-        <li><img src="images/svg/fbk.svg" alt=""></li>
+        <li><img src="../images/svg/fbk.svg" alt=""></li>
+        <li><img src="../images/svg/fbk.svg" alt=""></li>
+        <li><img src="../images/svg/fbk.svg" alt=""></li>
+        <li><img src="../images/svg/fbk.svg" alt=""></li>
     </ul>
     <ul class="compte">
         <li class="titre">Compte</li>
-        <li><a href="#">Cree un compte</a></li>
-        <li><a href="#">se connecter</a></li>
+        <% if (user) { %>
+            <li><a href="/deconnexion">deconnexion</a></li>
+        <% } else {%>
+            <li><a href="/connexion_cree_compte">Cree un compte</a></li>
+            <li><a href="/connexion_connexion">se connecter</a></li>
+        <% } %> 
     </ul>
     <button class="btn-abone">Abonnee vous !</button>
 </footer>

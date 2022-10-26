@@ -1,8 +1,12 @@
 @import './components/import.scss';
+@import './components/navigation.scss';
+@import './components/panier.scss';
+@import './components/addUser.scss';
 
 // staert header
 header {
     @include style-header(url("../../images/background/wave.png"), 700px);
+    // display: none;
 }
 
 .sous-titre {
@@ -175,3 +179,33 @@ main {
 
 // end section services
 // end main
+@media screen and (max-width:1160px) {
+    header .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:900px) {
+    header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 300px 1fr;
+    }
+
+    header .textes {
+        grid-column: 1/ span 2;
+        max-width: 500px;
+    }
+
+    header .image {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width:450px) {
+
+    header .textes h1 {
+        font-size: 2em;
+    }
+}

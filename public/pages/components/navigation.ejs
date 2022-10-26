@@ -9,12 +9,79 @@
         <li><a href="#">Contactez nous</a></li>
     </ul>
     <div class="abonnees">
-        <a href="#"><img src="images/svg/user.svg" alt="icone utilisateur"></a>
+        <div class="users">
+            <img src="../images/svg/user.svg" alt="icone utilisateur">
+            <div class="userConnected">
+                <% if (user) { %>
+                    <div id='user_1'>
+                        <a href="/compte"><button>Modifier mon compte</button></a>
+                        <a href="/deconnexion"><button class="low">Deconnexion</button></a>
+                    </div>
+                    <% } else {%>
+                        <div id="user_2">
+                            <a href="/connexion_connexion"><button class="good">connexion</button></a>
+                            <a href="/connexion_cree_compte"><button class="good">cree un compte</button></a>
+                        </div>
+                        <% } %>
+            </div>
+        </div>
 
-        <button class="reche"><img src="images/svg/rech.svg" alt="svg de revherche"></button>
+        <button class="reche"><img src="../images/svg/rech.svg" alt="svg de revherche"></button>
         <div class="btns-abonnee">
             <button class="btn-abonne">S'abonnee</button>
             <button class="nbr-abonnee">1,5k</button>
         </div>
+    </div>
+    <div class="burger">
+        <div></div>
+    </div>
+    <div class="bar-menu">
+        <div class="burger"></div>
+        <div class="user-bar-menu" data-userId="<%= user?.id ?? null%>">
+            <% if (user) { %>
+                <div id="isconnected">
+                    <div class="img-user"></div>
+                    <p class="info">
+                        <span>
+                            <%= user?.name ?? null %>
+                        </span>
+                    </p>
+                    <p class="info mail">
+                        <%= user?.numero ?? null %>
+                    </p>
+                    <button class="btn m">Modifier mon compte</button>
+                    <a href="/deconnexion"><button class="btn d">Deconnexion</button></a>
+                </div>
+                <% } else {%>
+                    <div id="deconnecter">
+                        <a href="/connexion_connexion"><button>connexion</button></a>
+                        <a href="/connexion_cree_compte"><button>cree un compte</button></a>
+                    </div>
+                    <% } %>
+                        <div class="btns-abonnee">
+                            <button class="btn-abonne">S'abonnee</button>
+                            <button class="nbr-abonnee">1,5k</button>
+                        </div>
+        </div>
+        <ul class="menu-bar">
+            <a href="/">
+                <li>Accueil</li>
+            </a>
+            <a href="/boutique">
+                <li>Boutique</li>
+            </a>
+            <a href="#">
+                <li>Services</li>
+            </a>
+            <a href="#">
+                <li>Blog</li>
+            </a>
+            <a href="#">
+                <li>Qui somme nous ?</li>
+            </a>
+            <a href="#">
+                <li>Contactez nous</li>
+            </a>
+        </ul>
     </div>
 </nav>

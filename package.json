@@ -4,17 +4,28 @@
   "description": "site ecommerce de people",
   "main": "main.js",
   "scripts": {
-    "test": "test"
+    "start": "scripts/main.js",
+    "dev": "nodemon scripts/main.js",
+    "sass-index": "sass --watch public/styles/sass/style.scss public/styles/css/style.css",
+    "sass-connexions": "sass --watch public/styles/sass/connexions.scss public/styles/css/connexions.css",
+    "sass-commande": "sass --watch public/styles/sass/commande.scss public/styles/css/commande.css",
+    "sass-boutique": "sass --watch public/styles/sass/boutique.scss public/styles/css/boutique.css",
+    "sass-compte": "sass --watch public/styles/sass/compte.scss public/styles/css/compte.css",
+    "sass-numero": "sass --watch public/styles/sass/numero.scss public/styles/css/numero.css",
+    "bdd": "mysql -u root"
   },
   "author": "waly le dev",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-myconnection": "^1.0.4",
+    "express-session": "^1.17.3",
     "g": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "util.promisify": "^1.1.1"
   }
 }

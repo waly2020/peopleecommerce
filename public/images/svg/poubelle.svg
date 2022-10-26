@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.023" height="24.315" viewBox="0 0 22.023 28.315">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff002b;
+      }
+    </style>
+  </defs>
+  <path id="Icon_material-delete-forever" data-name="Icon material-delete-forever" class="cls-1" d="M9.073,29.669a3.155,3.155,0,0,0,3.146,3.146H24.8a3.155,3.155,0,0,0,3.146-3.146V10.792H9.073Zm3.87-11.2,2.218-2.218,3.351,3.335,3.335-3.335,2.218,2.218L20.73,21.8l3.335,3.335-2.218,2.218-3.335-3.335-3.335,3.335-2.218-2.218L16.293,21.8Zm11.074-12.4L22.444,4.5H14.579L13.006,6.073H7.5V9.219H29.523V6.073Z" transform="translate(-7.5 -4.5)"/>
+</svg>

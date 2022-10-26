@@ -1,0 +1,175 @@
+.shadow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: .5;
+    transform: scale(0);
+    z-index: 1300;
+    transition: .3s;
+
+    &.active {
+        transform: scale(1);
+    }
+}
+
+.panier {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 90vw;
+    height: 90vh;
+    background: #fff;
+    z-index: 1000;
+    // box-shadow: 0 0 3px 2px #000;
+    border-radius: 10px;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: 40px 30px 1fr 50px;
+    gap: 10px;
+    transition: .3s;
+    z-index: 1500;
+
+    &.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .contener-articles {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 300px);
+        justify-content: center;
+        gap: 10px;
+        overflow-y: scroll;
+
+        .article {
+            position: relative;
+            height: 400px;
+            // background: orange;
+
+            img {
+                width: 100%;
+            }
+
+            .details {
+                position: absolute;
+                width: 80%;
+                height: 35%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-around;
+                align-items: center;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                background: $main-color;
+                border-radius: 4px;
+                color: #fff;
+
+                .titre {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+
+                .titre-quantiter {
+                    text-align: center;
+                    padding: 5px 0;
+                    width: 100%;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        background: #fff;
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+
+                .ajouter-produit {
+                    display: grid;
+                    grid-template-columns: 30px 50px 30px;
+                    gap: 5px;
+                    margin-top: 10px;
+
+                    p {
+                        height: 30px;
+                        @include flex-center;
+                    }
+
+                    .nombre {
+                        background: #fff;
+                        color: #555;
+                        border-radius: 4px;
+                        font-weight: bold;
+                    }
+
+                    .action {
+                        user-select: none;
+                        font-size: 1.3em;
+                        color: #555;
+                        background: #aaa;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .quantiter {
+        font-size: 1.3em;
+        margin: 10px 0;
+    }
+
+    .btns_action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 3px;
+            color: #555;
+            background: #aaa;
+            cursor: pointer;
+            transition: .5s;
+
+            &:hover {
+                background: $main-color;
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+
+        .res {
+            margin-right: 10px;
+        }
+    }
+}
+
+.close {
+    @include btnDisplayPaniers(#fff, 30px, 100%);
+    transform: translate(-50%, 50%);
+    right: 0;
+    top: 0;
+}
+
+.open {
+    @include btnDisplayPaniers;
+    right: 3vw;
+    bottom: 3vw;
+    box-shadow: 0 0 3px 1px #888;
+    z-index: 600;
+}

@@ -1,4 +1,8 @@
 @import './components/import.scss';
+@import './components/navigation.scss';
+@import './components/panier.scss';
+@import './components/addUser.scss';
+
 
 header {
     @include style-header($main-color, 400px);
@@ -22,6 +26,7 @@ header {
     grid-template-columns: 200px 1fr;
     gap: 10px;
     margin: auto;
+    padding: 0 10px;
     height: 50px;
 
     input,
@@ -62,4 +67,27 @@ header {
 .articles {
     margin: 40px 0;
     @import './components/article.scss';
+}
+
+@media screen and (max-width:730px) {
+    #recherche {
+        grid-template-columns: 120px 1fr;
+
+    }
+}
+
+@media screen and (max-width:490px) {
+    header .titre-b h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width:380px) {
+    #recherche select {
+        display: none;
+    }
+
+    #recherche form {
+        grid-column: 1 / span 2;
+    }
 }

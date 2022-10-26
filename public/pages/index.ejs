@@ -27,6 +27,7 @@
                 </div>
             </div>
             <!-- end div texte -->
+            <%- include('./components/addUser') %>
             <!-- div image -->
             <div class="image">
                 <img src="images/background/casque.png" alt="visuel du site">
@@ -34,97 +35,88 @@
             <!-- end div image -->
     </header>
     <!-- end header -->
-    <!-- start main -->
-    <main>
-        <!-- start section article -->
-        <section class="articles">
-            <h2 class="sous-titre">Nos Articles</h2>
-            <div class="contener-articles">
-                <% for (let i=0; i < 8; i++){ %>
-                    <div class="carte-article">
-                        <div class="img-article">
-                            <img src="images/haut.png" alt="">
+    <%- include("./components/panier") %>
+        <!-- start main -->
+        <main>
+            <!-- start section article -->
+            <section class="articles">
+                <h2 class="sous-titre">Nos Articles</h2>
+                <%- include("./components/articles") %>
+                    <p class="liens-plus"><a href="#">plus d'articles </a></p>
+            </section>
+            <!-- end section article -->
+            <!-- section services -->
+            <section class="services">
+                <h2 class="sous-titre">NOS Services</h2>
+                <div class="contener-services">
+                    <!-- start carte service -->
+                    <div class="service">
+                        <div class="icone-sevice">
+                            <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
+                            <p>Livraison</p>
                         </div>
-                        <div class="info-article">
-                            <p class="titre-article">
-                                <%= res[i].titre %>
-                            </p>
-                            <p class="prix">
-                                <%= res[i].prix %>F
-                            </p>
+                        <p class="description-service">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto
+                            nisi
+                            deserunt sunt modi?
+                        </p>
+                        <button class="btn-service">Contacter</button>
+                    </div>
+                    <!-- end carte service -->
+                    <!-- start carte service -->
+                    <div class="service">
+                        <div class="icone-sevice">
+                            <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
+                            <p>Livraison</p>
                         </div>
+                        <p class="description-service">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto
+                            nisi
+                            deserunt sunt modi?
+                        </p>
+                        <button class="btn-service">Contacter</button>
                     </div>
-                <% } %>
-            </div>
-                <p class="liens-plus"><a href="#">plus d'articles </a></p>
-        </section>
-        <!-- end section article -->
-        <!-- section services -->
-        <section class="services">
-            <h2 class="sous-titre">NOS Services</h2>
-            <div class="contener-services">
-                <!-- start carte service -->
-                <div class="service">
-                    <div class="icone-sevice">
-                        <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
-                        <p>Livraison</p>
+                    <!-- end carte service -->
+                    <!-- start carte service -->
+                    <div class="service">
+                        <div class="icone-sevice">
+                            <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
+                            <p>Livraison</p>
+                        </div>
+                        <p class="description-service">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto
+                            nisi
+                            deserunt sunt modi?
+                        </p>
+                        <button class="btn-service">Contacter</button>
                     </div>
-                    <p class="description-service">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto nisi
-                        deserunt sunt modi?
-                    </p>
-                    <button class="btn-service">Contacter</button>
+                    <!-- end carte service -->
+                    <!-- start carte service -->
+                    <div class="service">
+                        <div class="icone-sevice">
+                            <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
+                            <p>Livraison</p>
+                        </div>
+                        <p class="description-service">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto
+                            nisi
+                            deserunt sunt modi?
+                        </p>
+                        <button class="btn-service">Contacter</button>
+                    </div>
+                    <!-- end carte service -->
                 </div>
-                <!-- end carte service -->
-                <!-- start carte service -->
-                <div class="service">
-                    <div class="icone-sevice">
-                        <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
-                        <p>Livraison</p>
-                    </div>
-                    <p class="description-service">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto nisi
-                        deserunt sunt modi?
-                    </p>
-                    <button class="btn-service">Contacter</button>
-                </div>
-                <!-- end carte service -->
-                <!-- start carte service -->
-                <div class="service">
-                    <div class="icone-sevice">
-                        <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
-                        <p>Livraison</p>
-                    </div>
-                    <p class="description-service">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto nisi
-                        deserunt sunt modi?
-                    </p>
-                    <button class="btn-service">Contacter</button>
-                </div>
-                <!-- end carte service -->
-                <!-- start carte service -->
-                <div class="service">
-                    <div class="icone-sevice">
-                        <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
-                        <p>Livraison</p>
-                    </div>
-                    <p class="description-service">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto nisi
-                        deserunt sunt modi?
-                    </p>
-                    <button class="btn-service">Contacter</button>
-                </div>
-                <!-- end carte service -->
-            </div>
-            <p class="liens-plus"><a href="#">plus de services </a></p>
+                <p class="liens-plus"><a href="#">plus de services </a></p>
 
-        </section>
-        <!-- end section services -->
-    </main>
-    <!-- end main  -->
-    <!-- start footer  -->
-    <%- include('./components/footer') %>
-        <!-- end footer -->
+            </section>
+            <!-- end section services -->
+        </main>
+        <!-- end main  -->
+        <!-- start footer  -->
+        <%- include('./components/footer') %>
+            <!-- end footer -->
+            <%- include('./components/scripts') %>
+                <script src="../js/apiQuery.js"></script>
 </body>
 
 </html>

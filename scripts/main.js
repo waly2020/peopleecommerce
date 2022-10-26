@@ -1,28 +1,35 @@
 const express = require("express");
-const heur = require("./heurs.js");
-const ejs = require("ejs");
+const session = require("express-session");
 const server = express();
-const mysql = require("mysql");
-const myconnection = require("express-myconnection");
+const path = require("path");
+const ejs = require("ejs");
+const routerPages = require("./pages");
+const routeAPI = require("./routes");
 
-const options_db = {
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: '',
-    database: 'people_db'
-}
-
-server.use(myconnection(mysql, options_db, 'pool'));
 
 server.use(express.static("public"));
-server.set('view engine', 'ejs');
-server.set("views", 'public');
+server.use(express.urlencoded({extended : false}));
 
-heur.getDatas(server,'/','index');
+server.set("views","public");
+server.set("view engine", "ejs");
 
-heur.getDatas(server,'/boutique','boutique');
+// session
+server.use(session({
+    secret : "site_mon_bouet",
+    resave : false,
+    saveUninitialized : true,
+    cookie : {
+        maxAge : 60 * 1000 * 30,
+    }
+}));
 
-server.listen(3001, () => {
-    console.log('port 3001 ouvert');
+server.use("/",routerPages);
+server.use("/",routeAPI);
+// page 404
+server.use((req,res,next) =>{
+    res.status(404);
+    res.send("Page non trouver");
 })
+server.listen(3001,() => console.log("port 3001 ouvert"));
+
+module.exports = server;
