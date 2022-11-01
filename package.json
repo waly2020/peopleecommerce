@@ -4,7 +4,7 @@
   "description": "site ecommerce de gabon mont bouet",
   "main": "main.js",
   "scripts": {
-    "start": "scripts/main.js",
+    "start": "cross-env scripts/main.js",
     "dev": "nodemon scripts/main.js",
     "sass-index": "sass --watch public/styles/sass/style.scss public/styles/css/style.css",
     "sass-connexions": "sass --watch public/styles/sass/connexions.scss public/styles/css/connexions.css",
@@ -21,6 +21,8 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-myconnection": "^1.0.4",

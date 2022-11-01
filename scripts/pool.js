@@ -2,11 +2,11 @@ const util = require("util");
 const mysql = require("mysql");
 
 const pool = mysql.createPool({
-    user : "root",
-    database : "people_db",
-    host : "localhost",
-    port : 3306,
-    password : "",
+    user : process.env.DB_USER ?? 'root',
+    database : process.env.DATABASE,
+    host : process.env.HOST,
+    port : process.env.DB_PORT,
+    password : process.env.PASSWORD,
     connectionLimit : 10
 });
 
