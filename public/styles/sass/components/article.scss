@@ -16,13 +16,15 @@
             border-radius: 5px;
             display: grid;
             grid-template-rows: 370px 1fr;
-
+            
             .img-article {
-                align-self: center;
-                justify-self: center;
+                @include flex-center;
+                overflow: hidden;
+                width: 100%;
+                height: 370px;
 
                 img {
-                    width: 100%;
+                    width: 90%;
                 }
             }
 

@@ -1,12 +1,39 @@
 <nav class="navigation">
     <div class="logo"></div>
     <ul class="menu">
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/boutique">Boutique</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Qui somme nous ?</a></li>
-        <li><a href="#">Contactez nous</a></li>
+        <% if (li == 1) { %>
+            <li class="active"><a href="/home">Accueil</a></li>
+        <% } else {%>
+            <li><a href="/home">Accueil</a></li>  
+        <% } %>
+        <% if (li == 2) { %>
+            <li class="active"><a href="/boutique">Boutique</a></li>
+        <% } else {%>
+            <li><a href="/boutique">Boutique</a></li>      
+        <% } %>
+
+        <% if (li == 3) { %>
+            <li class="active"><a href="#">Services</a></li>
+        <% } else {%>
+            <li><a href="/services">Services</a></li>          
+        <% } %>
+
+        <% if (li == 4) { %>
+            <li class="active"><a href="/blog">Blog</a></li>
+        <% } else {%>
+            <li><a href="/blog">Blog</a></li>      
+        <% } %>
+        <% if (li == 5) { %>
+            <li class="active"><a href="/about">Qui somme nous ?</a></li>
+        <% } else {%>
+            <li><a href="/about">Qui somme nous ?</a></li>
+        <% } %>
+        <% if (li == 6) { %>
+            <li class="active"><a href="/contacte">Contactez nous</a></li>
+        <% } else {%>
+            <li><a href="/contacte">Contactez nous</a></li>
+        <% } %> 
+        
     </ul>
     <div class="abonnees">
         <div class="users">
@@ -14,7 +41,8 @@
             <div class="userConnected">
                 <% if (user) { %>
                     <div id='user_1'>
-                        <a href="/compte"><button>Modifier mon compte</button></a>
+                        <p><%= user.name %> </p>
+                        <p><%= user.numero %> </p>
                         <a href="/deconnexion"><button class="low">Deconnexion</button></a>
                     </div>
                     <% } else {%>
@@ -26,9 +54,16 @@
             </div>
         </div>
 
-        <button class="reche"><img src="../images/svg/rech.svg" alt="svg de revherche"></button>
+        <!-- <button class="reche"><img src="../images/svg/rech.svg" alt="svg de revherche"></button> -->
         <div class="btns-abonnee">
-            <button class="btn-abonne">S'abonnee</button>
+            <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> " class="link-abonne">
+                
+                <% if (user?.isabonne == 1) { %>
+                 <button class="btn-abonne abonner active">Déja abonne</button>
+                <% } else {%>
+                    <button class="btn-abonne abonner">S'abonne</button>
+                <% } %> 
+            </a>
             <button class="nbr-abonnee">1,5k</button>
         </div>
     </div>
@@ -59,27 +94,34 @@
                     </div>
                     <% } %>
                         <div class="btns-abonnee">
-                            <button class="btn-abonne">S'abonnee</button>
+                            <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> " class="link-abonne">
+                
+                                <% if (user?.isabonne == 1) { %>
+                                 <button class="btn-abonne abonner active">Déja abonne</button>
+                                <% } else {%>
+                                    <button class="btn-abonne abonner">S'abonne</button>
+                                <% } %> 
+                            </a>
                             <button class="nbr-abonnee">1,5k</button>
                         </div>
         </div>
         <ul class="menu-bar">
-            <a href="/">
+            <a href="/home">
                 <li>Accueil</li>
             </a>
             <a href="/boutique">
                 <li>Boutique</li>
             </a>
-            <a href="#">
+            <a href="/services">
                 <li>Services</li>
             </a>
-            <a href="#">
+            <a href="/blog">
                 <li>Blog</li>
             </a>
-            <a href="#">
+            <a href="/about">
                 <li>Qui somme nous ?</li>
             </a>
-            <a href="#">
+            <a href="/contacte">
                 <li>Contactez nous</li>
             </a>
         </ul>

@@ -30,7 +30,6 @@ btn_panier.forEach(btn => {
 
 function managerPanier(button) {
     if (button.classList.contains("open")) {
-        console.log("open");
 
         for (let i = 0; i < panierStorage.length; i++) {
 
@@ -55,7 +54,6 @@ function managerPanier(button) {
             `
         }
     } else {
-        console.log("close");
         contenerArticlesPanier.innerHTML = '';
     }
 }
@@ -88,7 +86,6 @@ function setQuantity() {
 burger.forEach(btn => {
     btn.addEventListener("click", () => {
         bar_menu.classList.toggle("active");
-        console.log("canges");
     })
 })
 // fin menu mobile
@@ -96,4 +93,16 @@ burger.forEach(btn => {
 btn_close_user.addEventListener("click", () => {
     add_user.classList.toggle("active");
     shadow_add_user.classList.toggle("active");
+})
+
+link_abn.forEach(btn => {
+    btn.addEventListener("click", e =>{
+        if(userId){
+            return;
+        }else{
+            e.preventDefault();
+            add_user.classList.toggle("active");
+            shadow_add_user.classList.toggle("active");
+        }
+    })
 })

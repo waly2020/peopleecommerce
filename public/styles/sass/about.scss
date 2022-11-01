@@ -1,0 +1,145 @@
+@import './components/import.scss';
+@import './components/navigation.scss';
+
+header {
+    @include style-header($main-color, 300px);
+
+    .contente {
+        grid-column: 1 / span 2;
+        @include flex-center;
+
+        h1 {
+            color: #fff;
+            font-size: 3em;
+            text-align: center;
+        }
+    }
+    margin-bottom: 40px;
+
+    // display: none;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & > *{
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px 10px;
+        margin-bottom: 40px;
+    }
+    .presentation{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        .texte{
+            width: 100%;
+            max-width: 600px;
+            min-width: 300px;
+            margin: 0 10px 30px 0;
+            .titre{
+                font-size: 2.5em;
+                margin-bottom: 10px;
+                color: $main-color;
+               
+            }
+            p{
+                color: #555;
+                line-height: 24px;
+            }
+        }
+        .img{
+            width: 100%;
+            max-width: 450px;
+            height: 400px;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .avantages{
+        display: grid;
+        grid-template-rows: 50px 1fr;
+        gap: 20px;
+        min-height: 250px;
+        // background: orange;
+        h2{
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: $main-color;
+        }
+        .avantage{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,280px);
+            justify-content: center;
+            gap: 15px;
+            & > div{
+                height: 200px;
+                background: #fff;
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                border-radius: 10px;
+                box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.156);
+            }
+            .icone{
+                @include flex-center;
+            }
+            p{
+                color: #555;
+                text-align: center;
+                padding: 0 20px;
+            }
+        }
+    }
+}
+.thanks{
+    width: 100%;
+    height: 500px;
+    background: rgb(1, 16, 37);
+    .contente{
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        margin: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2{
+            font-size: 3em;
+            margin-bottom: 70px;
+            color: #fff;
+            text-align: center;
+        }
+        .btns{
+            display: grid;
+            width: 100%;
+            max-width: 400px;
+            height: 50px;
+            grid-template-columns: 1fr 20px 1fr;
+        }
+        button{
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        .contact{
+            background: royalblue;
+            color: #ddd;
+        }
+        p{
+            display: inline-block;
+            font-weight: bold;
+            color: #999;
+            @include flex-center;
+            font-size: 2em;
+        }
+    }
+}

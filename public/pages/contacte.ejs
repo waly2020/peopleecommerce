@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/css/contacte.css">
+    <title>contactez nous</title>
+</head>
+<body>
+    <%- include('./components/addUser') %>
+    <header>
+        <%- include("./components/navigation") %>
+          <div class="contente">
+              <h1>Contactez nous !</h1>
+          </div>
+    </header>
+    <h2 class="titre-h2">Vous pensez quoi de ce site ?</h2>
+    <main class="body">
+        <form action="#">
+            <div class="inputs">
+                <div class="input">
+                    <label for="name">*Votre nom</label>
+                    <input type="text" name="name" id="name" placeholder="Jean" required>
+                </div>
+                <div class="input">
+                    <label for="numero">*Votre numero de telephone</label>
+                    <input type="tel" name="numero" id="numero" placeholder="0740000000" required>
+                </div>
+            </div>
+            <textarea name="message" id="message" placeholder="votre message..." required></textarea>
+            <button>Envoyé le message</button>
+        </form>
+    </main>
+    <%- include("./components/footer") %>
+    <%- include('./components/scripts') %>
+</body>
+</html>

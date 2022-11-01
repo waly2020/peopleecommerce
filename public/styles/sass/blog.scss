@@ -1,0 +1,25 @@
+@import './components/import.scss';
+@import './components/navigation.scss';
+
+header{
+    @include style-header($main-color,400px);
+    .contente{
+        grid-column: 1 / span 2;
+        @include flex-center;
+        h1{
+            text-align: center;
+            color: #fff;
+            font-size: 3em;
+        }
+    }
+}
+.body{
+    height: calc(100vh - 400px);
+    @include flex-center;
+    h2{
+        color: #aaa;
+        font-size: 3em;
+        font-family: sans-serif;
+        text-align: center;
+    }
+}

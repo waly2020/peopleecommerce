@@ -44,9 +44,12 @@ footer {
             grid-column: 1 / span 4;
         }
     }
-
+    .link-abonne{
+        height: 45px;
+    }
     button {
-        @include button-style;
+        @include button-style($bgd : none);
+        width: 100%;
     }
 }
 

@@ -94,9 +94,9 @@
 
             #deconnecter {
                 display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    grid-row: 1 / span 2;
+                justify-content: space-between;
+                align-items: center;
+                grid-row: 1 / span 2;
 
                 button {
                     min-width: 120px;
@@ -114,6 +114,7 @@
             #isconnected {
                 @include flex-center(column, center);
                 grid-row: 1 / span 2;
+
                 .info {
                     font-size: 15px;
                     color: #fff;
@@ -163,7 +164,7 @@
                 margin: 10px auto;
 
                 .btn-abonne {
-                    @include button-style($bgd : #555);
+                    @include button-style($bgd : none);
                     z-index: 10;
                 }
 
@@ -253,6 +254,12 @@
                 }
             }
 
+            &.active {
+                &::after {
+                    width: 100%;
+                }
+            }
+
             a {
                 text-decoration: none;
                 color: #fff;
@@ -284,7 +291,7 @@
             grid-template-columns: 122px 1fr;
 
             .btn-abonne {
-                @include button-style;
+                @include button-style($bgd : none);
                 z-index: 10;
             }
 

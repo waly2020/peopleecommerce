@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/css/commande.css">
     <title>
-        <%= forms %> 
+        <%= data %>
     </title>
 </head>
 
@@ -16,6 +16,7 @@
         <%- include("./components/navigation") %>
             <h2>LIVRAISON</h2>
     </header>
+    <%- include('./components/addUser') %>
     <main id="body">
         <!-- section article selectionner -->
         <section id="article-commander">
@@ -29,19 +30,22 @@
             </div>
             <div id="detail-article">
                 <div class="forms">
-                    <% if (forms == "livraison") { %>
+                    <% if (data=="livraison" ) { %>
                         <form action="#" class="livraison form active">
-                            <p class="quantiter">Nombre d'article : <span class="semi-important sold" data-solde="quantiter">0</span><span
-                                    class="semi-important">articles</span></p>
-                            <p class="total">Total : <span class="important sold" data-solde="prix">0</span><span class="important"> FCFA</span></p>
+                            <p class="quantiter">Nombre d'article : <span class="semi-important sold"
+                                    data-solde="quantiter">0</span><span class="semi-important">articles</span></p>
+                            <p class="total">Total : <span class="important sold" data-solde="prix">0</span><span
+                                    class="important"> FCFA</span></p>
                             <p class="titre-form">Dite nous ou vous trouver</p>
                             <div class="input_infos">
-                                <input type="tel" name="numero_phone" id="numero_phone" placeholder="Votre numero de telephone..." required>
+                                <input type="tel" name="numero_phone" id="numero_phone"
+                                    placeholder="Votre numero de telephone..." required>
                                 <div class="my-number">
                                     <label for="num">Utiliser mon numero de telephone</label>
                                     <input type="checkbox" name="num" id="num">
                                 </div>
-                                <input type="text" name="ville" id="ville" placeholder="Ville/Cartier de livraison" required>
+                                <input type="text" name="ville" id="ville" placeholder="Ville/Cartier de livraison"
+                                    required>
                             </div>
                             <p>Quand voulez-vous faire livrer ?</p>
                             <div class="fixe_date_contener">
@@ -49,35 +53,36 @@
                             </div>
                             <div class="contener-btn">
                                 <button id="send" type="submit">Evoye la demande</button>
-                                <a href="/"><button id="restore" type="button">Annuler</button></a>
+                                <a href="/home"><button id="restore" type="button">Annuler</button></a>
                             </div>
                         </form>
-                    <% } else { %>
-                        <form action="#" class="reservation form">
-                            <p class="quantiter">Nombre d'article : <span class="semi-important sold"
-                                    data-solde="quantiter"></span><span class="semi-important">articles</span></p>
-                            <p class="total">Total : <span class="important sold" data-solde="prix"></span><span
-                                    class="important">
-                                    FCFA</span></p>
-                            <p class="titre-form">Laisser nous un numero pour appeler</p>
-                            <div class="input_infos">
-                                <input type="tel" name="numero_phone" id="numero_phone" placeholder="Votre numero de telephone..." required>
-                                <div class="my-number">
-                                    <label for="num">Utiliser mon numero de telephone</label>
-                                    <input type="checkbox" name="num" id="num">
+                        <% } else { %>
+                            <form action="#" class="reservation form">
+                                <p class="quantiter">Nombre d'article : <span class="semi-important sold"
+                                        data-solde="quantiter"></span><span class="semi-important">articles</span></p>
+                                <p class="total">Total : <span class="important sold" data-solde="prix"></span><span
+                                        class="important">
+                                        FCFA</span></p>
+                                <p class="titre-form">Laisser nous un numero pour appeler</p>
+                                <div class="input_infos">
+                                    <input type="tel" name="numero_phone" id="numero_phone"
+                                        placeholder="Votre numero de telephone..." required>
+                                    <div class="my-number">
+                                        <label for="num">Utiliser mon numero de telephone</label>
+                                        <input type="checkbox" name="num" id="num">
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <p>Quand venez-vous recuperer vos articles ?</p>
-                            <div class="fixe_date_contener">
-                                <input type="date" name="fixe_date" id="fixe-date">
-                            </div>
-                            <div class="contener-btn">
-                                <button id="send" type="submit">Evoye la demande</button>
-                                <button id="restore" type="button">Annuler</button>
-                            </div>
-                        </form>
-                    <% } %> 
+
+                                <p>Quand venez-vous recuperer vos articles ?</p>
+                                <div class="fixe_date_contener">
+                                    <input type="date" name="fixe_date" id="fixe-date">
+                                </div>
+                                <div class="contener-btn">
+                                    <button id="send" type="submit">Evoye la demande</button>
+                                    <button id="restore" type="button">Annuler</button>
+                                </div>
+                            </form>
+                            <% } %>
                 </div>
             </div>
         </section>

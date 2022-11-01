@@ -22,7 +22,13 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, vitae!</p>
                     <div class="btns-header">
                         <a href="#"><button class="btn-article">voir les articles</button></a>
-                        <button class="btn-abone">s'abonnee</button>
+                        <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> " class="link-abonne">
+                            <% if (user?.isabonne == 1) { %>
+                                <button class="btn-abone abonner active">Déja abonne</button>
+                               <% } else {%>
+                                   <button class="btn-abone abonner">S'abonne</button>
+                            <% } %> 
+                        </a>
                     </div>
                 </div>
             </div>
@@ -116,7 +122,8 @@
         <%- include('./components/footer') %>
             <!-- end footer -->
             <%- include('./components/scripts') %>
-                <script src="../js/apiQuery.js"></script>
+                <script defer src="../js/apiQuery.js"></script>
+                <script type="module" src="../js/abonne.js"></script>
 </body>
 
 </html>

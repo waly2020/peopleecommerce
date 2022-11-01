@@ -18,8 +18,9 @@ const add_user = document.querySelector(".add-user");
 const shadow_add_user = document.querySelector(".shadow-add-user");
 const btn_close_user = document.querySelector(".close-add-user");
 
-console.log(add_user,shadow_add_user,btn_close_user);
-
 // menu mobile
 const burger = document.querySelectorAll(".burger");
 const bar_menu = document.querySelector(".bar-menu");
+
+// boutons d'abonnement
+const link_abn = document.querySelectorAll(".link-abonne");

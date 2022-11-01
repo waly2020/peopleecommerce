@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/css/about.css">
+    <title>Qui somme nous ?</title>
+</head>
+
+<body>
+    <header>
+        <%- include("./components/navigation") %>
+            <div class="contente">
+                <h1>Mont bouet gabon</h1>
+            </div>
+    </header>
+    <%- include('./components/addUser') %>
+    <main class="body">
+        <section class="presentation">
+            <div class="texte">
+                <h2 class="titre">Salut...</h2>
+                <p>
+                    Je suis... ,lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque omnis, aliquam quibusdam illum similique ab voluptas vel corporis temporibus modi corrupti commodi laudantium et tempora consequatur odit tenetur. Esse voluptatum dolor ea totam inventore ipsum provident praesentium impedit ipsam, unde ratione, odio aspernatur omnis quia cumque aut? Dicta molestias eligendi rerum, facere veritatis impedit, quos odit quibusdam aliquam laudantium porro cumque placeat labore sint quisquam, totam magni vitae nulla dignissimos?
+                </p>
+            </div>
+            <div class="img">
+                <img src="../images/articles/hugo-boss-slim-fit-shirt-homme-taille-xl.jpg" alt="Astrid obame">
+            </div>
+        </section>
+        <section class="presentation">
+            <div class="img">
+                <img src="../images/articles/hugo-boss-slim-fit-shirt-homme-taille-xl.jpg" alt="Astrid obame">
+            </div>
+            <div class="texte">
+                <h2 class="titre">Marche Mont Bout est...</h2>
+                <p>
+                    Une plate-forme qui vous permet... ,lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque omnis, aliquam quibusdam illum similique ab voluptas vel corporis temporibus modi corrupti commodi laudantium et tempora consequatur odit tenetur. Esse voluptatum dolor ea totam inventore ipsum provident praesentium impedit ipsam, unde ratione, odio aspernatur omnis quia cumque aut? Dicta molestias eligendi rerum, facere veritatis impedit, quos odit quibusdam aliquam laudantium porro cumque placeat labore sint quisquam, totam magni vitae nulla dignissimos?
+                </p>
+            </div>
+        </section>
+        <section class="avantages">
+            <h2 class="titre">Ici vous pouvez...</h2>
+            <div class="avantage">
+                <div class="atg1">
+                    <div class="icone">
+                        <img src="../images/svg/livraison.svg">
+                    </div>
+                    <p class="desc">Vous faire livre vos articles.</p>
+                </div>
+                <div class="atg2">
+                    <div class="icone">
+                        <img src="../images/svg/livraison.svg">
+                    </div>
+                    <p class="desc">Reserver vos article.</p>
+                </div>
+                <div class="atg3">
+                    <div class="icone">
+                        <img src="../images/svg/livraison.svg">
+                    </div>
+                    <p class="desc">Vous faire livre quand vous voulez et ou vous voulez.</p>
+                </div>
+                <div class="atg4">
+                    <div class="icone">
+                        <img src="../images/svg/livraison.svg">
+                    </div>
+                    <p class="desc">Recuperer les articles Reserver quand vous voulez.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="thanks">
+        <div class="contente">
+            <% if (user?.isabonne == 1) { %>
+                <h2>Merci d'avoir rejoins la communauté</h2>
+            <% } else {%>
+                <h2>N'oubliez pas de vous abonné</h2>
+            <% } %> 
+            
+            <div class="btns">
+                <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> ">
+                    <% if (user?.isabonne == 1) { %>
+                        <button class="abonner active">Déja abonne</button>
+                       <% } else {%>
+                           <button class="abonner">Abonnez-vous !</button>
+                    <% } %> 
+                </a>
+                <p>|</p>
+                <button class="contact">Contactez nous !</button></div>
+        </div>
+    </section>
+    <%- include("./components/footer") %>
+    <%- include('./components/scripts') %>
+</body>
+
+</html>

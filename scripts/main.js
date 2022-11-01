@@ -5,6 +5,7 @@ const path = require("path");
 const ejs = require("ejs");
 const routerPages = require("./pages");
 const routeAPI = require("./routes");
+const routeAdmin = require("../scripts-admin/routes");
 
 
 server.use(express.static("public"));
@@ -25,6 +26,7 @@ server.use(session({
 
 server.use("/",routerPages);
 server.use("/",routeAPI);
+server.use("/",routeAdmin);
 // page 404
 server.use((req,res,next) =>{
     res.status(404);

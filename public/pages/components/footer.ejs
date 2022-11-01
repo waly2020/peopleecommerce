@@ -1,12 +1,12 @@
 <footer>
     <ul class="menu">
         <li class="titre">Navigation</li>
-        <li><a href="/">Accueil</a></li>
+        <li><a href="/home">Accueil</a></li>
         <li><a href="/boutique">Boutique</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Qui somme nous ?</a></li>
-        <li><a href="#">Contactez nous</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/about">Qui somme nous ?</a></li>
+        <li><a href="/contacte">Contactez nous</a></li>
     </ul>
     <ul class="informations">
         <li class="titre">informations</li>
@@ -30,5 +30,15 @@
             <li><a href="/connexion_connexion">se connecter</a></li>
         <% } %> 
     </ul>
-    <button class="btn-abone">Abonnee vous !</button>
+    <% if (li == false) { %>
+      <div></div>
+    <% } else {%>
+        <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> " class="link-abonne">
+            <% if (user?.isabonne == 1) { %>
+                <button class="btn-abone abonner active">Déja abonne</button>
+               <% } else {%>
+                   <button class="btn-abone abonner">Abonnez-vous !</button>
+            <% } %> 
+    <% } %> 
+    </a>
 </footer>

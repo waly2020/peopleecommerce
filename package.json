@@ -1,7 +1,7 @@
 {
   "name": "peopleecommerce",
   "version": "1.0.0",
-  "description": "site ecommerce de people",
+  "description": "site ecommerce de gabon mont bouet",
   "main": "main.js",
   "scripts": {
     "start": "scripts/main.js",
@@ -10,8 +10,11 @@
     "sass-connexions": "sass --watch public/styles/sass/connexions.scss public/styles/css/connexions.css",
     "sass-commande": "sass --watch public/styles/sass/commande.scss public/styles/css/commande.css",
     "sass-boutique": "sass --watch public/styles/sass/boutique.scss public/styles/css/boutique.css",
-    "sass-compte": "sass --watch public/styles/sass/compte.scss public/styles/css/compte.css",
-    "sass-numero": "sass --watch public/styles/sass/numero.scss public/styles/css/numero.css",
+    "sass-admin": "sass --watch public/styles/sass/styles_admin/admin.scss public/css_admin/admin.css",
+    "sass-about": "sass --watch public/styles/sass/about.scss public/styles/css/about.css",
+    "sass-contacte": "sass --watch public/styles/sass/contacte.scss public/styles/css/contacte.css",
+    "sass-service": "sass --watch public/styles/sass/service.scss public/styles/css/service.css",
+    "sass-blog": "sass --watch public/styles/sass/blog.scss public/styles/css/blog.css",
     "bdd": "mysql -u root"
   },
   "author": "waly le dev",
@@ -24,6 +27,7 @@
     "express-session": "^1.17.3",
     "g": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20",
     "util.promisify": "^1.1.1"

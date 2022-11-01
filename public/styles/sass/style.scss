@@ -1,7 +1,6 @@
 @import './components/import.scss';
 @import './components/navigation.scss';
 @import './components/panier.scss';
-@import './components/addUser.scss';
 
 // staert header
 header {
@@ -44,7 +43,7 @@ header {
     }
 
     .btn-abone {
-        @include button-style;
+        @include button-style($bgd : none);
     }
 }
 

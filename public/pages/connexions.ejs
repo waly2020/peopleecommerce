@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/css/connexions.css">
-    <title>connexion</title>
+    <title>
+        <%= data %>
+    </title>
 </head>
 
 <body>
+    <%- include('./components/addUser') %>
     <div class="forms">
-        <% if (form == 'connexion') { %>
+        <% if (data=='connexion' ) { %>
             <form action="/login" method="post" class="connexion active">
                 <div class="logo-form">
                     <p>PEOPLE.</p>
@@ -20,16 +23,16 @@
                 <input type="tel" name="usernum" id="usernum" placeholder="074937621">
                 <button type="submit">Se connecter</button>
             </form>
-        <% } else {%>
-            <form action="/create" method="post" class="creation active">
-                <div class="logo-form">
-                    <p>PEOPLE.</p>
-                </div>
-                <input type="text" name="name" id="name" placeholder="Votre nom..." required>
-                <input type="tel" name="numero" id="numero" placeholder="074937621">
-                <button type="submit">Cree mon compte</button>
-            </form>
-        <% } %> 
+            <% } else {%>
+                <form action="/create" method="post" class="creation active">
+                    <div class="logo-form">
+                        <p>PEOPLE.</p>
+                    </div>
+                    <input type="text" name="name" id="name" placeholder="Votre nom..." required>
+                    <input type="tel" name="numero" id="numero" placeholder="074937621">
+                    <button type="submit">Cree mon compte</button>
+                </form>
+                <% } %>
     </div>
     <%- include('./components/footer') %>
 </body>

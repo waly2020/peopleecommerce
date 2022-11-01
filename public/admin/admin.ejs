@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css_admin/admin.css">
+    <title>admin</title>
+</head>
+
+<body>
+    <aside class="barre">
+        <div class="can-active-aside">
+            <img src="../images/svg/sup.svg">
+        </div>
+        <div class="admin">
+            <div class="img"></div>
+            <p class="name">Waly le dev</p>
+        </div>
+        <ul class="menu">
+            <li class="item active i1" data-form="0">
+                <img src="../images/svg/dashboard.svg" class="icn">
+                <p class="texte">Dashboard</p>
+                <img src="../images/svg/sup.svg" class="sup">
+            </li>
+            <li class="item i2" data-form="1">
+                <img src="../images/svg/panier.svg" class="icn">
+                <p class="texte">Gere les articles</p>
+                <img src="../images/svg/sup.svg" class="sup">
+            </li>
+            <li class="item i3" data-form="0">
+                <img src="../images/svg/g_user.svg" class="icn">
+                <p class="texte">Gere les utilisateurs</p>
+                <img src="../images/svg/sup.svg" class="sup">
+            </li>
+            <li class="item i4" data-form="2">
+                <img src="../images/svg/services.svg" class="icn">
+                <p class="texte">Gere les services</p>
+                <img src="../images/svg/sup.svg" class="sup">
+            </li>
+            <li class="item i5" data-form="3">
+                <img src="../images/svg/blog.svg" class="icn">
+                <p class="texte">Gere le blog</p>
+                <img src="../images/svg/sup.svg" class="sup">
+            </li>
+            <li class="item i6" data-form="0">
+                <img src="../images/svg/sms.svg" class="icn">
+                <p class="texte">Messages</p>
+                <img src="../images/svg/sup.svg" class="sup">
+            </li>
+        </ul>
+    </aside>
+    <main class="contenue">
+        <div class="add-items">+</div>
+        <header class="en-tete">
+            <div class="logo"></div>
+            <p class="title">Marche Mont-Bouet Gabon</p>
+        </header>
+
+        <div class="pages">
+            <section class="page active dashborads">
+                <div class="titre">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="contente dashboard">
+                    <div class="contenu">
+                        <!-- start section -->
+                        <div class="section last-datas">
+                            <div class="contente-section datas">
+                                <!-- start data -->
+                                <div class="data">
+                                    <div class="img">
+                                        <img src="../images/svg/user-dash.svg" alt="">
+                                    </div>
+                                    <div class="taux">
+                                        <p class="titre-taux">Utilisateurs</p>
+                                        <p class="num-taux"><%= tables[0].length %> </p>
+                                    </div>
+                                </div>
+                                <!-- end datas -->
+                                <!-- start data -->
+                                <div class="data">
+                                    <div class="img">
+                                        <img src="../images/svg/blog-dash.svg" alt="">
+                                    </div>
+                                    <div class="taux">
+                                        <p class="titre-taux">blog</p>
+                                        <p class="num-taux">0</p>
+                                    </div>
+                                </div>
+                                <!-- end datas -->
+                                <!-- start data -->
+                                <div class="data">
+                                    <div class="img">
+                                        <img src="../images/svg/panier-dash.svg" alt="">
+                                    </div>
+                                    <div class="taux">
+                                        <p class="titre-taux">Articles</p>
+                                        <p class="num-taux"><%= tables[1].length %></p>
+                                    </div>
+                                </div>
+                                <!-- end datas -->
+                                <!-- start data -->
+                                <div class="data">
+                                    <div class="img">
+                                        <img src="../images/svg/service-dash.svg" alt="">
+                                    </div>
+                                    <div class="taux">
+                                        <p class="titre-taux">Services</p>
+                                        <p class="num-taux">0</p>
+                                    </div>
+                                </div>
+                                <!-- end datas -->
+                            </div>
+                        </div>
+                        <!-- end section -->
+                        <div class="section last-users">
+                            <div class="titre-section">
+                                <h2>Derniers utilisateurs connecter</h2>
+                            </div>
+                            <div class="contente-section">
+                                <!-- user -->
+                                <% let i = 0 %> 
+                                <% while (i < 4 && i < tables[0].length) {%>
+                                    <% let user = tables[0][(tables[0].length - 1) - i] %>
+                                    <div class="user">
+                                        <div class="img-user">
+                                            <div class="img">
+                                                <img src="../images/svg/user-admin.svg">
+                                            </div>
+                                        </div>
+                                        <div class="info-user">
+                                            <p class="nom"><%= user.name%> </p>
+                                            <p class="num"><%= user.numero %> </p>
+                                        </div>
+                                        <div class="btns">
+                                            <% if (user.isabonne == 1) { %>
+                                                <button class="abn true">Abonné</button>
+                                            <% } else {%>
+                                                <button class="abn">Abonné</button>
+                                            <% } %> 
+                                            
+                                        </div>
+                                    </div>
+                                    <% i++ %> 
+                                <% } %> 
+                                <!-- end user -->
+                            </div>
+                        </div>
+                        <!-- start section -->
+                        <div class="section last-article">
+                            <div class="titre-section">
+                                <h2>Dernier article ajouter</h2>
+                            </div>
+                            <div class="contente-section">
+                                <!-- article -->
+                                <% let a = 0 %>
+                                <% while (a < 4 && a < tables[1].length) {%>
+                                <% let article = tables[1][(tables[1].length - 1) - a] %>
+                                <div class="article">
+                                    <div class="img-article">
+                                        <img src="../images/upload/<%= article.image %>">
+                                    </div>
+                                    <div class="detail-article">
+                                        <p class="nom-article"><%= article.nom %> </p>
+                                        <p class="prix-article"><%= article.prix %> </p>
+                                        <p class="categorie"><%= article.categorie ?? "pas de categorie" %> </p>
+                                        <p class="date"><%= article.datePublication ?? "aucune date" %> </p>
+                                        <button onclick="suprimer('articles','<%= article.id %>')">suprimer</button>
+                                    </div>
+                                </div>
+                                <% a++; %> 
+                                <% } %> 
+                                <!-- end article -->
+                            </div>
+                        </div>
+                        <!-- end section -->
+                        <!-- start section -->
+                        <div class="section last-message">
+                            <div class="titre-section">
+                                <h2>Dernier message</h2>
+                            </div>
+                            <div class="contente-section">
+                                <!-- message -->
+                                <div class="message">
+                                    <div class="user">
+                                        <div class="img-user">
+                                            <div class="img">
+                                                <img src="../images/svg/user-admin.svg">
+                                            </div>
+                                        </div>
+                                        <div class="info-user">
+                                            <p class="nom">Waly le dev</p>
+                                            <p class="num">+241 074543425</p>
+                                        </div>
+                                    </div>
+                                    <div class="texte-sms">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Quaerat esse veritatis, eius nostrum delectus quia voluptate,
+                                            iusto eos exercitationem sint facere sit qui ex natus tenetur?
+                                            Aspernatur consequatur corporis maiores!
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- end message -->
+                            </div>
+                        </div>
+                        <!-- end section -->
+                        <!-- start section -->
+                        <div class="section last-article">
+                            <div class="titre-section">
+                                <h2>Dernier aricle de blog ajouter</h2>
+                            </div>
+                            <div class="contente-section">
+                                <!-- article de blog -->
+                                <div class="blog">
+                                    <div class="img">
+                                        <img src="../images/background/casque.png">
+                                    </div>
+                                    <div class="texte-blog">
+                                        <p class="titre">L'achat en ligne</p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
+                                            expedita harum. Porro provident eum laboriosam libero enim esse ducimus
+                                            sed, quae quam, vitae dolorem, voluptas eius nostrum aspernatur hic dolorum
+                                            consectetur autem quos. Quibusdam ipsam dolore quisquam velit veniam
+                                            molestias
+                                            recusandae soluta voluptatum sint dicta, debitis ea numquam obcaecati
+                                            asperiores nihil ut, iusto laboriosam blanditiis mollitia quod cupiditate
+                                            explicabo reprehenderit consequatur. Vel dolorem provident ipsa,
+                                            eius, hic dolores laborum repellendus distinctio, voluptas consectetur
+                                            expedita quibusdam unde asperiores fugiat libero eum.
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <!-- fin article de blog -->
+                            </div>
+                        </div>
+                        <!-- end section -->
+                        <!-- start section -->
+                        <div class="section last-service">
+                            <div class="titre-section">
+                                <h2>Dernier service ajouter</h2>
+                            </div>
+                            <div class="contente-section">
+                                <!-- start carte service -->
+                                <div class="service">
+                                    <div class="icone-sevice">
+                                        <div class="icone"><img src="../images/svg/livraison.svg" alt="icone livraison">
+                                        </div>
+                                        <p>Livraison</p>
+                                    </div>
+                                    <p class="description-service">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam
+                                        illum iusto
+                                        nisi
+                                        deserunt sunt modi?
+                                    </p>
+                                    <button class="btn-service">suprimer</button>
+                                </div>
+                                <!-- end carte service -->
+                            </div>
+                        </div>
+                        <!-- end section -->
+                    </div>
+                </div>
+            </section>
+            <section class="page add-articles">
+                <div class="titre">
+                    <h1>Gere les articles</h1>
+                </div>
+                <div class="contente modifier">
+                    <div class="contenu">
+                        <!-- article -->
+                        <% for (let c = tables[1].length - 1; c >= 0; c--){ %>
+                            <% let article = tables[1][c] %> 
+                            <div class="article">
+                                <div class="img-article">
+                                    <img src="../images/upload/<%= article.image %>">
+                                </div>
+                                <div class="detail-article">
+                                    <p class="nom-article"><%= article.nom %> </p>
+                                    <p class="prix-article"><%= article.prix %> </p>
+                                    <p class="categorie"><%= article.categorie ?? "pas de categorie" %> </p>
+                                    <p class="date"><%= article.datePublication ?? "aucune date" %> </p>
+                                    <button onclick="suprimer('articles','<%= article.id %>')">suprimer</button>
+                                </div>
+                            </div>
+                        <% }%>
+                        <!-- end article -->
+                    </div>
+                    <div class="forms" data-form="1">
+                        <p class="titre-form">Ajouter un article</p>
+                        <form action="/add/aricle" method="post" enctype="multipart/form-data">
+
+                            <input type="text" name="nom" id="nom" placeholder="nom de l'article" required>
+                            <input type="text" name="prix" id="prix" placeholder="prix de l'article" required>
+
+                            <div class="cat">
+                                <label for="categories">Ajouter un categorie</label>
+                                <select name="categories" id="categorie" required>
+                                    <option value="vetement">vetement</option>
+                                    <option value="electronic">electronic</option>
+                                </select>
+                            </div>
+
+                            <div class="add-img">
+                                <label for="image">Ajouter une image</label>
+                                <div class="icone-file">
+                                    <img src="../images/svg/next.svg" alt="">
+                                    <input type="file" name="image" id="images" required>
+                                </div>
+                            </div>
+
+                            <button type="submit">Cree</button>
+
+                        </form>
+                        <p class="err"><% typeof err !== 'undefined'  ? err : '' %> </p>
+                    </div>
+                </div>
+            </section>
+            <section class="page users">
+                <div class="titre">
+                    <h1>Géré les utilisateurs</h1>
+                </div>
+                <div class="contente one-page">
+                    <div class="contenu">
+                        <!-- user -->
+                        <% for (let i = tables[0].length - 1; i >= 0; i--) { %>
+                            <% let user = tables[0][i] %> 
+                            <div class="user">
+                                <div class="img-user">
+                                    <div class="img">
+                                        <img src="../images/svg/user-admin.svg">
+                                    </div>
+                                </div>
+                                <div class="info-user">
+                                    <p class="nom"><%= user.name %> </p>
+                                    <p class="num"><%= user.numero %> </p>
+                                </div>
+                                <div class="btns">
+                                    <% if (user.isabonne == 1) { %>
+                                        <button class="abn true">Abonné</button>
+                                    <% } else {%>
+                                        <button class="abn">Abonné</button>
+                                    <% } %> 
+                                    <button class="sup" onclick="suprimer('users','<%= user.id %>')">suprimer</button>
+                                </div>
+                            </div>
+                        <% } %>
+                        <!-- end user -->
+                        
+                    </div>
+                </div>
+            </section>
+            <section class="page add-services">
+                <div class="titre">
+                    <h1>Géré les services</h1>
+                </div>
+                <div class="contente modifier">
+                    <div class="contenu">
+                        <!-- start carte service -->
+                        <div class="service">
+                            <div class="icone-sevice">
+                                <div class="icone"><img src="../images/svg/livraison.svg" alt="icone livraison"></div>
+                                <p>Livraison</p>
+                            </div>
+                            <p class="description-service">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto
+                                nisi
+                                deserunt sunt modi?
+                            </p>
+                            <button class="btn-service">suprimer</button>
+                        </div>
+                        <!-- end carte service -->
+                    </div>
+                    <div class="forms" data-form="2">
+                        <p class="titre-form">Ajouter un service</p>
+                        <form action="#">
+                            <input type="text" name="nom" id="nom" placeholder="nom du service">
+                            <textarea name="texte" id="texte" placeholder="Description du service"></textarea>
+                            <div class="add-img">
+                                <label for="images">Ajouter une image</label>
+                                <div class="icone-file">
+                                    <img src="../images/svg/next.svg" alt="">
+                                    <input type="file" name="images" id="images">
+                                </div>
+                            </div>
+                            <button type="submit">Ajouter service</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="page add-blog dat">
+                <div class="titre">
+                    <h1>Gere le blog</h1>
+                </div>
+                <div class="contente modifier">
+                    <div class="contenu">
+                        <!-- article de blog -->
+                        <div class="blog">
+                            <div class="img">
+                                <img src="../images/background/casque.png">
+                            </div>
+                            <div class="texte-blog">
+                                <p class="titre">L'achat en ligne</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
+                                    expedita harum. Porro provident eum laboriosam libero enim esse ducimus
+                                    sed, quae quam, vitae dolorem, voluptas eius nostrum aspernatur hic dolorum
+                                    consectetur autem quos. Quibusdam ipsam dolore quisquam velit veniam molestias
+                                    recusandae soluta voluptatum sint dicta, debitis ea numquam obcaecati
+                                    asperiores nihil ut, iusto laboriosam blanditiis mollitia quod cupiditate
+                                    explicabo reprehenderit consequatur. Vel dolorem provident ipsa,
+                                    eius, hic dolores laborum repellendus distinctio, voluptas consectetur
+                                    expedita quibusdam unde asperiores fugiat libero eum.
+                                </p>
+
+                            </div>
+                        </div>
+                        <!-- fin article de blog -->
+                    </div>
+                    <div class="forms" data-form="3">
+                        <p class="titre-form">Ajouter un article</p>
+                        <form action="#">
+                            <input type="text" name="nom" id="nom" placeholder="nom de l'article">
+                            <textarea name="texte" id="texte" placeholder="Texte de l'article"></textarea>
+                            <div class="add-img">
+                                <label for="images">Ajouter une image</label>
+                                <div class="icone-file">
+                                    <img src="../images/svg/next.svg" alt="">
+                                    <input type="file" name="images" id="images">
+                                </div>
+                            </div>
+                            <button type="submit">Ajouter au Blog</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="page messages">
+                <div class="titre">
+                    <h1>Messages</h1>
+                </div>
+                <div class="contente one-page">
+                    <div class="contenu">
+                        <!-- message -->
+                        <div class="message">
+                            <div class="user">
+                                <div class="img-user">
+                                    <div class="img">
+                                        <img src="../images/svg/user-admin.svg">
+                                    </div>
+                                </div>
+                                <div class="info-user">
+                                    <p class="nom">Waly le dev</p>
+                                    <p class="num">+241 074543425</p>
+                                </div>
+                            </div>
+                            <div class="texte-sms">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Quaerat esse veritatis, eius nostrum delectus quia voluptate,
+                                    iusto eos exercitationem sint facere sit qui ex natus tenetur?
+                                    Aspernatur consequatur corporis maiores!
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end message -->
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    <script src="admin.js"></script>
+</body>
+
+</html>
