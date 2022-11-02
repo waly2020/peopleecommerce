@@ -35,6 +35,6 @@ server.use((req,res,next) =>{
 
 const port = process.env.PORT;
 
-server.listen(port || 3001,() => console.log("port " + port || 3001));
+server.listen(10000,() => console.log("port " + 10000));
 
 module.exports = server;
