@@ -3,8 +3,8 @@ const {Client} = require("pg");
 
 const pool = new Client({
     user : "waly",
-    database : "marche-mont-bouet-gabon",
-    host : "postgres://waly:JMJN91hoZgeFx1Kd6FrA6luDjbB6eGiT@dpg-cdh2v5qen0hl21kptpug-a/montbouet",
+    database : "montbouet",
+    host : "dpg-cdh2v5qen0hl21kptpug-a",
     port : 5432,
     password : "JMJN91hoZgeFx1Kd6FrA6luDjbB6eGiT",
 });
@@ -17,8 +17,12 @@ const pool = new Client({
 //     }
 // })
 
-pool.connect();
+// pool.connect();
 
+// pool.query('SELECT * FROM candidat',(err,res) =>{
+//     console.log(res.rows);
+//     pool.end();
+// })
 
-pool.query = util.promisify(pool.query);
+// pool.query = util.promisify(pool.query);
 module.exports = pool;
