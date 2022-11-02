@@ -1,12 +1,19 @@
 const util = require("util");
 const mysql = require("mysql");
 
+// const pool = mysql.createPool({
+//     user : "waly",
+//     database : "waly_mont_bouet_gabon",
+//     host : "mysql-waly.alwaysdata.net",
+//     password : "walyledev2022",
+//     connectionLimit : 10
+// });
 const pool = mysql.createPool({
-    user : process.env.DB_USER ?? 'root',
-    database : process.env.DATABASE,
-    host : process.env.HOST,
-    port : process.env.DB_PORT,
-    password : process.env.PASSWORD,
+    user : "root",
+    database : "people_db",
+    host : "localhost",
+    port : 3306,
+    password : "",
     connectionLimit : 10
 });
 

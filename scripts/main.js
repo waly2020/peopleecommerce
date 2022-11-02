@@ -32,6 +32,6 @@ server.use((req,res,next) =>{
     res.status(404);
     res.send("Page non trouver");
 })
-server.listen(process.env.PORT,() => console.log("port 3001 ouvert"));
+server.listen(3001,() => console.log("port " + process.env?.ALWAYSDATA_HTTPD_PORT ?? 3001));
 
 module.exports = server;
