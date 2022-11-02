@@ -3,6 +3,15 @@ const pool = require("./pool");
 const routeAPI = express.Router();
 const {getAllData,find} = require("./fonctions");
 
+pool.connect();
+pool.query("CREATE TABLE users(id INT PRIMARY KEY SERIAL,name VARCHAR(80),numero INT,images VARCHAR(100),isabonne BOOLEAN,dateCreation DATE)",(err)=>{
+    if(err){
+        console.log("n'as pas pue cree la table");
+    }else{
+        console.log("table cree");
+    }
+})
+pool.end();
 routeAPI.get("/api/get-articles", (req, res) => {
     getAllData("articles", (table) => {
         res.send(table);
