@@ -9,11 +9,11 @@ const mysql = require("mysql");
 //     connectionLimit : 10
 // });
 const pool = mysql.createPool({
-    user : "root",
-    database : "people_db",
-    host : "localhost",
-    port : 3306,
-    password : "",
+    user : "waly",
+    database : "marche-mont-bouet-gabon",
+    host : "postgres://waly:JMJN91hoZgeFx1Kd6FrA6luDjbB6eGiT@dpg-cdh2v5qen0hl21kptpug-a.oregon-postgres.render.com/montbouet",
+    port : 5432,
+    password : "JMJN91hoZgeFx1Kd6FrA6luDjbB6eGiT",
     connectionLimit : 10
 });
 
