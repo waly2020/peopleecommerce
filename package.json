@@ -4,7 +4,7 @@
   "description": "site ecommerce de gabon mont bouet",
   "main": "main.js",
   "scripts": {
-    "start": "scripts/main.js",
+    "start": "node scripts/main.js",
     "dev": "nodemon scripts/main.js",
     "sass-index": "sass --watch public/styles/sass/style.scss public/styles/css/style.css",
     "sass-connexions": "sass --watch public/styles/sass/connexions.scss public/styles/css/connexions.css",

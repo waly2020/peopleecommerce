@@ -24,5 +24,7 @@ pool.getConnection((err,connexion)=>{
         connexion.release();
     }
 })
+
+
 pool.query = util.promisify(pool.query);
 module.exports = pool;

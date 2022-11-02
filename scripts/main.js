@@ -32,6 +32,9 @@ server.use((req,res,next) =>{
     res.status(404);
     res.send("Page non trouver");
 })
-server.listen(3001,() => console.log("port " + 3001));
+
+const port = process.env.PORT;
+
+server.listen(port || 3001,() => console.log("port " + port || 3001));
 
 module.exports = server;
