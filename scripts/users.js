@@ -30,7 +30,7 @@ class User {
         }
         console.log(values);
 
-        let sql = `INSERT INTO users (name,numero,images,isabonne,dateCreation) VALUES (?,?,'default.png',FALSE,'2022-12-09')`;
+        let sql = `INSERT INTO users (name,numero,image,isabonne) VALUES (?,?,'default.png',FALSE)`;
 
         pool.query(sql, values, (err, lastId) => {
             if (err) throw err;
