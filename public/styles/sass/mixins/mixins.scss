@@ -61,14 +61,23 @@
 }
 
 @mixin style-header($background : orange, $height : 700px) {
+    position: relative;
     width: 100%;
     height: $height;
     background: $background;
     background-repeat: no-repeat;
     background-position-x: -300px;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: 70px 1fr;
+    grid-template-columns: repeat(2,1fr);
+    overflow: hidden;
+    margin-top: 75px;
+    & > .background{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
 }
 
 @mixin btnDisplayPaniers($bgd : $main-color, $width : 70px, $wImg : 50%) {

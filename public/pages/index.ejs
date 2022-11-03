@@ -12,14 +12,15 @@
 <body>
     <!-- start header -->
     <header>
+        <img src="../images/background/background.jpeg" class="background">
         <!-- start nav -->
         <%- include("./components/navigation") %>
             <!-- end nav -->
             <!-- div texte -->
             <div class="textes">
                 <div class="texte">
-                    <h1>BIENVENUE SUR <span>PEOPLE</span></h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, vitae!</p>
+                    <h1>BIENVENUE SUR <span style="color: orange;">MARCHÉ <br> MONT BOUET</span></h1>
+                    <p>Tout mont bouet en un seul endroit !</p>
                     <div class="btns-header">
                         <a href="#"><button class="btn-article">voir les articles</button></a>
                         <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> " class="link-abonne">

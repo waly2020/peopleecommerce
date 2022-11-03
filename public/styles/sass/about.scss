@@ -2,7 +2,7 @@
 @import './components/navigation.scss';
 
 header {
-    @include style-header($main-color, 300px);
+    @include style-header(#000000c0, 300px);
 
     .contente {
         grid-column: 1 / span 2;
@@ -15,6 +15,10 @@ header {
         }
     }
     margin-bottom: 40px;
+    .background{
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
     // display: none;
 }
@@ -141,5 +145,13 @@ header {
             @include flex-center;
             font-size: 2em;
         }
+    }
+}
+@media screen and (max-width:880px) {
+    header .background{
+        width: auto;
+        height: 100%;
+        left : 50%;
+        transform: translateX(-50%);
     }
 }

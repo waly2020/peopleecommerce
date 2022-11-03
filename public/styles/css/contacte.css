@@ -166,7 +166,7 @@ button.abonner.active:hover {
 .add-user .create-count .icone-user {
   width: 100px;
   height: 100px;
-  background: #001165;
+  background: #232227;
   border-radius: 50%;
   display: flex;
   flex-direction: row;
@@ -178,7 +178,7 @@ button.abonner.active:hover {
 }
 .add-user h2 {
   text-align: center;
-  color: #001165;
+  color: #232227;
 }
 .add-user > p {
   color: #555;
@@ -202,8 +202,14 @@ button.abonner.active:hover {
 }
 
 .navigation {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  z-index: 300;
   padding: 0 8vw;
-  background: #001165;
+  background: #232227;
   grid-column: 1/span 2;
   display: flex;
   justify-content: space-between;
@@ -212,7 +218,7 @@ button.abonner.active:hover {
 .navigation .bar-menu {
   display: none;
   position: fixed;
-  background: #001165;
+  background: #232227;
   width: 300px;
   height: 100vh;
   top: 0;
@@ -561,14 +567,23 @@ button.abonner.active:hover {
   }
 }
 header {
+  position: relative;
   width: 100%;
-  height: 400px;
-  background: #001165;
+  height: 300px;
+  background: #232227;
   background-repeat: no-repeat;
   background-position-x: -300px;
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-template-rows: 70px 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  margin-top: 75px;
+}
+header > .background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 header .contente {
   grid-column: 1/span 2;

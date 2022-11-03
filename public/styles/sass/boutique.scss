@@ -4,7 +4,7 @@
 
 
 header {
-    @include style-header($main-color, 400px);
+    @include style-header(#000000c6, 550px);
 
     .titre-b {
         grid-column: 1 / span 2;
@@ -15,6 +15,12 @@ header {
             color: #fff;
             font-size: 5em;
         }
+    }
+   & > .background{
+        right: 0;
+        bottom: 0;
+        left: initial;
+        top: initial;
     }
 }
 
@@ -79,8 +85,16 @@ header {
     header .titre-b h1 {
         font-size: 2.5em;
     }
+    header .background{
+        height: 100%;
+    }
 }
-
+@media screen and (max-width:745px) {
+    header .background{
+        width: auto;
+        height: 100%;
+    }
+}
 @media screen and (max-width:380px) {
     #recherche select {
         display: none;

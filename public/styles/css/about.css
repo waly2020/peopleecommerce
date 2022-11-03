@@ -91,11 +91,12 @@ button.abonner:hover {
   background: rgb(237, 0, 0);
 }
 button.abonner.active {
-  background: rgb(241, 205, 0);
-  color: #fff;
+  background: rgb(104, 104, 104);
+  color: rgb(221, 221, 221);
+  font-weight: bold;
 }
 button.abonner.active:hover {
-  background: gold;
+  background: rgb(133, 133, 133);
 }
 
 .shadow-add-user {
@@ -165,7 +166,7 @@ button.abonner.active:hover {
 .add-user .create-count .icone-user {
   width: 100px;
   height: 100px;
-  background: #001165;
+  background: #232227;
   border-radius: 50%;
   display: flex;
   flex-direction: row;
@@ -177,7 +178,7 @@ button.abonner.active:hover {
 }
 .add-user h2 {
   text-align: center;
-  color: #001165;
+  color: #232227;
 }
 .add-user > p {
   color: #555;
@@ -201,8 +202,14 @@ button.abonner.active:hover {
 }
 
 .navigation {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  z-index: 300;
   padding: 0 8vw;
-  background: #001165;
+  background: #232227;
   grid-column: 1/span 2;
   display: flex;
   justify-content: space-between;
@@ -211,7 +218,7 @@ button.abonner.active:hover {
 .navigation .bar-menu {
   display: none;
   position: fixed;
-  background: #001165;
+  background: #232227;
   width: 300px;
   height: 100vh;
   top: 0;
@@ -560,15 +567,24 @@ button.abonner.active:hover {
   }
 }
 header {
+  position: relative;
   width: 100%;
   height: 300px;
-  background: #001165;
+  background: rgba(0, 0, 0, 0.7529411765);
   background-repeat: no-repeat;
   background-position-x: -300px;
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-template-rows: 70px 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  margin-top: 75px;
   margin-bottom: 40px;
+}
+header > .background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 header .contente {
   grid-column: 1/span 2;
@@ -581,6 +597,10 @@ header .contente h1 {
   color: #fff;
   font-size: 3em;
   text-align: center;
+}
+header .background {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .body {
@@ -609,7 +629,7 @@ header .contente h1 {
 .body .presentation .texte .titre {
   font-size: 2.5em;
   margin-bottom: 10px;
-  color: #001165;
+  color: #232227;
 }
 .body .presentation .texte p {
   color: #555;
@@ -633,7 +653,7 @@ header .contente h1 {
 .body .avantages h2 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  color: #001165;
+  color: #232227;
 }
 .body .avantages .avantage {
   display: grid;
@@ -712,6 +732,15 @@ header .contente h1 {
   justify-content: center;
   align-items: center;
   font-size: 2em;
+}
+
+@media screen and (max-width: 880px) {
+  header .background {
+    width: auto;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 /*# sourceMappingURL=about.css.map */

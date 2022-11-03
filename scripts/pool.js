@@ -9,6 +9,16 @@ const pool = mysql.createPool({
     connectionLimit : 10
 });
 
+// const pool = mysql.createPool({
+//     user : "root",
+//     database : "people_db",
+//     host : "localhost",
+//     port : 3306,
+//     password : "",
+//     connectionLimit : 10
+// });
+
+
 pool.getConnection((err,connexion)=>{
     if(err) throw err;
     if(connexion){

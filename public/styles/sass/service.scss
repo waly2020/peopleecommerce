@@ -3,15 +3,21 @@
 
 
 header{
-    @include style-header($main-color,400px);
+    @include style-header(#000000a9,550px);
     .contente{
         grid-column: 1 / span 2;
         @include flex-center;
         h1{
             text-align: center;
             color: #fff;
-            font-size: 3em;
+            font-size: 5em;
         }
+    }
+    & > .background{
+        right: 0;
+        bottom: 0;
+        left: initial;
+        top: initial;
     }
 }
 .body{
@@ -79,5 +85,12 @@ header{
                 color: rgb(235, 200, 0);
             }
         }
+    }
+}
+
+@media screen and (max-width:745px) {
+    header .background{
+        width: auto;
+        height: 100%;
     }
 }

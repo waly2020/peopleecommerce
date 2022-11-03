@@ -2,7 +2,7 @@
 @import './components/navigation.scss';
 
 header {
-    @include style-header($main-color,400px);
+    @include style-header($main-color,300px);
     .contente{
         grid-column: 1 / span 2;
         @include flex-center;

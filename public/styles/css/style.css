@@ -166,7 +166,7 @@ button.abonner.active:hover {
 .add-user .create-count .icone-user {
   width: 100px;
   height: 100px;
-  background: #001165;
+  background: #232227;
   border-radius: 50%;
   display: flex;
   flex-direction: row;
@@ -178,7 +178,7 @@ button.abonner.active:hover {
 }
 .add-user h2 {
   text-align: center;
-  color: #001165;
+  color: #232227;
 }
 .add-user > p {
   color: #555;
@@ -202,8 +202,14 @@ button.abonner.active:hover {
 }
 
 .navigation {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  z-index: 300;
   padding: 0 8vw;
-  background: #001165;
+  background: #232227;
   grid-column: 1/span 2;
   display: flex;
   justify-content: space-between;
@@ -212,7 +218,7 @@ button.abonner.active:hover {
 .navigation .bar-menu {
   display: none;
   position: fixed;
-  background: #001165;
+  background: #232227;
   width: 300px;
   height: 100vh;
   top: 0;
@@ -621,7 +627,7 @@ button.abonner.active:hover {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  background: #001165;
+  background: #232227;
   border-radius: 4px;
   color: #fff;
 }
@@ -695,7 +701,7 @@ button.abonner.active:hover {
   transition: 0.5s;
 }
 .panier .btns_action button:hover {
-  background: #001165;
+  background: #232227;
   color: #fff;
   font-weight: bold;
 }
@@ -726,7 +732,7 @@ button.abonner.active:hover {
   position: fixed;
   width: 70px;
   height: 70px;
-  background: #001165;
+  background: #232227;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -743,14 +749,23 @@ button.abonner.active:hover {
 }
 
 header {
+  position: relative;
   width: 100%;
   height: 700px;
-  background: url("../../images/background/wave.png");
+  background: rgba(0, 0, 0, 0.645);
   background-repeat: no-repeat;
   background-position-x: -300px;
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-template-rows: 70px 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  margin-top: 75px;
+}
+header > .background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .sous-titre {
@@ -782,10 +797,12 @@ header {
   font-size: 3em;
 }
 .textes h1 span {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .textes p {
   color: #fff;
+  font-weight: bold;
+  font-size: 1.3em;
 }
 .textes button {
   margin-top: 20px;
@@ -815,8 +832,10 @@ header {
 }
 
 .image {
-  align-self: center;
-  justify-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -900,7 +919,7 @@ main {
   position: absolute;
   width: 0;
   height: 2px;
-  background: #001165;
+  background: #232227;
   left: 50%;
   top: 50%;
   border-radius: 4px;
@@ -912,7 +931,7 @@ main {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #001165;
+  background: #232227;
   color: #fff;
   cursor: pointer;
   font-size: 2em;
@@ -950,10 +969,10 @@ main {
   transition: 0.3s;
 }
 .liens-plus a:hover {
-  color: #001165;
+  color: #232227;
 }
 .liens-plus a:hover::after {
-  background: #001165;
+  background: #232227;
   width: 100%;
 }
 
@@ -1024,15 +1043,20 @@ main {
 }
 @media screen and (max-width: 900px) {
   header {
-    grid-template-columns: 1fr;
-    grid-template-rows: 70px 300px 1fr;
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, 1fr);
   }
   header .textes {
-    grid-column: 1/span 2;
     max-width: 500px;
   }
   header .image {
     max-width: 400px;
+  }
+}
+@media screen and (max-width: 690px) {
+  header > .background {
+    width: auto;
+    height: 100%;
   }
 }
 @media screen and (max-width: 450px) {
