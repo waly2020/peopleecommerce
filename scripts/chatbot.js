@@ -12,7 +12,7 @@ client.on('qr', qr => {
 
 client.on('message', message => {
     console.log(message);
-    console.log(message.body);
+    // console.log(message.body);
 });
 client.on('ready', () => { 
     console.log('Client is ready!');

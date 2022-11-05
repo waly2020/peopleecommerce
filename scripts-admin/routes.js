@@ -38,7 +38,7 @@ routeAdmin.post("/add/aricle",(req,res) =>{
             if(req.file !== undefined){
                 console.log(req.body);
                 let sql = `INSERT INTO articles (nom,prix,categorie,image) VALUES (?,?,?,?)`;
-                pool.query(sql,[req.body.nom,req.body.prix,req.body.categorie,req.file.filename],(err)=>{
+                pool.query(sql,[req.body.nom,req.body.prix,req.body.categories,req.file.filename],(err)=>{
                     if(err){
                         console.log(err);
                         res.render("admin/error",{error : err});
