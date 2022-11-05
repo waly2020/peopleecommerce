@@ -37,7 +37,7 @@ function managerPanier(button) {
 
             contenerArticlesPanier.innerHTML += `
             <div class="article">
-            <img src="../images/haut.png" alt="haut teste">
+            <img src="../images/${article.image}" alt="haut teste">
             <div class="details">
                 <p class="titre">${article.titre}</p>
                 <p class="prix">${article.prix}FCFA</p>
