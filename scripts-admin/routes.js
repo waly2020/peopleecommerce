@@ -37,8 +37,8 @@ routeAdmin.post("/add/aricle",(req,res) =>{
         }else{
             if(req.file !== undefined){
                 console.log(req.body);
-                let sql = `INSERT INTO articles (nom,prix,image,categorie) VALUES (?,?,?,?)`;
-                pool.query(sql,[req.body.nom,req.body.prix,req.file.filename,req.body.categorie],(err)=>{
+                let sql = `INSERT INTO articles (nom,prix,categorie,image) VALUES (?,?,?,?)`;
+                pool.query(sql,[req.body.nom,req.body.prix,req.body.categorie,req.file.filename],(err)=>{
                     if(err){
                         console.log(err);
                         res.render("admin/error",{error : "N'as pas pue ajouter l'article veuileez ressayrer :("});
