@@ -30,7 +30,7 @@ class User {
         }
         console.log(values);
 
-        let sql = `INSERT INTO users (name,numero,images,isabonne) VALUES (?,?,'user-${Math.floor(Math.random() * 4)}.png',FALSE)`;
+        let sql = `INSERT INTO users (name,numero,image,isabonne) VALUES (?,?,'user-${Math.floor(Math.random() * 4)}.png',FALSE)`;
 
         pool.query(sql, values, (err, lastId) => {
             if (err) throw err;

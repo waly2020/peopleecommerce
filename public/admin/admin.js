@@ -39,7 +39,7 @@ active_form.addEventListener("click", () => {
 
 function suprimer(table,id){
 
-    const url = `http://localhost:3001/delete/${table}/${id}`;
+    const url = `https://marche-mont-bouet.onrender.com/delete/${table}/${id}`;
 
     fetch (url,{method : "DELETE"}).then(res => {
         if(res.ok){
