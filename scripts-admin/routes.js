@@ -41,7 +41,7 @@ routeAdmin.post("/add/aricle",(req,res) =>{
                 pool.query(sql,[req.body.nom,req.body.prix,req.body.categorie,req.file.filename],(err)=>{
                     if(err){
                         console.log(err);
-                        res.render("admin/error",{error : "N'as pas pue ajouter l'article veuileez ressayrer :("});
+                        res.render("admin/error",{error : err});
                     }else{
                         // res.render("admin/succes",{file : req.file.filename,article : req.body});
                         res.redirect("/admin");
