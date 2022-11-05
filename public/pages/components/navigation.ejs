@@ -37,12 +37,21 @@
     </ul>
     <div class="abonnees">
         <div class="users">
-            <img src="../images/svg/user.svg" alt="icone utilisateur">
+            <% if (user) {%>
+                <div class="is-connted">
+                    <img src="../images/users/<%= user.images %> " alt="icone user connecter">
+                </div>
+            <% } else {%>
+                <div class="not-connected">
+                    <img src="../images/svg/user.svg" alt="icone utilisateur">
+                </div>
+            <% } %>   
+            
             <div class="userConnected">
                 <% if (user) { %>
                     <div id='user_1'>
                         <p><%= user.name %> </p>
-                        <p><%= user.numero %> </p>
+                        <p>+241 <%= user.numero %> </p>
                         <a href="/deconnexion"><button class="low">Deconnexion</button></a>
                     </div>
                     <% } else {%>
@@ -50,6 +59,8 @@
                             <a href="/connexion_connexion"><button class="good">connexion</button></a>
                             <a href="/connexion_cree_compte"><button class="good">cree un compte</button></a>
                         </div>
+
+                        
                         <% } %>
             </div>
         </div>
@@ -75,14 +86,16 @@
         <div class="user-bar-menu" data-userId="<%= user?.id ?? null%>">
             <% if (user) { %>
                 <div id="isconnected">
-                    <div class="img-user"></div>
+                    <div class="img-user">
+                        <img src="../images/users/<%= user.images %> ">
+                    </div>
                     <p class="info">
                         <span>
                             <%= user?.name ?? null %>
                         </span>
                     </p>
                     <p class="info mail">
-                        <%= user?.numero ?? null %>
+                        +241 <%= user?.numero ?? null %>
                     </p>
                     <button class="btn m">Modifier mon compte</button>
                     <a href="/deconnexion"><button class="btn d">Deconnexion</button></a>

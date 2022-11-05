@@ -154,10 +154,15 @@
                 .img-user {
                     width: 70px;
                     height: 70px;
-                    background: orange;
+                    border: solid 4px #fff;
+                    box-shadow: 0 0 3px rgba(0, 0, 0, 0.647);
                     border-radius: 50%;
                     overflow: hidden;
                     margin-bottom: 10px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
 
@@ -282,13 +287,6 @@
         justify-content: space-between;
         align-items: center;
 
-        .reche {
-            border: none;
-            outline: none;
-            background: none;
-            cursor: pointer;
-        }
-
         .btns-abonnee {
             position: relative;
             min-width: 117px;
@@ -315,82 +313,79 @@
 
     .users {
         position: relative;
-
-        .userConnected {
-            transform: translateX(-50%)scale(0);
-            left: 50%;
-            top: 100%;
+        .not-connected{
+            position: relative;
+            &::after{
+            content: "!";
             position: absolute;
-            width: 180px;
-            border-radius: 3px;
-            background: #fff;
-            box-shadow: 0 0 2px 1px #888;
+            padding: 2.5px 5px;
+            background: red;
+            color: #fff;
+            bottom: 0;
+            right: 0;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 40%;
+            transform: translate(30%,30%);
+        }
+        }
+        .is-connted{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: solid 4px gold;
+            overflow: hidden;
+            @include flex-center;
+            img{
+                width: 55px;
+                height: 55px;
+            }
+        }
+        
+        .userConnected {
+            transform: scale(0);
             transition: .5s;
-
-            .note {
-                color: red;
-            }
-
-            .low {
-                color: orange;
-            }
-
-            .good {
-                color: greenyellow;
-                font-weight: bold;
-            }
-
-            &>div {
-                display: grid;
-                width: 100%;
-                padding: 7px 4px;
-
-                button {
-                    position: relative;
+            & > div{
+                position: absolute;
+                background: #fff;
+                width: 180px;
+                left: 50%;
+                transform: translateX(-50%);
+                button{
                     width: 100%;
-                    height: 100%;
+                    padding: 8px 0;
                     border: none;
-                    cursor: pointer;
                     outline: none;
-                    color: #444;
-                    background: #fff;
-                    transition: .4s;
-
-                    &::after {
-                        position: absolute;
-                        content: "";
-                        width: 0;
-                        height: 1px;
-                        background: #555;
-                        left: 50%;
-                        bottom: 0;
-                        transform: translateX(-50%);
-                        transition: .2s;
-                    }
-
-                    &:hover {
-                        background: #f2f2f2;
-
-                        &::after {
-                            width: 60%;
-                        }
+                    background: none;
+                    cursor: pointer;
+                }
+            }
+            #user_1{
+                p{
+                    color: #555;
+                    padding: 4px 0;
+                    text-align: center;
+                }
+                button{
+                    width: 100%;
+                    padding: 8px 0;
+                    color: red;
+                    text-decoration: underline;
+                }
+            }
+            #user_2{
+                button{
+                    color: #555;
+                    transition: .5s;
+                    &:hover{
+                        color: royalblue;
                     }
                 }
             }
-
-            #user_1 {
-                grid-template-rows: repeat(3, 40px);
-                gap: 3px;
-            }
-
-            #user_2 {
-                grid-template-rows: 40px;
-            }
         }
-
-        &:hover {
-            .userConnected {
-                transform: translateX(-50%) scale(1);
+        &:hover{
+            .userConnected{
+                transform: scale(1);
             }
         }
     }

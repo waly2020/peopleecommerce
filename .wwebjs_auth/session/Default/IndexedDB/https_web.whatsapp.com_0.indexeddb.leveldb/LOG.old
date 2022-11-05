@@ -1,0 +1,23 @@
+2022/11/05-11:37:01.929 2c5c Reusing MANIFEST C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/11/05-11:37:01.929 2c5c Recovering log #35
+2022/11/05-11:37:02.348 2c5c Reusing old log C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000035.log 
+2022/11/05-11:37:02.349 2c5c Delete type=2 #34
+2022/11/05-11:37:02.349 2c5c Delete type=2 #36
+2022/11/05-11:37:26.496 1624 Level-0 table #40: started
+2022/11/05-11:37:26.993 1624 Level-0 table #40: 1045700 bytes OK
+2022/11/05-11:37:27.070 1624 Delete type=0 #35
+2022/11/05-11:37:27.235 283c Compacting 1@1 + 1@2 files
+2022/11/05-11:37:27.762 283c Generated table #41@1: 17663 keys, 1318708 bytes
+2022/11/05-11:37:27.762 283c Compacted 1@1 + 1@2 files => 1318708 bytes
+2022/11/05-11:37:27.821 283c compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/11/05-11:38:16.890 1ca8 Level-0 table #43: started
+2022/11/05-11:38:17.008 1ca8 Level-0 table #43: 1052083 bytes OK
+2022/11/05-11:38:17.106 1ca8 Delete type=2 #37
+2022/11/05-11:38:17.106 1ca8 Delete type=0 #39
+2022/11/05-11:38:17.106 1ca8 Delete type=2 #40
+2022/11/05-11:38:17.320 2f08 Compacting 1@1 + 1@2 files
+2022/11/05-11:38:17.661 2f08 Generated table #44@1: 31181 keys, 1772798 bytes
+2022/11/05-11:38:17.661 2f08 Compacted 1@1 + 1@2 files => 1772798 bytes
+2022/11/05-11:38:17.701 2f08 compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/11/05-11:38:17.702 2f08 Delete type=2 #41
+2022/11/05-11:38:17.702 2f08 Delete type=2 #43

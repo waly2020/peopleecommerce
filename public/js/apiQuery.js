@@ -1,7 +1,7 @@
-fetch("http://localhost:3001/api/get-articles").then(res => {
+fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
     if (res.ok) {
         res.json().then(articles => {
-
+            // start for
             for (let i = 0; i < articles.length; i++) {
                 let article = articles[i];
                 contenerArticles.innerHTML += `
@@ -18,7 +18,7 @@ fetch("http://localhost:3001/api/get-articles").then(res => {
                  </div>
                 </div>
                 `;
-                // console.log("element ajouter " + article.id);
+                console.log("element ajouter " + article.id);
             }
             // document.onload
             document.querySelectorAll(".add_panier").forEach((btn, key, paren) => {
@@ -34,7 +34,7 @@ fetch("http://localhost:3001/api/get-articles").then(res => {
                                 titre: articles[key].nom,
                                 prix: articles[key].prix,
                                 quantiter: 1,
-                                image: "2022-10-12.png",
+                                image:articles[key].images,
                             });
                             console.log(panierStorage);
                             localStorage.setItem("articles", JSON.stringify(panierStorage));

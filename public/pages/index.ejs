@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/css/style.css">
-    <title>people</title>
+    <title>Marche Mont-Bouet online</title>
 </head>
 
 <body>
@@ -19,10 +19,10 @@
             <!-- div texte -->
             <div class="textes">
                 <div class="texte">
-                    <h1>BIENVENUE SUR <span style="color: orange;">MARCHÉ <br> MONT BOUET</span></h1>
-                    <p>Tout mont bouet en un seul endroit !</p>
+                    <h1>BIENVENUE SUR <span style="color: orange;">MARCHÉ <br> MONT-BOUET ONLINE</span></h1>
+                    <p>Tout mont-bouet en un seul endroit !</p>
                     <div class="btns-header">
-                        <a href="#"><button class="btn-article">voir les articles</button></a>
+                        <a href="/boutique"><button class="btn-article">voir les articles</button></a>
                         <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> " class="link-abonne">
                             <% if (user?.isabonne == 1) { %>
                                 <button class="btn-abone abonner active">Déja abonne</button>
@@ -37,7 +37,20 @@
             <%- include('./components/addUser') %>
             <!-- div image -->
             <div class="image">
-                <img src="images/background/casque.png" alt="visuel du site">
+
+                <div class="header-article">
+                    <div class="titre-article">
+                        Pull Adidas
+                    </div>
+                    <img src="../images/haut.png" alt="pull Adidas">
+                    <div class="content-prix">
+                        <p>18.0000 F</p>
+                    </div>
+                    <div class="contener-add-panier">
+                        <div class="add-panier">+</div>
+                    </div>
+                </div>
+
             </div>
             <!-- end div image -->
     </header>

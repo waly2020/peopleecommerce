@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -14,22 +14,46 @@
 <body>
     <%- include('./components/addUser') %>
     <div class="forms">
-        <% if (data=='connexion' ) { %>
+        <% if (data == 'connexion' ) { %>
+
             <form action="/login" method="post" class="connexion active">
                 <div class="logo-form">
-                    <p>PEOPLE.</p>
+                    <h2>Connexion</h2>
                 </div>
-                <input type="text" name="username" id="username" placeholder="Votre nom..." required>
-                <input type="tel" name="usernum" id="usernum" placeholder="074937621">
+                <div id="div-name">
+                    <div class="icone">
+                        <img src="../images/svg/user.svg" alt="" class="svg">
+                    </div>
+                    <input type="text" name="username" id="username" placeholder="Votre nom..." required>
+                </div>
+                <div id="div-num">
+                    <div class="icone">
+                        <img src="../images/svg/phone.svg" alt="" class="svg">
+                    </div>
+                    <p>+241</p>
+                    <input type="tel" name="usernum" id="usernum" placeholder="074937621" required>
+                </div>
                 <button type="submit">Se connecter</button>
             </form>
+
             <% } else {%>
                 <form action="/create" method="post" class="creation active">
                     <div class="logo-form">
-                        <p>PEOPLE.</p>
+                        <h2>Créé un compte</h2>
                     </div>
-                    <input type="text" name="name" id="name" placeholder="Votre nom..." required>
-                    <input type="tel" name="numero" id="numero" placeholder="074937621">
+                    <div id="div-name">
+                        <div class="icone">
+                            <img src="../images/svg/user.svg" alt="" class="svg">
+                        </div>
+                        <input type="text" name="name" id="name" placeholder="Votre nom..." required>
+                    </div>
+                    <div id="div-num">
+                        <div class="icone">
+                            <img src="../images/svg/phone.svg" alt="" class="svg">
+                        </div>
+                        <p>+241</p>
+                        <input type="tel" name="numero" id="numero" placeholder="074937621" required>
+                    </div>
                     <button type="submit">Cree mon compte</button>
                 </form>
                 <% } %>

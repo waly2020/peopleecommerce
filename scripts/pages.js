@@ -34,17 +34,19 @@ router.post("/create", (req, res, next) => {
             res.send("lutilisateur " + userCreate.name + " existe deja");
             return;
         }
-        users.create(userCreate, (lastId) => {
-            if (lastId) {
-                users.find([userCreate.name, userCreate.numero], resultat => {
-                    req.session.user = resultat;
-                    req.session.opp = 0;
-                    res.redirect("/home");
-                })
-            } else {
-                res.send("Cree un nouvelle utilisateur !!");
-            }
-        })
+        else{
+            users.create(userCreate, (lastId) => {
+                if (lastId) {
+                    users.find([userCreate.name, userCreate.numero], resultat => {
+                        req.session.user = resultat;
+                        req.session.opp = 0;
+                        res.redirect("/home");
+                    })
+                } else {
+                    res.send("Cree un nouvelle utilisateur !!");
+                }
+            })
+        }
     })
 })
 // deconnexion

@@ -341,10 +341,15 @@ button.abonner.active:hover {
 .navigation .bar-menu .user-bar-menu #isconnected .img-user {
   width: 70px;
   height: 70px;
-  background: orange;
+  border: solid 4px #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.647);
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 10px;
+}
+.navigation .bar-menu .user-bar-menu #isconnected .img-user img {
+  width: 100%;
+  height: 100%;
 }
 .navigation .bar-menu .user-bar-menu .btns-abonnee {
   position: relative;
@@ -449,12 +454,6 @@ button.abonner.active:hover {
   justify-content: space-between;
   align-items: center;
 }
-.navigation .abonnees .reche {
-  border: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-}
 .navigation .abonnees .btns-abonnee {
   position: relative;
   min-width: 117px;
@@ -486,69 +485,76 @@ button.abonner.active:hover {
 .navigation .users {
   position: relative;
 }
-.navigation .users .userConnected {
-  transform: translateX(-50%) scale(0);
-  left: 50%;
-  top: 100%;
+.navigation .users .not-connected {
+  position: relative;
+}
+.navigation .users .not-connected::after {
+  content: "!";
   position: absolute;
-  width: 180px;
-  border-radius: 3px;
-  background: #fff;
-  box-shadow: 0 0 2px 1px #888;
+  padding: 2.5px 5px;
+  background: red;
+  color: #fff;
+  bottom: 0;
+  right: 0;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 40%;
+  transform: translate(30%, 30%);
+}
+.navigation .users .is-connted {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: solid 4px gold;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .users .is-connted img {
+  width: 55px;
+  height: 55px;
+}
+.navigation .users .userConnected {
+  transform: scale(0);
   transition: 0.5s;
 }
-.navigation .users .userConnected .note {
-  color: red;
-}
-.navigation .users .userConnected .low {
-  color: orange;
-}
-.navigation .users .userConnected .good {
-  color: greenyellow;
-  font-weight: bold;
-}
 .navigation .users .userConnected > div {
-  display: grid;
-  width: 100%;
-  padding: 7px 4px;
+  position: absolute;
+  background: #fff;
+  width: 180px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .navigation .users .userConnected > div button {
-  position: relative;
   width: 100%;
-  height: 100%;
+  padding: 8px 0;
   border: none;
-  cursor: pointer;
   outline: none;
-  color: #444;
-  background: #fff;
-  transition: 0.4s;
+  background: none;
+  cursor: pointer;
 }
-.navigation .users .userConnected > div button::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 1px;
-  background: #555;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  transition: 0.2s;
+.navigation .users .userConnected #user_1 p {
+  color: #555;
+  padding: 4px 0;
+  text-align: center;
 }
-.navigation .users .userConnected > div button:hover {
-  background: #f2f2f2;
+.navigation .users .userConnected #user_1 button {
+  width: 100%;
+  padding: 8px 0;
+  color: red;
+  text-decoration: underline;
 }
-.navigation .users .userConnected > div button:hover::after {
-  width: 60%;
+.navigation .users .userConnected #user_2 button {
+  color: #555;
+  transition: 0.5s;
 }
-.navigation .users .userConnected #user_1 {
-  grid-template-rows: repeat(3, 40px);
-  gap: 3px;
-}
-.navigation .users .userConnected #user_2 {
-  grid-template-rows: 40px;
+.navigation .users .userConnected #user_2 button:hover {
+  color: royalblue;
 }
 .navigation .users:hover .userConnected {
-  transform: translateX(-50%) scale(1);
+  transform: scale(1);
 }
 
 @media screen and (max-width: 1160px) {
@@ -836,11 +842,92 @@ header > .background {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  transform-style: preserve-3d;
 }
-.image img {
+.image .header-article {
+  position: relative;
   width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.image .header-article .titre-article {
+  width: 200px;
+  height: 50px;
+  background: orange;
+  color: rgb(2, 14, 67);
+  left: 50%;
+  top: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+.image .header-article > div {
+  position: absolute;
+  background: rosybrown;
+}
+.image .header-article img {
+  width: 100%;
+}
+.image .header-article .content-prix {
+  bottom: 60px;
+  width: 200px;
+  height: 50px;
+  background: orange;
+  border-radius: 12% 10% 10% 12%/56% 44% 52% 44%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.image .header-article .content-prix p {
+  width: 190px;
+  height: 40px;
+  text-transform: uppercase;
+  color: rgb(2, 14, 67);
+  font-weight: bold;
+  background: #fff;
+  border-radius: 12% 10% 10% 12%/56% 44% 52% 44%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 3px 2px rgba(35, 34, 34, 0.205);
+}
+.image .header-article .contener-add-panier {
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  transform: translateY(50%);
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 3px 2px rgba(24, 24, 24, 0.51);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.image .header-article .contener-add-panier .add-panier {
+  width: 45px;
+  height: 45px;
+  background: rgb(2, 14, 67);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  user-select: none;
+  font-weight: bold;
+  box-shadow: 0 0 3px 2px rgba(13, 13, 13, 0.315);
 }
 
 main {
@@ -1045,6 +1132,11 @@ main {
   header {
     grid-template-columns: none;
     grid-template-rows: repeat(2, 1fr);
+    height: 900px;
+  }
+  header > .background {
+    width: auto;
+    height: 100%;
   }
   header .textes {
     max-width: 500px;

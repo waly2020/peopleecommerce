@@ -6,6 +6,7 @@ const ejs = require("ejs");
 const routerPages = require("./pages");
 const routeAPI = require("./routes");
 const routeAdmin = require("../scripts-admin/routes");
+const chatbot = require("./chatbot");
 
 
 server.use(express.static("public"));
