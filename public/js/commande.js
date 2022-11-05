@@ -17,7 +17,7 @@ for (let i = 0; i < panierStorage.length; i++) {
                 
                 <p class="titre-article">${article.titre}</p>
                 <p class="prix-article">${article.prix} FCFA <span class="quantiter">${article.quantiter}</span> </p>
-                <img src="../images/${article.image}" alt="${article.titre}">
+                <img src="../images/upload/${article.image}" alt="${article.titre}">
 
         </div>
     `;
