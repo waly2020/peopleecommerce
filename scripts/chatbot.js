@@ -14,7 +14,7 @@ client.on('message', message => {
     console.log(message);
     console.log(message.body);
 });
-client.on('ready', () => {
+client.on('ready', () => { 
     console.log('Client is ready!');
 });
 
