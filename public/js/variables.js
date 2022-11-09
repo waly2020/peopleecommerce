@@ -1,7 +1,12 @@
 let contenerArticles = document.querySelector(".contener-articles.section");
 let dataLocalStorage = JSON.parse(localStorage.getItem("articles")) ?? [];
 let panierStorage = [...dataLocalStorage];
+let put_article = document.querySelectorAll(".put-article-to-panier");
+
 let userId = document.querySelector(".user-bar-menu").getAttribute("data-userId");
+
+// contener article aleatoire
+const header_article = document.querySelector(".header-article");
 
 // animation page commande
 const btn_display = document.querySelectorAll(".add_input");
@@ -12,6 +17,9 @@ const btn_panier = document.querySelectorAll(".display-panier");
 const shadow = document.querySelector(".shadow");
 const panier = document.querySelector(".panier");
 let contenerArticlesPanier = document.querySelector(".contener-articles.paniers");
+let deleteStorage = document.querySelectorAll(".delete");
+let quantiterArticle = document.querySelectorAll(".quant");
+let prix_panier = document.querySelector(".prix_panier");
 
 // add user
 const add_user = document.querySelector(".add-user");

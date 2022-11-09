@@ -1,19 +1,13 @@
-/**
- * <div class="img-article active" data-position="1">
-                        <p class="quantiter">10</p>
-                        <img src="../images/haut.png" alt="">
-                    </div>
- */
-// page commande
-let dataLocalStorage = JSON.parse(localStorage.getItem("articles")) ?? [];
-let panierStorage = [...dataLocalStorage];
 const contenerArticleCommande = document.querySelector(".photo");
+
+let active = true;
 
 for (let i = 0; i < panierStorage.length; i++) {
     let article = panierStorage[i];
 
-    contenerArticleCommande.innerHTML += `
-          <div class="img-article ${i == 0 ? "active" : ""}" data-position="${i + 1}">
+    if(article){
+        contenerArticleCommande.innerHTML += `
+          <div class="img-article ${active == true ? "active" : ""}" data-position="${i + 1}">
                 
                 <p class="titre-article">${article.titre}</p>
                 <p class="prix-article">${article.prix} FCFA <span class="quantiter">${article.quantiter}</span> </p>
@@ -21,6 +15,9 @@ for (let i = 0; i < panierStorage.length; i++) {
 
         </div>
     `;
+    active = false;
+    }
+
 }
 
 let slide_img = 0;
@@ -51,14 +48,18 @@ let sold = {
     quantiter : (function(){
         let quant = 0;
         for(let c of panierStorage){
-            quant += c.quantiter;
+            if(c){
+                quant += c.quantiter
+            }
         }
         return quant;
     })(),
     prix : (function(){
         let prix = 0;
         for(let c of panierStorage){
-            prix += (c.prix * c.quantiter);
+            if(c){
+                prix += (c.prix * c.quantiter)
+            }
         }
         return prix;
     })(),

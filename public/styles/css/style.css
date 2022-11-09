@@ -219,14 +219,15 @@ button.abonner.active:hover {
   display: none;
   position: fixed;
   background: #232227;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 100vh;
   top: 0;
   right: 0;
   transform: translateX(100%);
   box-shadow: 0 3px 3px #000;
   transition: 0.4s;
-  z-index: 20000;
+  z-index: 200000;
 }
 .navigation .bar-menu .burger {
   position: absolute;
@@ -254,8 +255,8 @@ button.abonner.active:hover {
 .navigation .bar-menu .menu-bar li {
   position: relative;
   width: 100%;
-  padding: 10px 5px;
-  margin-bottom: 5px;
+  padding: 8px 5px;
+  margin-bottom: 2px;
   list-style: none;
   color: #fff;
   transition: 0.5s;
@@ -618,9 +619,15 @@ button.abonner.active:hover {
 .panier .contener-articles .article {
   position: relative;
   height: 400px;
+  background: #232227;
+  padding: 10px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .panier .contener-articles .article img {
-  width: 100%;
+  width: 90%;
+  margin: auto;
+  display: block;
 }
 .panier .contener-articles .article .details {
   position: absolute;
@@ -636,6 +643,7 @@ button.abonner.active:hover {
   background: #232227;
   border-radius: 4px;
   color: #fff;
+  box-shadow: 0 0 3px 2px rgba(22, 22, 22, 0.736);
 }
 .panier .contener-articles .article .details .titre {
   text-transform: uppercase;
@@ -645,21 +653,23 @@ button.abonner.active:hover {
   text-align: center;
   padding: 5px 0;
   width: 100%;
+  color: rgb(12, 156, 12);
   position: relative;
 }
 .panier .contener-articles .article .details .titre-quantiter::after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 20%;
   height: 2px;
-  background: #fff;
-  left: 0;
+  background: rgb(12, 156, 12);
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
 }
 .panier .contener-articles .article .details .ajouter-produit {
   display: grid;
-  grid-template-columns: 30px 50px 30px;
-  gap: 5px;
+  grid-template-columns: 40px 70px 40px;
+  gap: 15px;
   margin-top: 10px;
 }
 .panier .contener-articles .article .details .ajouter-produit p {
@@ -670,26 +680,28 @@ button.abonner.active:hover {
   align-items: center;
 }
 .panier .contener-articles .article .details .ajouter-produit .nombre {
-  background: #fff;
-  color: #555;
-  border-radius: 4px;
+  color: rgb(12, 156, 12);
+  border-bottom: solid 2px rgb(12, 156, 12);
   font-weight: bold;
 }
 .panier .contener-articles .article .details .ajouter-produit .action {
   user-select: none;
   font-size: 1.3em;
-  color: #555;
-  background: #aaa;
-  font-weight: bold;
+  color: #fff;
+  background: #232227;
+  border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0 0 3px 2px rgba(22, 22, 22, 0.736);
+}
+.panier .contener-articles .article .details .ajouter-produit .action:hover {
+  background: rgb(12, 156, 12);
+  font-weight: bold;
 }
 .panier h2 {
   text-align: center;
   font-size: 2em;
-}
-.panier .quantiter {
-  font-size: 1.3em;
-  margin: 10px 0;
+  color: #232227;
+  letter-spacing: 4px;
 }
 .panier .btns_action {
   display: flex;
@@ -735,6 +747,7 @@ button.abonner.active:hover {
 }
 
 .open {
+  position: relative;
   position: fixed;
   width: 70px;
   height: 70px;
@@ -752,6 +765,31 @@ button.abonner.active:hover {
 }
 .open img {
   width: 50%;
+}
+
+.caisse p {
+  display: inline-block;
+  margin-right: 20px;
+  color: #aaa;
+}
+.caisse p span {
+  color: red;
+}
+
+.quant.btn-add {
+  position: absolute;
+  padding: 5px 10px;
+  background: red;
+  color: #fff;
+  font-weight: bold;
+  top: 0;
+  right: 0;
+  border-radius: 40%;
+  transform: translate(25%, -25%);
+}
+
+.delete {
+  cursor: pointer;
 }
 
 header {
@@ -874,6 +912,7 @@ header > .background {
 }
 .image .header-article img {
   width: 100%;
+  max-width: 300px;
 }
 .image .header-article .content-prix {
   bottom: 60px;

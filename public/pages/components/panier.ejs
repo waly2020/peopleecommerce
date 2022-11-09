@@ -5,7 +5,10 @@
     <div class="header-panier">
         <h2>PANIER</h2>
     </div>
-    <p class="quantiter">Nombre d'articles : 8</p>
+    <div class="caisse">
+        <p class="quantiter">Nombre d'articles : <span class="quant">0</span></p>
+        <p class="prix">Prix total : <span class="prix_panier">0F</span></p>
+    </div>
     <!-- contener article du panier -->
     <div class="contener-articles paniers">
     </div>
@@ -15,12 +18,13 @@
             <img src="../images/svg/poubelle.svg" alt="suprimer tout">
         </div>
         <div class="btns">
-            <a href="/action/reservation"><button class="res">Reservation</button></a>
-            <a href="/action/livraison"><button>Livraison</button></a>
+           <a href="/action/reservation"><button class="res put-article-to-panier">Reservation</button></a> 
+            <a href="/action/livraison"><button class="put-article-to-panier">Livraison</button></a> 
         </div>
     </div>
 </div>
 
 <div class="display-panier open">
+    <span class="quant btn-add">0</span>
     <img src="../../images/svg/panier.svg" alt="icone panier">
 </div>

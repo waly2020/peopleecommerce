@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/css/style.css">
-    <title>Marche Mont-Bouet online</title>
+    <title>Marché Mont Bouët online</title>
 </head>
 
 <body>
@@ -19,8 +19,8 @@
             <!-- div texte -->
             <div class="textes">
                 <div class="texte">
-                    <h1>BIENVENUE SUR <span style="color: orange;">MARCHÉ <br> MONT-BOUET ONLINE</span></h1>
-                    <p>Tout mont-bouet en un seul endroit !</p>
+                    <h1>BIENVENUE SUR <span style="color: orange; text-transform: uppercase;">MARCHÉ <br>Mont Bouët ONLINE</span></h1>
+                    <p>Tout Mont Bouët en un seul endroit !</p>
                     <div class="btns-header">
                         <a href="/boutique"><button class="btn-article">voir les articles</button></a>
                         <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> " class="link-abonne">
@@ -38,18 +38,7 @@
             <!-- div image -->
             <div class="image">
 
-                <div class="header-article">
-                    <div class="titre-article">
-                        Pull Adidas
-                    </div>
-                    <img src="../images/haut.png" alt="pull Adidas">
-                    <div class="content-prix">
-                        <p>18.0000 F</p>
-                    </div>
-                    <div class="contener-add-panier">
-                        <div class="add-panier">+</div>
-                    </div>
-                </div>
+                <div class="header-article"></div>
 
             </div>
             <!-- end div image -->
@@ -62,7 +51,7 @@
             <section class="articles">
                 <h2 class="sous-titre">Nos Articles</h2>
                 <%- include("./components/articles") %>
-                    <p class="liens-plus"><a href="#">plus d'articles </a></p>
+                    <p class="liens-plus"><a href="/boutique">plus d'articles </a></p>
             </section>
             <!-- end section article -->
             <!-- section services -->
@@ -126,7 +115,7 @@
                     </div>
                     <!-- end carte service -->
                 </div>
-                <p class="liens-plus"><a href="#">plus de services </a></p>
+                <p class="liens-plus"><a href="/services">plus de services </a></p>
 
             </section>
             <!-- end section services -->
@@ -134,10 +123,10 @@
         <!-- end main  -->
         <!-- start footer  -->
         <%- include('./components/footer') %>
-            <!-- end footer -->
-            <%- include('./components/scripts') %>
-                <script defer src="../js/apiQuery.js"></script>
-                <script type="module" src="../js/abonne.js"></script>
+        <!-- end footer -->
+        <%- include('./components/scripts') %>
+        <script defer src="../js/apiQuery.js"></script>
+        <script type="module" src="../js/script-api.js"></script>
 </body>
 
 </html>

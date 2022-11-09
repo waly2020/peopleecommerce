@@ -31,14 +31,14 @@
             <div id="detail-article">
                 <div class="forms">
                     <% if (data=="livraison" ) { %>
-                        <form action="#" class="livraison form active">
+                     <form action="/api/commande/<%= data %>/<%= JSON.stringify({id : 1,name : "waly le dev",numero : 074932312}) %>" method="post" class="livraison form active">
                             <p class="quantiter">Nombre d'article : <span class="semi-important sold"
                                     data-solde="quantiter">0</span><span class="semi-important">articles</span></p>
                             <p class="total">Total : <span class="important sold" data-solde="prix">0</span><span
                                     class="important"> FCFA</span></p>
                             <p class="titre-form">Dite nous ou vous trouver</p>
                             <div class="input_infos">
-                                <input type="tel" name="numero_phone" id="numero_phone"
+                                <input type="tel" name="numero" id="numero"
                                     placeholder="Votre numero de telephone..." required>
                                 <div class="my-number">
                                     <label for="num">Utiliser mon numero de telephone</label>
@@ -49,7 +49,7 @@
                             </div>
                             <p>Quand voulez-vous faire livrer ?</p>
                             <div class="fixe_date_contener">
-                                <input type="date" name="fixe_date" id="fixe-date">
+                                <input type="date" name="date" id="fixe-date">
                             </div>
                             <div class="contener-btn">
                                 <button id="send" type="submit">Evoye la demande</button>
@@ -57,7 +57,7 @@
                             </div>
                         </form>
                         <% } else { %>
-                            <form action="#" class="reservation form">
+                            <form action="/api/commande/<%= data %>/<%= JSON.stringify({id : 1,name : "waly le dev",numero : 074932312}) %>" method="post" class="reservation form">
                                 <p class="quantiter">Nombre d'article : <span class="semi-important sold"
                                         data-solde="quantiter"></span><span class="semi-important">articles</span></p>
                                 <p class="total">Total : <span class="important sold" data-solde="prix"></span><span
@@ -65,7 +65,7 @@
                                         FCFA</span></p>
                                 <p class="titre-form">Laisser nous un numero pour appeler</p>
                                 <div class="input_infos">
-                                    <input type="tel" name="numero_phone" id="numero_phone"
+                                    <input type="tel" name="numero" id="numero"
                                         placeholder="Votre numero de telephone..." required>
                                     <div class="my-number">
                                         <label for="num">Utiliser mon numero de telephone</label>
@@ -75,7 +75,7 @@
 
                                 <p>Quand venez-vous recuperer vos articles ?</p>
                                 <div class="fixe_date_contener">
-                                    <input type="date" name="fixe_date" id="fixe-date">
+                                    <input type="date" name="date" id="date">
                                 </div>
                                 <div class="contener-btn">
                                     <button id="send" type="submit">Evoye la demande</button>
@@ -89,7 +89,9 @@
         <!-- end section article selectionner -->
     </main>
     <%- include('./components/footer') %>
+    <script src="../js/variables.js"></script>
         <script src="../js/commande.js"></script>
+        <script src="../js/animations.js"></script>
 
 </body>
 

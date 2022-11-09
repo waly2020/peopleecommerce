@@ -1,13 +1,3 @@
-2022/11/05-13:50:00.972 1de8 Reusing MANIFEST C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/11/05-13:50:00.989 1de8 Recovering log #46
-2022/11/05-13:50:02.506 1de8 Reusing old log C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000046.log 
-2022/11/05-13:50:57.115 17bc Level-0 table #51: started
-2022/11/05-13:50:58.097 17bc Level-0 table #51: 1016550 bytes OK
-2022/11/05-13:50:58.477 17bc Delete type=0 #46
-2022/11/05-13:51:19.338 1ce4 Compacting 1@1 + 1@2 files
-2022/11/05-13:51:20.693 1ce4 Generated table #52@1: 33655 keys, 2213458 bytes
-2022/11/05-13:51:21.528 1ce4 Generated table #53@1: 16233 keys, 339176 bytes
-2022/11/05-13:51:21.528 1ce4 Compacted 1@1 + 1@2 files => 2552634 bytes
-2022/11/05-13:51:21.773 1ce4 compacted to: files[ 0 0 2 0 0 0 0 ]
-2022/11/05-13:51:21.775 1ce4 Delete type=2 #48
-2022/11/05-13:51:21.775 1ce4 Delete type=2 #51
+2022/11/09-13:53:56.812 32c8 Reusing MANIFEST C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/11/09-13:53:58.609 32c8 Recovering log #2047
+2022/11/09-13:53:58.774 32c8 Reusing old log C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/002047.log 

@@ -2,6 +2,7 @@ const express = require("express");
 const pool = require("./pool");
 const routeAPI = express.Router();
 const {getAllData,find} = require("./fonctions");
+const localStorage = require("./storage");
 
 
 routeAPI.get("/api/get-articles", (req, res) => {
@@ -32,6 +33,14 @@ routeAPI.get("/abonne/:id/:abonne/:url",(req,res) =>{
                 })
             }
         })
+})
+
+routeAPI.get("/api-add-to-panier/:article/:id",(req,res) =>{
+    console.log("requete enclencher");
+    let articles = req.params.article;
+    let userId = req.params.id;
+    localStorage.setItem(`articles-${userId}`,articles);
+    console.log("Localstorage appller");
 })
 
 module.exports = routeAPI;

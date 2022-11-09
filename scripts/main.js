@@ -28,6 +28,7 @@ server.use(session({
 server.use("/",routerPages);
 server.use("/",routeAPI);
 server.use("/",routeAdmin);
+server.use("/",chatbot);
 // page 404
 server.use((req,res,next) =>{
     res.status(404);

@@ -1,3 +1,28 @@
+function setQuantityHtml(){
+
+    let quantiter = 0;
+    let prix = 0;
+
+    for (let i = 0; i < panierStorage.length; i++){
+        let article = panierStorage[i];
+        if(article){
+            quantiter += article.quantiter;
+            prix += (article.prix * article.quantiter);
+        }
+    }
+        quantiterArticle.forEach(para =>{
+            if(panierStorage.length == 0){
+                para.innerHTML = 0;
+                prix_panier.innerHTML = 0;
+            }
+            else{
+                para.innerHTML = quantiter;
+                prix_panier.innerHTML = prix;
+            }
+        })
+    
+}
+setQuantityHtml();
 btn_display.forEach((btn, index, table) => {
     btn.addEventListener("click", () => {
 
@@ -32,12 +57,12 @@ function managerPanier(button) {
     if (button.classList.contains("open")) {
 
         for (let i = 0; i < panierStorage.length; i++) {
-
             let article = panierStorage[i];
 
-            contenerArticlesPanier.innerHTML += `
+            if(article){
+                contenerArticlesPanier.innerHTML += `
             <div class="article">
-            <img src="../images/upload/${article.image}" alt="haut teste">
+            <img src="../images/upload/${article.image}" alt="${article.titre}">
             <div class="details">
                 <p class="titre">${article.titre}</p>
                 <p class="prix">${article.prix}FCFA</p>
@@ -45,13 +70,14 @@ function managerPanier(button) {
                     <p class="titre-quantiter">Quantiter</p>
                     <div class="ajouter-produit">
                         <p class="moins action" data-key="${i}">-</p>
-                        <p class="nombre" data-key="${i}">${article.quantiter}</p>
+                        <p class="nombre set-${i}" data-key="${i}">${article.quantiter}</p>
                         <p class="plus action" data-key="${i}">+</p>
                     </div>
                 </div>
             </div>
             </div>
-            `
+            `;
+            }
         }
     } else {
         contenerArticlesPanier.innerHTML = '';
@@ -60,24 +86,28 @@ function managerPanier(button) {
 
 function setQuantity() {
     let btn_quantiter = document.querySelectorAll(".action");
-    let quantiter = document.querySelectorAll(".nombre");
 
     btn_quantiter.forEach((setquantity) => {
         setquantity.addEventListener("click", () => {
 
+            let key = parseInt(setquantity.getAttribute("data-key"));
+            let quantiter = document.querySelector(`.set-${key}`);
+
             if (setquantity.classList.contains("plus")) {
-                console.log("plus");
-                panierStorage[parseInt(setquantity.getAttribute("data-key"))].quantiter += 1;
-                quantiter[parseInt(setquantity.getAttribute("data-key"))].textContent = panierStorage[parseInt(setquantity.getAttribute("data-key"))].quantiter;
+                panierStorage[key].quantiter += 1;
+                quantiter.textContent = panierStorage[key].quantiter;
                 localStorage.setItem("articles", JSON.stringify(panierStorage));
+                setQuantityHtml();
+                
             } else {
-                console.log("moins");
-                if (panierStorage[parseInt(setquantity.getAttribute("data-key"))].quantiter > 1) {
-                    panierStorage[parseInt(setquantity.getAttribute("data-key"))].quantiter -= 1;
-                    quantiter[parseInt(setquantity.getAttribute("data-key"))].textContent = panierStorage[parseInt(setquantity.getAttribute("data-key"))].quantiter;
+                if (panierStorage[key].quantiter > 1) {
+                    panierStorage[key].quantiter -= 1;
+                    quantiter.textContent = panierStorage[parseInt(setquantity.getAttribute("data-key"))].quantiter;
                     localStorage.setItem("articles", JSON.stringify(panierStorage));
+                    setQuantityHtml();
                 }
             }
+            
         })
     })
 }
@@ -104,5 +134,15 @@ link_abn.forEach(btn => {
             add_user.classList.toggle("active");
             shadow_add_user.classList.toggle("active");
         }
+    })
+})
+
+deleteStorage.forEach(btn =>{
+    btn.addEventListener("click", () =>{
+        contenerArticlesPanier.innerHTML = '';
+        localStorage.removeItem("articles");
+        dataLocalStorage = JSON.parse(localStorage.getItem("articles")) ?? [];
+        panierStorage = [...dataLocalStorage];
+        setQuantityHtml();
     })
 })

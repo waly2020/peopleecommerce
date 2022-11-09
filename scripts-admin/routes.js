@@ -9,6 +9,7 @@ const storage = multer.diskStorage({
     destination : path.join('public','images','upload'),
     filename : (req,file,callback) =>{
         callback(null,`${file.fieldname}-${Date.now()}${file.originalname}`);
+        // console.log(file);
     }
 })
 

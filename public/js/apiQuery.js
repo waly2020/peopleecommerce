@@ -1,7 +1,34 @@
+/* <div class="titre-article">
+ Pull Adidas
+</div>
+<img src="../images/haut.png" alt="pull Adidas">
+<div class="content-prix">
+<p>18.0000 F</p>
+</div>
+<div class="contener-add-panier">
+<div class="add-panier">+</div>
+</div> */
+
+
+// "https://marche-mont-bouet.onrender.com/api/get-articles"
+// "http://localhost:10000/"
+
 fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
     if (res.ok) {
         res.json().then(articles => {
             // start for
+            let randomArticle = Math.floor(Math.random() * articles.length);
+
+            header_article.innerHTML = `
+            <div class="titre-article">${articles[randomArticle].nom}</div>
+            <img src="../images/upload/${articles[randomArticle].image}" alt="">
+            <div class="content-prix">
+            <p>${articles[randomArticle].prix} F</p>
+            </div>
+            <div class="contener-add-panier">
+            <div class="add-panier add_panier" data-id="${randomArticle}">+</div>
+            `;
+
             for (let i = 0; i < articles.length; i++) {
                 let article = articles[i];
                 contenerArticles.innerHTML += `
@@ -10,38 +37,44 @@ fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
                     <img src="../images/upload/${article.image}" alt="">
                   </div>
                   <div class="info-article">
-                    <p class="titre-article"> ${article.nom}</p>
-                    <p class="prix">${article.prix}</p>
+                    <p class="titre-article">- ${article.nom} -</p>
+                    <p class="prix">${article.prix} F</p>
                  </div>
                  <div class="contener_add_panier">
-                    <div class="add_panier">+</div>
+                    <div class="add_panier" data-id="${i}">+</div>
                  </div>
                 </div>
                 `;
-                console.log("element ajouter " + article.id);
             }
             // document.onload
-            document.querySelectorAll(".add_panier").forEach((btn, key, paren) => {
+            document.querySelectorAll(".add_panier").forEach((btn) => {
                 btn.addEventListener("click", () => {
 
-                    if (panierStorage.includes(panierStorage[key])) {
-                        return;
-                    } else {
+                    let articleId = parseInt(btn.getAttribute("data-id"));
+
+                    if (panierStorage[articleId] == undefined) {
+
+                        console.log(articleId);
+                        console.log(articles[articleId]);
+
                         if (userId) {
-                            panierStorage.push({
+                            panierStorage[articleId] = {
                                 userid: parseInt(userId),
-                                articleid: articles[key].id,
-                                titre: articles[key].nom,
-                                prix: articles[key].prix,
-                                quantiter: 1,
-                                image:articles[key].images,
-                            });
+                                articleid: articles[articleId].id,
+                                titre: articles[articleId].nom,
+                                prix: articles[articleId].prix,
+                                quantiter : 1,
+                                image : articles[articleId].image,
+                            };
                             console.log(panierStorage);
                             localStorage.setItem("articles", JSON.stringify(panierStorage));
+                            setQuantityHtml();
                         }else{
                             shadow_add_user.classList.add("active");
                             add_user.classList.add("active");
                         }
+                    } else {
+                        return;
                     }
 
                 })

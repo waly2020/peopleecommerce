@@ -7,6 +7,10 @@ let forms = document.querySelectorAll(".forms");
 let active_form = document.querySelector(".add-items");
 
 let key_forms = 0;
+let key_page = parseFloat(localStorage.getItem("page")) ?? 0;
+
+pages[key_page].classList.add("active");
+active_page[key_page].classList.add("active");
 
 // activation sidebar et formulaire
 active_aside.addEventListener("click", () => {
@@ -24,12 +28,14 @@ active_page.forEach((btn, key, array) => {
         }
         pages[key].classList.add("active");
         btn.classList.add("active");
+        // pour aside
         aside.classList.remove("active");
         active_aside.classList.remove("active");
+        // fin aside
         key_forms = parseFloat(btn.getAttribute("data-form"));
+        localStorage.setItem("page",`${key}`);
     })
 });
-
 // activation du forlmulaire
 active_form.addEventListener("click", () => {
     if (key_forms) {
@@ -44,6 +50,7 @@ function suprimer(table,id){
     fetch (url,{method : "DELETE"}).then(res => {
         if(res.ok){
             window.location.href = "/admin";
+            // document.onload();
         }else{
             console.log("non sup");
         }
