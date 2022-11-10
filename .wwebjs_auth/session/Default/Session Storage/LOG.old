@@ -1,3 +1,2 @@
-2022/11/10-12:56:26.446 25d4 Reusing MANIFEST C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
-2022/11/10-12:56:26.447 25d4 Recovering log #3
-2022/11/10-12:56:26.447 25d4 Reusing old log C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Session Storage/000003.log 
+2022/11/10-13:51:09.991 784 Creating DB C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Session Storage since it was missing.
+2022/11/10-13:51:14.686 784 Reusing MANIFEST C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001

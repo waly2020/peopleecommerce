@@ -1,3 +1,2 @@
-2022/11/10-12:56:25.396 1e34 Reusing MANIFEST C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
-2022/11/10-12:56:25.399 1e34 Recovering log #10
-2022/11/10-12:56:25.400 1e34 Reusing old log C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Local Storage\leveldb/000010.log 
+2022/11/10-13:50:54.916 784 Creating DB C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Local Storage\leveldb since it was missing.
+2022/11/10-13:51:00.366 784 Reusing MANIFEST C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001

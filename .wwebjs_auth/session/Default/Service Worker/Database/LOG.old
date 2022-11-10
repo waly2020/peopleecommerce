@@ -1,3 +1,2 @@
-2022/11/10-12:56:25.138 1e34 Reusing MANIFEST C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Service Worker\Database/MANIFEST-000001
-2022/11/10-12:56:25.139 1e34 Recovering log #3
-2022/11/10-12:56:25.143 1e34 Reusing old log C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Service Worker\Database/000003.log 
+2022/11/10-13:52:00.023 17a0 Creating DB C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Service Worker\Database since it was missing.
+2022/11/10-13:52:00.436 17a0 Reusing MANIFEST C:\Users\PC\Desktop\mes_fichiers\projet_node\peopleEcommerce\.wwebjs_auth\session\Default\Service Worker\Database/MANIFEST-000001
