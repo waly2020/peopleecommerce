@@ -17,6 +17,29 @@
             <h2>LIVRAISON</h2>
     </header>
     <%- include('./components/addUser') %>
+    <div class="loading">
+        <div class="animation">
+            <div class="icone-animation">
+                <div class="ic g">
+                    <img src="../images/svg/addimages.svg">
+                </div>
+                <div class="fleches">
+                    <div class="fleche">
+                     <div>
+                        <img src="../images/svg/fleches.svg">
+                     </div>
+                     <div>
+                        <img src="../images/svg/fleches.svg">
+                     </div>
+                    </div>
+                </div>
+                <div class="ic w">
+                    <img src="../images/svg/whatsapp.svg">
+                </div>
+            </div>
+            <h2>Votre <%= data %> est en cour de traitement...</h2>
+        </div>
+    </div>
     <main id="body">
         <!-- section article selectionner -->
         <section id="article-commander">
@@ -40,16 +63,16 @@
                             <div class="input_infos">
                                 <input type="tel" name="numero" id="numero"
                                     placeholder="Votre numero de telephone..." required>
-                                <div class="my-number">
+                                <!-- <div class="my-number">
                                     <label for="num">Utiliser mon numero de telephone</label>
                                     <input type="checkbox" name="num" id="num">
-                                </div>
+                                </div> -->
                                 <input type="text" name="ville" id="ville" placeholder="Ville/Cartier de livraison"
                                     required>
                             </div>
                             <p>Quand voulez-vous faire livrer ?</p>
                             <div class="fixe_date_contener">
-                                <input type="date" name="date" id="fixe-date">
+                                <input type="date" name="date" id="fixe-date" required>
                             </div>
                             <div class="contener-btn">
                                 <button id="send" type="submit">Evoye la demande</button>
@@ -67,15 +90,15 @@
                                 <div class="input_infos">
                                     <input type="tel" name="numero" id="numero"
                                         placeholder="Votre numero de telephone..." required>
-                                    <div class="my-number">
+                                    <!-- <div class="my-number">
                                         <label for="num">Utiliser mon numero de telephone</label>
                                         <input type="checkbox" name="num" id="num">
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <p>Quand venez-vous recuperer vos articles ?</p>
                                 <div class="fixe_date_contener">
-                                    <input type="date" name="date" id="date">
+                                    <input type="date" name="date" id="date" required>
                                 </div>
                                 <div class="contener-btn">
                                     <button id="send" type="submit">Evoye la demande</button>
@@ -89,10 +112,8 @@
         <!-- end section article selectionner -->
     </main>
     <%- include('./components/footer') %>
-    <script src="../js/variables.js"></script>
-        <script src="../js/commande.js"></script>
-        <script src="../js/animations.js"></script>
-
+    <%- include('./components/scripts') %>
+    <script src="../js/commande.js"></script>
 </body>
 
 </html>

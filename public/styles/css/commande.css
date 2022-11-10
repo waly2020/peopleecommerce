@@ -917,6 +917,88 @@ header h2 {
   margin-right: 15px;
 }
 
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.655);
+  transform: scale(0);
+  z-index: 2000;
+}
+.loading.active {
+  transform: scale(1);
+}
+.loading .animation {
+  width: 100%;
+  max-width: 300px;
+}
+.loading .animation h2 {
+  text-align: center;
+  padding: 0 8px;
+  margin: 40px 0;
+  user-select: none;
+  color: #fff;
+}
+.loading .animation .icone-animation {
+  width: 100%;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  gap: 10px;
+}
+.loading .animation .icone-animation .ic {
+  border-radius: 5px;
+  box-shadow: 0 0 3px #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.loading .animation .icone-animation .ic.w {
+  background: rgb(6, 202, 6);
+}
+.loading .animation .icone-animation .ic.g {
+  background: rgb(36, 82, 222);
+}
+.loading .animation .icone-animation .ic img {
+  width: 60%;
+}
+.loading .animation .fleches {
+  position: relative;
+  overflow: hidden;
+}
+.loading .animation .fleches .fleche {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  display: grid;
+  grid-template-columns: 100% 100%;
+  animation: loader 1.5s linear infinite;
+}
+.loading .animation .fleches .fleche div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes loader {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
 @media screen and (max-width: 350px) {
   #body {
     padding: 0;

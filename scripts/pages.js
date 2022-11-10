@@ -61,8 +61,10 @@ router.get('/deconnexion', (req, res, next) => {
 router.get("/",(req,res,next)=>{
     res.redirect("/home");
 })
+
 // page home
 routerFunc(router, "pages/index", "/home",{li : 1, url : "home"});
+
 // route de formulaire de connexion ou creation de compte
 routerFunc(router, "pages/connexions", "/connexion_:data",{li : false});
 
@@ -83,5 +85,8 @@ routerFunc(router,"pages/services","/services",{li : 3, url : "services"});
 
 // page blog
 routerFunc(router,"pages/blog","/blog",{li : 4, url : "blog"});
+
+// page status de commande
+routerFunc(router,"pages/status-commande","/status",{status : "sucess",commande : "livraison"});
 
 module.exports = router;

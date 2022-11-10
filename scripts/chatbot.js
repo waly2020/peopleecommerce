@@ -14,6 +14,7 @@ client.on('qr', qr => {
 });
 
 const startChatBot = client.initialize();
+
 client.on('ready', () => { 
     console.log('Client is ready!');
 });
@@ -58,7 +59,7 @@ routChatBot.post("/api/commande/:commande/:user",(req,res) =>{
             }
             client.sendMessage(contact,`Nombrex total d'article : ${quantiter}\nPrix total : ${total}`);
         }).then(() =>{
-            res.redirect("/");
+            res.redirect("/status");
         })
     }).catch(err =>{
         res.send("Verifier votre connexion et ressayer " + err);

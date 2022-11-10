@@ -15,7 +15,7 @@
     "sass-contacte": "sass --watch public/styles/sass/contacte.scss public/styles/css/contacte.css",
     "sass-service": "sass --watch public/styles/sass/service.scss public/styles/css/service.css",
     "sass-blog": "sass --watch public/styles/sass/blog.scss public/styles/css/blog.css",
-    "bdd": "mysql -u root"
+    "sass-status": "sass --watch public/styles/sass/status-commande.scss public/styles/css/status-commande.css"
   },
   "author": "waly le dev",
   "license": "ISC",

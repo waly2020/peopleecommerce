@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/css/status-commande.css">
+    <title><%= status %> </title>
+</head>
+<body>
+    <% if (status == "sucess") { %> 
+       <% if (commande == "livraison") { %>
+           <div class="livraison">
+
+            <div class="contener-animation">
+
+                <div class="animation">
+                    <div class="truck">
+                        <div class="roues r1"></div>
+                        <div class="roues r2"></div>
+                        <div class="roues r3"></div>
+                        <div class="logo"></div>
+                        <img src="../images/svg/truck.svg">
+                    </div>
+                    <div class="paysage">
+                        <div class="pierre p1"></div>
+                        <div class="pierre p2"></div>
+                        <div class="pierre p3"></div>
+                    </div>
+                </div>
+                <div class="texte">
+                    <h2>Nous avons bien recu votre demande de <%= commande %>,nous vous contacterons d'ici peut... merci</h2>
+                    <a href="/">
+                        <p>Retour a l'acceuil</p>
+                    </a>
+                    <a href="/boutique">
+                        <p>Aller dans la boutique</p>
+                    </a>
+                </div>
+
+            </div>
+
+           </div>
+       <% } else { %>
+           <div class="reservation">
+               <%= commande %> 
+           </div>
+       <% } %>
+    <% } else { %>
+        <div class="error">
+            <%= status %> 
+        </div>
+    <% } %> 
+</body>
+</html>

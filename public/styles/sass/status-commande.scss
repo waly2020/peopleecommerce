@@ -1,0 +1,139 @@
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$main-color : #232227;
+body{
+    background: $main-color;
+    & > div{
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.livraison{
+    .contener-animation{
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .texte{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 40px;
+            h2{
+                color: greenyellow;
+                font-size: 2em;
+            }
+            & > * {
+                margin-bottom: 20px;
+            }
+            a{
+                color: #aaa;
+                &:hover{
+                    color: royalblue;
+                }
+            }
+        }
+        .animation{
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+            overflow: hidden;
+            .paysage{
+                position: absolute;
+                width: 300%;
+                height: 100%;
+                border-bottom: solid 3px #888;
+                animation: route 2s linear infinite;
+                z-index: 300;
+                .pierre{
+                    position: absolute;
+                    width: 20px;
+                    height: 6px;
+                    border: solid 3px #888;
+                    bottom: -3px;
+                    &.p1{
+                        left: 35%;
+                    }
+                    &.p2{
+                        left: 50%;
+                    }
+                    &.p3{
+                        left: 62%;
+                    }
+                }
+            }
+            .truck{
+                position: absolute;
+                bottom: 0;
+                left: 30px;
+                width: 100px;
+                .roues{
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    bottom: 4.3px;
+                    border-radius: 50%;
+                    background: #fff;
+                    z-index: 100;
+                    animation: rotate .5s linear infinite;
+                    &::after,&::before{
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 1px;
+                        background: #888;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                    &::after{
+                        transform: translate(-50%,-50%) rotate(90deg);
+                    }
+                    &.r1{
+                        left: 75.3px;
+                    }
+                    &.r2{
+                        left: 32.9px;
+                    }
+                    &.r3{
+                        left: 5px;
+                    }
+                }
+                img{
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes route{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-68%);
+    }
+}

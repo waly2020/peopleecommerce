@@ -67,7 +67,6 @@ function managerPanier(button) {
                 <p class="titre">${article.titre}</p>
                 <p class="prix">${article.prix}FCFA</p>
                 <div class="quantiter-produit">
-                    <p class="titre-quantiter">Quantiter</p>
                     <div class="ajouter-produit">
                         <p class="moins action" data-key="${i}">-</p>
                         <p class="nombre set-${i}" data-key="${i}">${article.quantiter}</p>

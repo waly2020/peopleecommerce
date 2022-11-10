@@ -3,7 +3,7 @@ let dataLocalStorage = JSON.parse(localStorage.getItem("articles")) ?? [];
 let panierStorage = [...dataLocalStorage];
 let put_article = document.querySelectorAll(".put-article-to-panier");
 
-let userId = document.querySelector(".user-bar-menu").getAttribute("data-userId");
+let userId = 1;//document.querySelector(".user-bar-menu").getAttribute("data-userId");
 
 // contener article aleatoire
 const header_article = document.querySelector(".header-article");

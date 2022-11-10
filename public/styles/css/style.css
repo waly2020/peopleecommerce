@@ -598,8 +598,7 @@ button.abonner.active:hover {
   height: 90vh;
   background: #fff;
   z-index: 1000;
-  border-radius: 10px;
-  padding: 15px;
+  padding: 8px;
   display: grid;
   grid-template-rows: 40px 30px 1fr 50px;
   gap: 10px;
@@ -619,9 +618,9 @@ button.abonner.active:hover {
 .panier .contener-articles .article {
   position: relative;
   height: 400px;
-  background: #232227;
+  background: #fff;
   padding: 10px;
-  border-radius: 8px;
+  border: solid 2px rgba(127, 125, 125, 0.648);
   overflow: hidden;
 }
 .panier .contener-articles .article img {
@@ -638,42 +637,28 @@ button.abonner.active:hover {
   justify-content: space-around;
   align-items: center;
   left: 50%;
-  bottom: 0;
+  bottom: 10px;
   transform: translateX(-50%);
-  background: #232227;
-  border-radius: 4px;
-  color: #fff;
-  box-shadow: 0 0 3px 2px rgba(22, 22, 22, 0.736);
 }
 .panier .contener-articles .article .details .titre {
   text-transform: uppercase;
   font-weight: bold;
+  background: #232227;
+  padding: 5px 13px;
+  color: #fff;
+  letter-spacing: 7px;
 }
-.panier .contener-articles .article .details .titre-quantiter {
-  text-align: center;
-  padding: 5px 0;
-  width: 100%;
+.panier .contener-articles .article .details .prix {
   color: rgb(12, 156, 12);
-  position: relative;
-}
-.panier .contener-articles .article .details .titre-quantiter::after {
-  content: "";
-  position: absolute;
-  width: 20%;
-  height: 2px;
-  background: rgb(12, 156, 12);
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
 }
 .panier .contener-articles .article .details .ajouter-produit {
   display: grid;
-  grid-template-columns: 40px 70px 40px;
+  grid-template-columns: 50px 70px 50px;
   gap: 15px;
   margin-top: 10px;
 }
 .panier .contener-articles .article .details .ajouter-produit p {
-  height: 30px;
+  height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -681,21 +666,22 @@ button.abonner.active:hover {
 }
 .panier .contener-articles .article .details .ajouter-produit .nombre {
   color: rgb(12, 156, 12);
-  border-bottom: solid 2px rgb(12, 156, 12);
-  font-weight: bold;
+  font-size: 1.2em;
 }
 .panier .contener-articles .article .details .ajouter-produit .action {
   user-select: none;
   font-size: 1.3em;
-  color: #fff;
-  background: #232227;
-  border-radius: 4px;
+  color: #555;
+  background: #fff;
+  border: solid 1px #555;
   cursor: pointer;
-  box-shadow: 0 0 3px 2px rgba(22, 22, 22, 0.736);
+  transition: 0.5s;
 }
 .panier .contener-articles .article .details .ajouter-produit .action:hover {
   background: rgb(12, 156, 12);
   font-weight: bold;
+  color: #fff;
+  border: none;
 }
 .panier h2 {
   text-align: center;

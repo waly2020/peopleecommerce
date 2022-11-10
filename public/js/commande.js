@@ -1,4 +1,8 @@
 const contenerArticleCommande = document.querySelector(".photo");
+const send = document.getElementById("send");
+const loader = document.querySelector(".loading");
+const inputs = document.querySelectorAll("input");
+let canload = false;
 
 let active = true;
 
@@ -67,4 +71,21 @@ let sold = {
 
 soldes.forEach(item =>{
     item.textContent = sold[item.getAttribute("data-solde")];
+})
+
+send.addEventListener("click", e =>{
+    for (let i = 0; i < inputs.length; i++){
+        let input = inputs[i];
+        if(input.value){
+            canload = true;
+        }else{
+            canload = false;
+        }
+    }
+    if(canload){
+        loader.classList.add("active");
+    }
+    else{
+        e.preventDefault();
+    }
 })
