@@ -219,14 +219,15 @@ button.abonner.active:hover {
   display: none;
   position: fixed;
   background: #232227;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 100vh;
   top: 0;
   right: 0;
   transform: translateX(100%);
   box-shadow: 0 3px 3px #000;
   transition: 0.4s;
-  z-index: 20000;
+  z-index: 200000;
 }
 .navigation .bar-menu .burger {
   position: absolute;
@@ -254,8 +255,8 @@ button.abonner.active:hover {
 .navigation .bar-menu .menu-bar li {
   position: relative;
   width: 100%;
-  padding: 10px 5px;
-  margin-bottom: 5px;
+  padding: 8px 5px;
+  margin-bottom: 2px;
   list-style: none;
   color: #fff;
   transition: 0.5s;
@@ -341,10 +342,15 @@ button.abonner.active:hover {
 .navigation .bar-menu .user-bar-menu #isconnected .img-user {
   width: 70px;
   height: 70px;
-  background: orange;
+  border: solid 4px #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.647);
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 10px;
+}
+.navigation .bar-menu .user-bar-menu #isconnected .img-user img {
+  width: 100%;
+  height: 100%;
 }
 .navigation .bar-menu .user-bar-menu .btns-abonnee {
   position: relative;
@@ -449,12 +455,6 @@ button.abonner.active:hover {
   justify-content: space-between;
   align-items: center;
 }
-.navigation .abonnees .reche {
-  border: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-}
 .navigation .abonnees .btns-abonnee {
   position: relative;
   min-width: 117px;
@@ -486,69 +486,76 @@ button.abonner.active:hover {
 .navigation .users {
   position: relative;
 }
-.navigation .users .userConnected {
-  transform: translateX(-50%) scale(0);
-  left: 50%;
-  top: 100%;
+.navigation .users .not-connected {
+  position: relative;
+}
+.navigation .users .not-connected::after {
+  content: "!";
   position: absolute;
-  width: 180px;
-  border-radius: 3px;
-  background: #fff;
-  box-shadow: 0 0 2px 1px #888;
+  padding: 2.5px 5px;
+  background: red;
+  color: #fff;
+  bottom: 0;
+  right: 0;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 40%;
+  transform: translate(30%, 30%);
+}
+.navigation .users .is-connted {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: solid 4px gold;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .users .is-connted img {
+  width: 55px;
+  height: 55px;
+}
+.navigation .users .userConnected {
+  transform: scale(0);
   transition: 0.5s;
 }
-.navigation .users .userConnected .note {
-  color: red;
-}
-.navigation .users .userConnected .low {
-  color: orange;
-}
-.navigation .users .userConnected .good {
-  color: greenyellow;
-  font-weight: bold;
-}
 .navigation .users .userConnected > div {
-  display: grid;
-  width: 100%;
-  padding: 7px 4px;
+  position: absolute;
+  background: #fff;
+  width: 180px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .navigation .users .userConnected > div button {
-  position: relative;
   width: 100%;
-  height: 100%;
+  padding: 8px 0;
   border: none;
-  cursor: pointer;
   outline: none;
-  color: #444;
-  background: #fff;
-  transition: 0.4s;
+  background: none;
+  cursor: pointer;
 }
-.navigation .users .userConnected > div button::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 1px;
-  background: #555;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  transition: 0.2s;
+.navigation .users .userConnected #user_1 p {
+  color: #555;
+  padding: 4px 0;
+  text-align: center;
 }
-.navigation .users .userConnected > div button:hover {
-  background: #f2f2f2;
+.navigation .users .userConnected #user_1 button {
+  width: 100%;
+  padding: 8px 0;
+  color: red;
+  text-decoration: underline;
 }
-.navigation .users .userConnected > div button:hover::after {
-  width: 60%;
+.navigation .users .userConnected #user_2 button {
+  color: #555;
+  transition: 0.5s;
 }
-.navigation .users .userConnected #user_1 {
-  grid-template-rows: repeat(3, 40px);
-  gap: 3px;
-}
-.navigation .users .userConnected #user_2 {
-  grid-template-rows: 40px;
+.navigation .users .userConnected #user_2 button:hover {
+  color: royalblue;
 }
 .navigation .users:hover .userConnected {
-  transform: translateX(-50%) scale(1);
+  transform: scale(1);
 }
 
 @media screen and (max-width: 1160px) {

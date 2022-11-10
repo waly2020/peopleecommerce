@@ -17,8 +17,12 @@ class User {
         pool.query(sql,users, (err, resultat) => {
             if (err) {
                 throw err;
+            }else{
+                console.log("depuis find user");
+                console.log(resultat);
+                callback(resultat[0]);
             }
-            callback(resultat[0]);
+            
         })
     }
     create(body, callback) {

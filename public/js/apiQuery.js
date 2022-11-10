@@ -11,7 +11,7 @@
 
 
 // "https://marche-mont-bouet.onrender.com/api/get-articles"
-// "https://marche-mont-bouet.onrender.com/"
+// "http://localhost:10000/"
 
 fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
     if (res.ok) {

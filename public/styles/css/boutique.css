@@ -219,14 +219,15 @@ button.abonner.active:hover {
   display: none;
   position: fixed;
   background: #232227;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 100vh;
   top: 0;
   right: 0;
   transform: translateX(100%);
   box-shadow: 0 3px 3px #000;
   transition: 0.4s;
-  z-index: 20000;
+  z-index: 200000;
 }
 .navigation .bar-menu .burger {
   position: absolute;
@@ -254,8 +255,8 @@ button.abonner.active:hover {
 .navigation .bar-menu .menu-bar li {
   position: relative;
   width: 100%;
-  padding: 10px 5px;
-  margin-bottom: 5px;
+  padding: 8px 5px;
+  margin-bottom: 2px;
   list-style: none;
   color: #fff;
   transition: 0.5s;
@@ -341,10 +342,15 @@ button.abonner.active:hover {
 .navigation .bar-menu .user-bar-menu #isconnected .img-user {
   width: 70px;
   height: 70px;
-  background: orange;
+  border: solid 4px #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.647);
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 10px;
+}
+.navigation .bar-menu .user-bar-menu #isconnected .img-user img {
+  width: 100%;
+  height: 100%;
 }
 .navigation .bar-menu .user-bar-menu .btns-abonnee {
   position: relative;
@@ -449,12 +455,6 @@ button.abonner.active:hover {
   justify-content: space-between;
   align-items: center;
 }
-.navigation .abonnees .reche {
-  border: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-}
 .navigation .abonnees .btns-abonnee {
   position: relative;
   min-width: 117px;
@@ -486,69 +486,76 @@ button.abonner.active:hover {
 .navigation .users {
   position: relative;
 }
-.navigation .users .userConnected {
-  transform: translateX(-50%) scale(0);
-  left: 50%;
-  top: 100%;
+.navigation .users .not-connected {
+  position: relative;
+}
+.navigation .users .not-connected::after {
+  content: "!";
   position: absolute;
-  width: 180px;
-  border-radius: 3px;
-  background: #fff;
-  box-shadow: 0 0 2px 1px #888;
+  padding: 2.5px 5px;
+  background: red;
+  color: #fff;
+  bottom: 0;
+  right: 0;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 40%;
+  transform: translate(30%, 30%);
+}
+.navigation .users .is-connted {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: solid 4px gold;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .users .is-connted img {
+  width: 55px;
+  height: 55px;
+}
+.navigation .users .userConnected {
+  transform: scale(0);
   transition: 0.5s;
 }
-.navigation .users .userConnected .note {
-  color: red;
-}
-.navigation .users .userConnected .low {
-  color: orange;
-}
-.navigation .users .userConnected .good {
-  color: greenyellow;
-  font-weight: bold;
-}
 .navigation .users .userConnected > div {
-  display: grid;
-  width: 100%;
-  padding: 7px 4px;
+  position: absolute;
+  background: #fff;
+  width: 180px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .navigation .users .userConnected > div button {
-  position: relative;
   width: 100%;
-  height: 100%;
+  padding: 8px 0;
   border: none;
-  cursor: pointer;
   outline: none;
-  color: #444;
-  background: #fff;
-  transition: 0.4s;
+  background: none;
+  cursor: pointer;
 }
-.navigation .users .userConnected > div button::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 1px;
-  background: #555;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  transition: 0.2s;
+.navigation .users .userConnected #user_1 p {
+  color: #555;
+  padding: 4px 0;
+  text-align: center;
 }
-.navigation .users .userConnected > div button:hover {
-  background: #f2f2f2;
+.navigation .users .userConnected #user_1 button {
+  width: 100%;
+  padding: 8px 0;
+  color: red;
+  text-decoration: underline;
 }
-.navigation .users .userConnected > div button:hover::after {
-  width: 60%;
+.navigation .users .userConnected #user_2 button {
+  color: #555;
+  transition: 0.5s;
 }
-.navigation .users .userConnected #user_1 {
-  grid-template-rows: repeat(3, 40px);
-  gap: 3px;
-}
-.navigation .users .userConnected #user_2 {
-  grid-template-rows: 40px;
+.navigation .users .userConnected #user_2 button:hover {
+  color: royalblue;
 }
 .navigation .users:hover .userConnected {
-  transform: translateX(-50%) scale(1);
+  transform: scale(1);
 }
 
 @media screen and (max-width: 1160px) {
@@ -591,8 +598,7 @@ button.abonner.active:hover {
   height: 90vh;
   background: #fff;
   z-index: 1000;
-  border-radius: 10px;
-  padding: 15px;
+  padding: 8px;
   display: grid;
   grid-template-rows: 40px 30px 1fr 50px;
   gap: 10px;
@@ -612,9 +618,15 @@ button.abonner.active:hover {
 .panier .contener-articles .article {
   position: relative;
   height: 400px;
+  background: #fff;
+  padding: 10px;
+  border: solid 2px rgba(127, 125, 125, 0.648);
+  overflow: hidden;
 }
 .panier .contener-articles .article img {
-  width: 100%;
+  width: 90%;
+  margin: auto;
+  display: block;
 }
 .panier .contener-articles .article .details {
   position: absolute;
@@ -625,65 +637,57 @@ button.abonner.active:hover {
   justify-content: space-around;
   align-items: center;
   left: 50%;
-  bottom: 0;
+  bottom: 10px;
   transform: translateX(-50%);
-  background: #232227;
-  border-radius: 4px;
-  color: #fff;
 }
 .panier .contener-articles .article .details .titre {
   text-transform: uppercase;
   font-weight: bold;
+  background: #232227;
+  padding: 5px 13px;
+  color: #fff;
+  letter-spacing: 7px;
 }
-.panier .contener-articles .article .details .titre-quantiter {
-  text-align: center;
-  padding: 5px 0;
-  width: 100%;
-  position: relative;
-}
-.panier .contener-articles .article .details .titre-quantiter::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  left: 0;
-  bottom: 0;
+.panier .contener-articles .article .details .prix {
+  color: rgb(12, 156, 12);
 }
 .panier .contener-articles .article .details .ajouter-produit {
   display: grid;
-  grid-template-columns: 30px 50px 30px;
-  gap: 5px;
+  grid-template-columns: 50px 70px 50px;
+  gap: 15px;
   margin-top: 10px;
 }
 .panier .contener-articles .article .details .ajouter-produit p {
-  height: 30px;
+  height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .panier .contener-articles .article .details .ajouter-produit .nombre {
-  background: #fff;
-  color: #555;
-  border-radius: 4px;
-  font-weight: bold;
+  color: rgb(12, 156, 12);
+  font-size: 1.2em;
 }
 .panier .contener-articles .article .details .ajouter-produit .action {
   user-select: none;
   font-size: 1.3em;
   color: #555;
-  background: #aaa;
-  font-weight: bold;
+  background: #fff;
+  border: solid 1px #555;
   cursor: pointer;
+  transition: 0.5s;
+}
+.panier .contener-articles .article .details .ajouter-produit .action:hover {
+  background: rgb(12, 156, 12);
+  font-weight: bold;
+  color: #fff;
+  border: none;
 }
 .panier h2 {
   text-align: center;
   font-size: 2em;
-}
-.panier .quantiter {
-  font-size: 1.3em;
-  margin: 10px 0;
+  color: #232227;
+  letter-spacing: 4px;
 }
 .panier .btns_action {
   display: flex;
@@ -729,6 +733,7 @@ button.abonner.active:hover {
 }
 
 .open {
+  position: relative;
   position: fixed;
   width: 70px;
   height: 70px;
@@ -746,6 +751,31 @@ button.abonner.active:hover {
 }
 .open img {
   width: 50%;
+}
+
+.caisse p {
+  display: inline-block;
+  margin-right: 20px;
+  color: #aaa;
+}
+.caisse p span {
+  color: red;
+}
+
+.quant.btn-add {
+  position: absolute;
+  padding: 5px 10px;
+  background: red;
+  color: #fff;
+  font-weight: bold;
+  top: 0;
+  right: 0;
+  border-radius: 40%;
+  transform: translate(25%, -25%);
+}
+
+.delete {
+  cursor: pointer;
 }
 
 header {
