@@ -7,7 +7,7 @@ let forms = document.querySelectorAll(".forms");
 let active_form = document.querySelector(".add-items");
 
 let key_forms = 0;
-let key_page = parseFloat(localStorage.getItem("page")) ?? 0;
+let key_page = parseFloat(localStorage.getItem("page")) || 0;
 
 pages[key_page].classList.add("active");
 active_page[key_page].classList.add("active");
