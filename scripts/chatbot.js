@@ -25,12 +25,14 @@ routChatBot.post("/api/commande/:commande/:user",(req,res) =>{
     let user = JSON.parse(req.params.user);
     let body = req.body;
     let articles = JSON.parse(localStorage.getItem(`articles-${user.id}`));
+    console.log(user);
+    console.log(articles);
 
     console.log("chatbot en cour d'execution");
 
     startChatBot.then(() =>{
         client.sendMessage(contact,`Salut...\nJe m'appel ${user.name}. Je voudrais une ${commande} de c'est articles`).then(() =>{
-
+            // console.log("Salut je suis + " + user.name)
             switch (commande) {
                 case "livraison":
                     client.sendMessage(contact,`Details de livraison...\nMon numero : ${body.numero}\nDate de livraison : ${body.date}\nLieux de livraison : ${body.ville}`);

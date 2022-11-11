@@ -18,8 +18,6 @@ class User {
             if (err) {
                 throw err;
             }else{
-                console.log("depuis find user");
-                console.log(resultat);
                 callback(resultat[0]);
             }
             

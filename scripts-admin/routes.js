@@ -37,11 +37,9 @@ routeAdmin.post("/add/aricle",(req,res) =>{
             res.render("admin/error",{error : err});
         }else{
             if(req.file !== undefined){
-                console.log(req.body);
                 let sql = `INSERT INTO articles (nom,prix,categorie,image) VALUES (?,?,?,?)`;
                 pool.query(sql,[req.body.nom,req.body.prix,req.body.categories,req.file.filename],(err)=>{
                     if(err){
-                        console.log(err);
                         res.render("admin/error",{error : err});
                     }else{
                         // res.render("admin/succes",{file : req.file.filename,article : req.body});
@@ -69,7 +67,7 @@ routeAdmin.delete("/delete/:table/:id",(req,res) =>{
     let sql = `DELETE FROM ${table} WHERE id = ?`;
     pool.query(sql,id,(err) =>{
         if(err){
-            console.log("non suprimer");
+            res.send("non suprimer");
         }else{
             res.send("supprimer");
         }

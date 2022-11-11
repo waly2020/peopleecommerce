@@ -54,7 +54,7 @@
             <div id="detail-article">
                 <div class="forms">
                     <% if (data=="livraison" ) { %>
-                     <form action="/api/commande/<%= data %>/<%= JSON.stringify({id : 1,name : "waly le dev",numero : 074932312}) %>" method="post" class="livraison form active">
+                     <form action="/api/commande/<%= data %>/<%= JSON.stringify(user) %>" method="post" class="livraison form active">
                             <p class="quantiter">Nombre d'article : <span class="semi-important sold"
                                     data-solde="quantiter">0</span><span class="semi-important">articles</span></p>
                             <p class="total">Total : <span class="important sold" data-solde="prix">0</span><span
@@ -80,7 +80,7 @@
                             </div>
                         </form>
                         <% } else { %>
-                            <form action="/api/commande/<%= data %>/<%= JSON.stringify({id : 1,name : "waly le dev",numero : 074932312}) %>" method="post" class="reservation form">
+                            <form action="/api/commande/<%= data %>/<%= JSON.stringify(user) %>" method="post" class="reservation form">
                                 <p class="quantiter">Nombre d'article : <span class="semi-important sold"
                                         data-solde="quantiter"></span><span class="semi-important">articles</span></p>
                                 <p class="total">Total : <span class="important sold" data-solde="prix"></span><span

@@ -1,17 +1,5 @@
-/* <div class="titre-article">
- Pull Adidas
-</div>
-<img src="../images/haut.png" alt="pull Adidas">
-<div class="content-prix">
-<p>18.0000 F</p>
-</div>
-<div class="contener-add-panier">
-<div class="add-panier">+</div>
-</div> */
-
-
-// "https://marche-mont-bouet.onrender.com/api/get-articles"
-// "http://localhost:10000/"
+// "http://localhost:10000/api/get-articles"
+// "https://marche-mont-bouet.onrender.com/"
 
 fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
     if (res.ok) {
@@ -54,9 +42,6 @@ fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
 
                     if (panierStorage[articleId] == undefined) {
 
-                        console.log(articleId);
-                        console.log(articles[articleId]);
-
                         if (userId) {
                             panierStorage[articleId] = {
                                 userid: parseInt(userId),
@@ -66,7 +51,6 @@ fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
                                 quantiter : 1,
                                 image : articles[articleId].image,
                             };
-                            console.log(panierStorage);
                             localStorage.setItem("articles", JSON.stringify(panierStorage));
                             setQuantityHtml();
                         }else{
@@ -81,7 +65,5 @@ fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
             })
 
         })
-    } else {
-        console.log("donnee non recupere");
     }
 });

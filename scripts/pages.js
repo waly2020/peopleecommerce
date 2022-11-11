@@ -22,12 +22,10 @@ router.post("/login", (req, res, next) => {
 })
 // creation de compte
 router.post("/create", (req, res, next) => {
-    // console.log(req.body);
     let userCreate = {
         name: req.body.name,
         numero: req.body.numero,
     }
-    console.log(userCreate);
     users.find([userCreate.name, userCreate.numero], resultat => {
 
         if (resultat) {
@@ -40,8 +38,6 @@ router.post("/create", (req, res, next) => {
                     users.find([userCreate.name, userCreate.numero], resultat => {
                         req.session.user = resultat;
                         req.session.opp = 0;
-                        console.log(resultat);
-                        console.log("utilisateur connecter");
                         res.redirect("/home");
                     })
                 } else {

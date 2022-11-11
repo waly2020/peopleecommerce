@@ -15,10 +15,8 @@ function routerFunc(router, render, url, params = {}) {
 function getAllData(table, callback) {
     pool.query(`SELECT * FROM ${table}`, [], (err, resultat) => {
         if (err) {
-            console.log(`n'as pas pue recuperer les donnees de ${table}`);
             callback(null);
         } else {
-            console.log(`donnees de ${table} recuperer`);
             callback(resultat);
         }
     })
@@ -49,7 +47,6 @@ function getTables (callback,...tables){
             if(resultat.length == tables.length){
                 bool = true;
                 callback(resultat,bool);
-                console.log("bool est vrai");
             }
         })
     }
@@ -66,9 +63,5 @@ function find(id, callback) {
         }
         callback(resultat[0]);
     })
-}
-// delete
-function suprimer(id,table){
-
 }
 module.exports = {routerFunc,getAllData,find,getTable,getTables};
