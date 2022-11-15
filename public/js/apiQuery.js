@@ -1,9 +1,9 @@
-// "https://marche-mont-bouet.onrender.com/api/get-articles"
-// "https://marche-mont-bouet.onrender.com/api/get-articles"
+// "https://marche-mont-bouet.onrender.com/"
+// "https://marche-mont-bouet.onrender.com/"
 
 let nbrArticle = null;
 
-fetch("https://marche-mont-bouet.onrender.com/api/get-articlesapi/get-articles").then(res => {
+fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
     if (res.ok) {
         res.json().then(articles => {
             // start for
