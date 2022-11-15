@@ -232,9 +232,13 @@
     }
 
     .logo {
-        width: 122px;
-        height: 50px;
-        background-color: #fff;
+        width: 70px;
+        height: 70px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    
     }
 
     // menu

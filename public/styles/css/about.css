@@ -420,9 +420,12 @@ button.abonner.active:hover {
   background: #fff;
 }
 .navigation .logo {
-  width: 122px;
-  height: 50px;
-  background-color: #fff;
+  width: 70px;
+  height: 70px;
+}
+.navigation .logo img {
+  width: 100%;
+  height: 100%;
 }
 .navigation .menu {
   display: flex;
@@ -652,14 +655,19 @@ header .background {
   width: 100%;
   max-width: 450px;
   height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+  background: orange;
 }
 .body .presentation .img img {
-  width: 100%;
+  height: 100%;
 }
 .body .avantages {
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 100px 1fr;
   gap: 20px;
   min-height: 250px;
 }

@@ -37,6 +37,6 @@ server.use((req,res,next) =>{
 
 const port = process.env.PORT;
 
-server.listen(port,() => console.log("port " + port));
+server.listen(port,() => console.log("port " + port + " ouvert"));
 
 module.exports = server;

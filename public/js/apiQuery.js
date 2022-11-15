@@ -1,6 +1,3 @@
-// "https://marche-mont-bouet.onrender.com/"
-// "https://marche-mont-bouet.onrender.com/"
-
 let nbrArticle = null;
 
 fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
@@ -43,7 +40,6 @@ fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
                 </div>
                 `;
             }
-            // document.onload
             document.querySelectorAll(".add_panier").forEach((btn) => {
                 btn.addEventListener("click", () => {
 

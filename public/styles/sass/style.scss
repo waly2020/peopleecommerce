@@ -5,6 +5,7 @@
 // staert header
 header {
     @include style-header(rgba(0, 0, 0, 0.645), 700px);
+    gap: 50px;
     // display: none;
 }
 
