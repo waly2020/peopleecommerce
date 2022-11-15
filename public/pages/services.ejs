@@ -20,65 +20,23 @@
         <h2 class="titre-h2-service">Nos services</h2>
         <div class="contente-sevices">
             <!-- start sevices -->
-            <div class="service">
-                <div class="img-service">
-                    <div class="img">
-                        <img src="../images/svg/livraison-1.svg">
+            <% for (let i = services.length - 1; i >= 0; i--){ %>
+                <% let s = services[(services.length - 1) - i] %>
+                <div class="service">
+                    <div class="img-service">
+                        <div class="img">
+                            <img src="../images/upload/<%= s.image %> ">
+                        </div>
+                        <p class="titre-service"><%= s.nom %> </p>
                     </div>
-                    <p class="titre-service">LIVRAISON</p>
-                </div>
-                <div class="desc-service">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque qui, laboriosam dolore sunt nobis eum libero. Cupiditate necessitatibus, voluptas consequatur eaque velit sit modi tenetur consectetur, earum facilis vero quisquam. Modi voluptates maxime dolores. Accusamus cupiditate expedita laboriosam quaerat assumenda.
-                    </p>
-                </div>
-            </div>
-            <!-- end service -->
-             <!-- start sevices -->
-             <div class="service">
-                <div class="img-service">
-                    <div class="img">
-                        <img src="../images/svg/livraison-1.svg">
+                    <div class="desc-service">
+                        <p>
+                            <%= s.description %> 
+                        </p>
                     </div>
-                    <p class="titre-service">LIVRAISON</p>
                 </div>
-                <div class="desc-service">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque qui, laboriosam dolore sunt nobis eum libero. Cupiditate necessitatibus, voluptas consequatur eaque velit sit modi tenetur consectetur, earum facilis vero quisquam. Modi voluptates maxime dolores. Accusamus cupiditate expedita laboriosam quaerat assumenda.
-                    </p>
-                </div>
-            </div>
-            <!-- end service -->
-             <!-- start sevices -->
-             <div class="service">
-                <div class="img-service">
-                    <div class="img">
-                        <img src="../images/svg/livraison-1.svg">
-                    </div>
-                    <p class="titre-service">LIVRAISON</p>
-                </div>
-                <div class="desc-service">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque qui, laboriosam dolore sunt nobis eum libero. Cupiditate necessitatibus, voluptas consequatur eaque velit sit modi tenetur consectetur, earum facilis vero quisquam. Modi voluptates maxime dolores. Accusamus cupiditate expedita laboriosam quaerat assumenda.
-                    </p>
-                </div>
-            </div>
-            <!-- end service -->
-             <!-- start sevices -->
-             <div class="service">
-                <div class="img-service">
-                    <div class="img">
-                        <img src="../images/svg/livraison-1.svg">
-                    </div>
-                    <p class="titre-service">LIVRAISON</p>
-                </div>
-                <div class="desc-service">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque qui, laboriosam dolore sunt nobis eum libero. Cupiditate necessitatibus, voluptas consequatur eaque velit sit modi tenetur consectetur, earum facilis vero quisquam. Modi voluptates maxime dolores. Accusamus cupiditate expedita laboriosam quaerat assumenda.
-                    </p>
-                </div>
-            </div>
-            <!-- end service -->
+            <% } %> 
+           <!-- end service -->
         </div>
     </main>
     <%- include("./components/footer") %>

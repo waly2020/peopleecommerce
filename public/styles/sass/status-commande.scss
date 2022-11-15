@@ -1,22 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,400;0,700;1,100&display=swap');
 *,::after,::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat Alternates';
 }
 $main-color : #232227;
 body{
     background: $main-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     & > div{
         position: relative;
         width: 100%;
+        max-width: 600px;
         min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 }
-
-.livraison{
+ 
+.contener{
     .contener-animation{
         width: 100%;
         padding: 10px;
@@ -30,15 +36,16 @@ body{
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 20px;
             h2{
-                color: greenyellow;
-                font-size: 2em;
+                color: #fff;
+                font-size: 1.3em;
             }
             & > * {
                 margin-bottom: 20px;
             }
             a{
+                font-size: 12px;
                 color: #aaa;
                 &:hover{
                     color: royalblue;
@@ -51,6 +58,53 @@ body{
             max-width: 400px;
             height: 200px;
             overflow: hidden;
+            &.reservation{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            // page d'erreur
+            .error{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    height: 100%;
+                }
+            }
+            .box{
+                position: relative;
+                // background: purple;
+                height: 100%;
+                display: inline-block;
+                img{
+                    height: 100%;
+                }
+                .hour{
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    border: solid 3.4px #fff;
+                    left: 63%;
+                    background: $main-color;
+                    animation: rotate .8s linear infinite;
+                    span{
+                        position: absolute;
+                        display: inline-block;
+                        width: 3px;
+                        height: 50%;
+                        left: 50%;
+                        top: 30%;
+                        border-radius: 5px;
+                        transform: translate(-50%,-50%);
+                        background: #fff;
+                    }
+                }
+            }
+            // animation caminion
             .paysage{
                 position: absolute;
                 width: 300%;
@@ -86,7 +140,7 @@ body{
                     height: 15px;
                     bottom: 4.3px;
                     border-radius: 50%;
-                    background: #fff;
+                    background: $main-color;
                     z-index: 100;
                     animation: rotate .5s linear infinite;
                     &::after,&::before{
@@ -94,7 +148,7 @@ body{
                         position: absolute;
                         width: 100%;
                         height: 1px;
-                        background: #888;
+                        background: #fff;
                         left: 50%;
                         top: 50%;
                         transform: translate(-50%,-50%);
@@ -117,7 +171,9 @@ body{
                     bottom: 0;
                     width: 100%;
                 }
+                
             }
+            // fin animation caminion
         }
     }
 }

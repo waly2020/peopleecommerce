@@ -5,6 +5,8 @@ let active_page = document.querySelectorAll(".item");
 let pages = document.querySelectorAll(".page");
 let forms = document.querySelectorAll(".forms");
 let active_form = document.querySelector(".add-items");
+let see_image = document.querySelectorAll(".see-images");
+let article_users = document.querySelectorAll(".article-users");
 
 let key_forms = 0;
 let key_page = parseFloat(localStorage.getItem("page")) || 0;
@@ -45,7 +47,7 @@ active_form.addEventListener("click", () => {
 
 function suprimer(table,id){
 
-    const url = `https://marche-mont-bouet.onrender.com/delete/${table}/${id}`;
+    const url = `https://marche-mont-bouet.onrender.com/api/get-articlesdelete/${table}/${id}`;
 
     fetch (url,{method : "DELETE"}).then(res => {
         if(res.ok){
@@ -56,3 +58,15 @@ function suprimer(table,id){
         }
     })
 }
+see_image.forEach(btn =>{
+    btn.addEventListener("click", () =>{
+        for(let i = 0; i < article_users.length; i++){
+            let page = article_users[i];
+
+            if(page.getAttribute("data-see") == btn.getAttribute("data-see")){
+                page.classList.toggle("active");
+                break;
+            }
+        }
+    })
+})

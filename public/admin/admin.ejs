@@ -8,15 +8,27 @@
     <link rel="stylesheet" href="../css_admin/admin.css">
     <title>admin</title>
 </head>
+<% 
+    function getTable(tableBd) {
+        let tab = [];
+        for (let i = 0; i < tables.length; i++){
+            let table = tables[i];
+            if(table.tableName == tableBd){
+                tab = table;
+                break;
+            }
+        }
 
+        return tab.table;
+    }
+ %>
 <body>
     <aside class="barre">
         <div class="can-active-aside">
             <img src="../images/svg/sup.svg">
         </div>
         <div class="admin">
-            <div class="img"></div>
-            <p class="name">Waly le dev</p>
+            <p class="name"><%= admin.nom %> </p>
         </div>
         <ul class="menu">
             <li class="item i1" data-form="0">
@@ -49,6 +61,11 @@
                 <p class="texte">Messages</p>
                 <img src="../images/svg/sup.svg" class="sup">
             </li>
+            <li class="item i7" data-form="0">
+                <img src="../images/svg/sms.svg" class="icn">
+                <p class="texte">Commandes</p>
+                <img src="../images/svg/sup.svg" class="sup">
+            </li>
         </ul>
     </aside>
     <main class="contenue">
@@ -75,7 +92,7 @@
                                     </div>
                                     <div class="taux">
                                         <p class="titre-taux">Utilisateurs</p>
-                                        <p class="num-taux"><%= tables[0].length %> </p>
+                                        <p class="num-taux"><%= getTable("users").length %> </p>
                                     </div>
                                 </div>
                                 <!-- end datas -->
@@ -97,7 +114,7 @@
                                     </div>
                                     <div class="taux">
                                         <p class="titre-taux">Articles</p>
-                                        <p class="num-taux"><%= tables[1].length %></p>
+                                        <p class="num-taux"><%= getTable("articles").length %></p>
                                     </div>
                                 </div>
                                 <!-- end datas -->
@@ -108,7 +125,7 @@
                                     </div>
                                     <div class="taux">
                                         <p class="titre-taux">Services</p>
-                                        <p class="num-taux">0</p>
+                                        <p class="num-taux"><%= getTable("services").length %> </p>
                                     </div>
                                 </div>
                                 <!-- end datas -->
@@ -122,8 +139,8 @@
                             <div class="contente-section">
                                 <!-- user -->
                                 <% let i = 0 %> 
-                                <% while (i < 4 && i < tables[0].length) {%>
-                                    <% let user = tables[0][(tables[0].length - 1) - i] %>
+                                <% while (i < 4 && i < getTable("users").length) {%>
+                                    <% let user = getTable("users")[(getTable("users").length - 1) - i] %>
                                     <div class="user">
                                         <div class="img-user">
                                             <div class="img">
@@ -156,8 +173,8 @@
                             <div class="contente-section">
                                 <!-- article -->
                                 <% let a = 0 %>
-                                <% while (a < 4 && a < tables[1].length) {%>
-                                <% let article = tables[1][(tables[1].length - 1) - a] %>
+                                <% while (a < 4 && a < getTable("articles").length) {%>
+                                <% let article = getTable("articles")[(getTable("articles").length - 1) - a] %>
                                 <div class="article">
                                     <div class="img-article">
                                         <img src="../images/upload/<%= article.image %>">
@@ -182,28 +199,58 @@
                             </div>
                             <div class="contente-section">
                                 <!-- message -->
-                                <div class="message">
-                                    <div class="user">
-                                        <div class="img-user">
-                                            <div class="img">
-                                                <img src="../images/svg/user-admin.svg">
+                                 <% let b = 0 %> 
+                                 <% while (b < 4 && b < getTable("contacte").length) {%>
+                                     <% let m = getTable("contacte")[(getTable("contacte").length - 1) - b] %>
+                                     <div class="message">
+                                        <div class="user">
+                                            <div class="img-user">
+                                                <div class="img">
+                                                    <img src="../images/svg/user-admin.svg">
+                                                </div>
+                                            </div>
+                                            <div class="info-user">
+                                                <p class="nom"><%= m.nom %></p>
+                                                <p class="num"><%= m.numero %></p>
                                             </div>
                                         </div>
-                                        <div class="info-user">
-                                            <p class="nom">Waly le dev</p>
-                                            <p class="num">+241 074543425</p>
+                                        <div class="texte-sms">
+                                            <p>
+                                                <%= m.message %> 
+                                            </p>
                                         </div>
+                                        <button class="suprimer" onclick="suprimer('contacte','<%= m.id %>')">suprimer</button>
                                     </div>
-                                    <div class="texte-sms">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Quaerat esse veritatis, eius nostrum delectus quia voluptate,
-                                            iusto eos exercitationem sint facere sit qui ex natus tenetur?
-                                            Aspernatur consequatur corporis maiores!
-                                        </p>
-                                    </div>
-                                </div>
+                                     <% b++ %> 
+                                 <% } %>
                                 <!-- end message -->
+                            </div>
+                        </div>
+                        <!-- end section -->
+                        <!-- start section -->
+                        <div class="section last-service">
+                            <div class="titre-section">
+                                <h2>Dernier service ajouter</h2>
+                            </div>
+                            <div class="contente-section">
+                                <!-- start carte service -->
+                                <% let z = 0 %> 
+                                 <% while (z < 4 && z < getTable("services").length) {%>
+                                     <% let s = getTable("services")[(getTable("services").length - 1) - z] %>
+
+                                     <div class="service">
+                                        <div class="icone-sevice">
+                                            <div class="icone"><img src="../images/upload/<%= s.image %>"></div>
+                                            <p><%= s.nom %> </p>
+                                        </div>
+                                        <p class="description-service">
+                                            <%= s.description %> 
+                                        </p>
+                                        <button onclick="suprimer('services','<%= s.id %>')">suprimer</button>
+                                    </div>
+                                    <% z++; %> 
+                                 <% } %>
+                                <!-- end carte service -->
                             </div>
                         </div>
                         <!-- end section -->
@@ -239,31 +286,6 @@
                             </div>
                         </div>
                         <!-- end section -->
-                        <!-- start section -->
-                        <div class="section last-service">
-                            <div class="titre-section">
-                                <h2>Dernier service ajouter</h2>
-                            </div>
-                            <div class="contente-section">
-                                <!-- start carte service -->
-                                <div class="service">
-                                    <div class="icone-sevice">
-                                        <div class="icone"><img src="../images/svg/livraison.svg" alt="icone livraison">
-                                        </div>
-                                        <p>Livraison</p>
-                                    </div>
-                                    <p class="description-service">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam
-                                        illum iusto
-                                        nisi
-                                        deserunt sunt modi?
-                                    </p>
-                                    <button class="btn-service">suprimer</button>
-                                </div>
-                                <!-- end carte service -->
-                            </div>
-                        </div>
-                        <!-- end section -->
                     </div>
                 </div>
             </section>
@@ -273,9 +295,9 @@
                 </div>
                 <div class="contente modifier">
                     <div class="contenu">
-                        <!-- article -->
-                        <% for (let c = tables[1].length - 1; c >= 0; c--){ %>
-                            <% let article = tables[1][c] %> 
+                    <!-- article -->
+                        <% for (let i = getTable("articles").length - 1; i >= 0; i--){ %>
+                            <% let article = getTable("articles")[i] %>
                             <div class="article">
                                 <div class="img-article">
                                     <img src="../images/upload/<%= article.image %>">
@@ -287,8 +309,8 @@
                                     <button onclick="suprimer('articles','<%= article.id %>')">suprimer</button>
                                 </div>
                             </div>
-                        <% }%>
-                        <!-- end article -->
+                        <% } %> 
+                    <!-- end article -->
                     </div>
                     <div class="forms" data-form="1">
                         <p class="titre-form">Ajouter un article</p>
@@ -323,9 +345,9 @@
                 </div>
                 <div class="contente one-page">
                     <div class="contenu">
-                        <!-- user -->
-                        <% for (let i = tables[0].length - 1; i >= 0; i--) { %>
-                            <% let user = tables[0][i] %> 
+                    <!-- user -->
+                        <% for (let i = getTable("users").length - 1; i >= 0; i--){ %>
+                            <% let user = getTable("users")[i] %>
                             <div class="user">
                                 <div class="img-user">
                                     <div class="img">
@@ -344,10 +366,9 @@
                                     <% } %> 
                                     <button class="sup" onclick="suprimer('users','<%= user.id %>')">suprimer</button>
                                 </div>
-                            </div>
+                            </div> 
                         <% } %>
-                        <!-- end user -->
-                        
+                    <!-- end user -->
                     </div>
                 </div>
             </section>
@@ -358,34 +379,45 @@
                 <div class="contente modifier">
                     <div class="contenu">
                         <!-- start carte service -->
-                        <div class="service">
-                            <div class="icone-sevice">
-                                <div class="icone"><img src="../images/svg/livraison.svg" alt="icone livraison"></div>
-                                <p>Livraison</p>
+
+                        <% for (let i = getTable("services").length - 1; i >= 0; i--){ %>
+                            <% let s = getTable("services")[i] %>
+
+                            <div class="service">
+                                <div class="icone-sevice">
+                                    <div class="icone"><img src="../images/upload/<%= s.image %>"></div>
+                                    <p><%= s.nom %> </p>
+                                </div>
+                                <p class="description-service">
+                                    <%= s.description %> 
+                                </p>
+                                <button onclick="suprimer('services','<%= s.id %>')">suprimer</button>
                             </div>
-                            <p class="description-service">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde ipsam illum iusto
-                                nisi
-                                deserunt sunt modi?
-                            </p>
-                            <button class="btn-service">suprimer</button>
-                        </div>
+                            
+                        <% } %> 
+
+                        
                         <!-- end carte service -->
                     </div>
-                    <div class="forms" data-form="2">
+                     <div class="forms" data-form="2">
+
                         <p class="titre-form">Ajouter un service</p>
-                        <form action="#">
+
+                        <form action="/add-services" method="post" enctype="multipart/form-data">
+
                             <input type="text" name="nom" id="nom" placeholder="nom du service">
-                            <textarea name="texte" id="texte" placeholder="Description du service"></textarea>
+
+                            <textarea name="description" id="texte" placeholder="Description du service"></textarea>
+
                             <div class="add-img">
-                                <label for="images">Ajouter une image</label>
-                                <div class="icone-file">
-                                    <img src="../images/svg/next.svg" alt="">
-                                    <input type="file" name="images" id="images">
-                                </div>
+                                <img src="../images/svg/addimages.svg" alt="">
+                                <input type="file" name="image" id="images" required>
                             </div>
+
                             <button type="submit">Ajouter service</button>
+
                         </form>
+
                     </div>
                 </div>
             </section>
@@ -438,29 +470,98 @@
                 </div>
                 <div class="contente one-page">
                     <div class="contenu">
-                        <!-- message -->
-                        <div class="message">
-                            <div class="user">
-                                <div class="img-user">
-                                    <div class="img">
-                                        <img src="../images/svg/user-admin.svg">
-                                    </div>
-                                </div>
-                                <div class="info-user">
-                                    <p class="nom">Waly le dev</p>
-                                    <p class="num">+241 074543425</p>
-                                </div>
-                            </div>
-                            <div class="texte-sms">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Quaerat esse veritatis, eius nostrum delectus quia voluptate,
-                                    iusto eos exercitationem sint facere sit qui ex natus tenetur?
-                                    Aspernatur consequatur corporis maiores!
-                                </p>
-                            </div>
+                       <% for (let i = getTable("contacte").length - 1; i >= 0; i--){ %>
+                           <% let m = getTable("contacte")[i] %>
+                           <div class="message">
+                               <div class="user">
+                                   <div class="img-user">
+                                       <div class="img">
+                                           <img src="../images/svg/user-admin.svg">
+                                       </div>
+                                   </div>
+                                   <div class="info-user">
+                                       <p class="nom"><%= m.nom %></p>
+                                       <p class="num"><%= m.numero %></p>
+                                   </div>
+                               </div>
+                               <div class="texte-sms">
+                                   <p>
+                                       <%= m.message %> 
+                                   </p>
+                               </div>
+                               <button class="suprimer" onclick="suprimer('contacte','<%= m.id %>')">suprimer</button>
+                           </div>
+                       <% } %>            
+                    </div>
+                </div>
+            </section>
+            <section class="page demandes">
+                <div class="titre">
+                    <h1>Géré les demandes</h1>
+                </div>
+                <div class="contente one-page">
+                    <div class="contenu">
+                <!-- boocle -->
+                <% for (let i = getTable("commande").length - 1; i >= 0; i--){ %>
+                    <% let c = getTable("commande")[i];
+                       let a = JSON.parse(getTable("commande")[i].articles);
+                       let d = JSON.parse(getTable("commande")[i].details);
+                       let p = {
+                        p : function (){
+                            let prix = 0;
+                            for (let b = 0; b < a.length; b++){
+                                prix += a[b].prix * a[b].quantiter;
+                            }
+                            return prix;
+                        },
+                        q : function (){
+                            let quantiter = 0;
+                            for (let b = 0; b < a.length; b++){
+                                quantiter += a[b].quantiter;
+                            }
+                            return quantiter;
+                        },
+                       }
+                    %>
+                    <div class="demande <%= c.type %>">
+                        <p class="titre-demande"><%= c.type %> </p>
+                        <p>Nom : <%= c.nom %></p>
+                        <p>Numero : <%= c.numero %> </p>
+                        <% if (d?.ville) {%>
+                            <p>Date de livraison : <%= d.date %> </p>
+                            <p>Lieux de livraison : <%= d.ville %> </p>
+                        <% } else {%>
+                            <p>Date de recuperation : <%= d.date %> </p>
+                        <% } %> 
+                        <p>Nombre d'articles : <%= p.q() %> </p>
+                        <p>Prix total : <%= p.p() %> </p>
+                        <div class="btns-commande">
+                            <button class="suprimer" onclick="suprimer('commande','<%= c.id %>')">suprimer</button>
+                            <button class="see-images" data-see="<%= c.id %>">Voir les articles</button>
                         </div>
-                        <!-- end message -->
+                        <div class="article-users" data-see="<%= c.id %>">
+                            <div class="close-see see-images" data-see="<%= c.id %>">X</div>
+                            <div class="img-see">
+                                <img src="../images/upload/image-1668346487315chaussures-montantes-mode-chaussure-homme-basket-h.jpg">
+                                <p class="nom-see"><%= c.nom %> </p>
+                                <p class="quantiter">18 articles</p>
+                                <p class="prix-see">18.000F</p>
+                            </div>
+
+                            <% for (let i = 0; i < a.length; i++) {%>
+                                <% let aaa = a[i] %>
+                                <div class="img-see">
+                                    <img src="../images/upload/<%= aaa.image %>">
+                                    <p class="nom-see"><%= aaa.titre %> </p>
+                                    <p class="quantiter"><%= aaa.quantiter %> articles</p>
+                                    <p class="prix-see"><%= aaa.prix %> F</p>
+                                </div>
+                            <% } %> 
+
+                        </div>
+                    </div>
+                <% } %> 
+                <!-- end boocle -->
                     </div>
                 </div>
             </section>

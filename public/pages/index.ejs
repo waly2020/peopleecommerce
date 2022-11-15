@@ -25,9 +25,9 @@
                         <a href="/boutique"><button class="btn-article">voir les articles</button></a>
                         <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> " class="link-abonne">
                             <% if (user?.isabonne == 1) { %>
-                                <button class="btn-abone abonner active">Déja abonne</button>
+                                <button class="btn-abone abonner active">Déjà abonné</button>
                                <% } else {%>
-                                   <button class="btn-abone abonner">S'abonne</button>
+                                   <button class="btn-abone abonner">S'abonné</button>
                             <% } %> 
                         </a>
                     </div>
@@ -59,26 +59,20 @@
                 <h2 class="sous-titre">NOS Services</h2>
                 <div class="contener-services">
                     <!-- start carte service -->
+                    <% let i = 0 %> 
+                    <% while (i < 4 && i < services.length) {%>
+                    <% let s = services[(services.length - 1) - i] %>
                     <div class="service">
                         <div class="icone-sevice">
-                            <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
-                            <p>Livraison</p>
+                            <div class="icone"><img src="../images/upload/<%= s.image %> " alt="icone livraison"></div>
+                            <p><%= s.nom %> </p>
                         </div>
                         <p class="description-service">
-                            Nous vous proposont un service de si vous manquez de temps !
+                            <%= s.description %> 
                         </p>
                     </div>
-                    <!-- end carte service -->
-                    <!-- start carte service -->
-                    <div class="service">
-                        <div class="icone-sevice">
-                            <div class="icone"><img src="images/svg/livraison.svg" alt="icone livraison"></div>
-                            <p>Reservation</p>
-                        </div>
-                        <p class="description-service">
-                            Recupere vos article dans notre magasin quant vous voulez !
-                        </p>
-                    </div>
+                    <% i++ %> 
+                    <% } %> 
                     <!-- end carte service -->
                 </div>
                 <p class="liens-plus"><a href="/services">plus de services </a></p>

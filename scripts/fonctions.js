@@ -7,8 +7,15 @@ function routerFunc(router, render, url, params = {}) {
         let user = req?.session?.user ?? null;
         let reqParm = req?.params?.data ?? null;
 
-        res.render(render, { opp: req?.session?.opp ?? null, user: user, data: reqParm, ...params });
+        res.render(render, { opp: req?.session?.opp ?? null, user: user, data: reqParm,...req.params, ...params});
     })
+}
+
+function routerSession (req,res,render,params = {}){
+    let user = req?.session?.user ?? null;
+    let reqParm = req?.params?.data ?? null;
+
+    res.render(render, { opp: req?.session?.opp ?? null, user: user, data: reqParm, ...params });
 }
 
 // recupere la data
@@ -43,10 +50,14 @@ function getTables (callback,...tables){
     for (let i = 0; i < tables.length; i++){
         let table = tables[i];
         getAllData(table,rest =>{
-            resultat.push(rest);
-            if(resultat.length == tables.length){
-                bool = true;
-                callback(resultat,bool);
+            // resultat.push(rest);
+            // resultat.length == tables.length
+            if(rest){
+                resultat.push({tableName : table,table : rest});
+                if(resultat.length === tables.length){
+                    bool = true;
+                    callback(resultat,bool);
+                }
             }
         })
     }
@@ -64,4 +75,4 @@ function find(id, callback) {
         callback(resultat[0]);
     })
 }
-module.exports = {routerFunc,getAllData,find,getTable,getTables};
+module.exports = {routerFunc,getAllData,find,getTable,getTables,routerSession};

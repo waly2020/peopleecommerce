@@ -1,7 +1,7 @@
 const express = require("express");
 const pool = require("./pool");
 const routeAPI = express.Router();
-const {getAllData,find} = require("./fonctions");
+const {getAllData,find,routerSession} = require("./fonctions");
 const localStorage = require("./storage");
 
 
@@ -40,5 +40,14 @@ routeAPI.get("/api-add-to-panier/:article/:id",(req,res) =>{
     let userId = req.params.id;
     localStorage.setItem(`articles-${userId}`,articles);
 })
-
+routeAPI.post("/send-message",(req,res) =>{
+    let sql = "INSERT INTO contacte (nom,numero,message) VALUES (?,?,?)";
+    pool.query(sql,[req.body.nom,req.body.numero,req.body.message],(err) =>{
+        if(err){
+            routerSession(req,res,"pages/contacte",{li : 6, url : "contacte",activeStatus : "active", color : "error", texte : "Une erreur ses produit lor de l'envoie :("});
+        }else{
+            routerSession(req,res,"pages/contacte",{li : 6, url : "contacte",activeStatus : "active", color : "succes", texte : "Nous avons bien recu votre message : )"});
+        }
+    })
+})
 module.exports = routeAPI;

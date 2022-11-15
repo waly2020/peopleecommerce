@@ -15,7 +15,9 @@
     <%- include('./components/addUser') %>
     <div class="forms">
         <% if (data == 'connexion' ) { %>
-
+            <div class="error <%= active %>">
+                <p><%= texte %></p>
+            </div>
             <form action="/login" method="post" class="connexion active">
                 <div class="logo-form">
                     <h2>Connexion</h2>
@@ -37,6 +39,9 @@
             </form>
 
             <% } else {%>
+                <div class="error <%= active %>">
+                    <p><%= texte %> </p>
+                </div>
                 <form action="/create" method="post" class="creation active">
                     <div class="logo-form">
                         <h2>Créé un compte</h2>

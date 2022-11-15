@@ -14,7 +14,7 @@ header{
     }
 }
 .body{
-    height: calc(100vh - 400px);
+    height: 400px;
     @include flex-center;
     h2{
         color: #aaa;

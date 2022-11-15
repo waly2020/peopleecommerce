@@ -1,23 +1,32 @@
-// "http://localhost:10000/api/get-articles"
-// "https://marche-mont-bouet.onrender.com/"
+// "https://marche-mont-bouet.onrender.com/api/get-articles"
+// "https://marche-mont-bouet.onrender.com/api/get-articles"
 
-fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
+let nbrArticle = null;
+
+fetch("https://marche-mont-bouet.onrender.com/api/get-articlesapi/get-articles").then(res => {
     if (res.ok) {
         res.json().then(articles => {
             // start for
             let randomArticle = Math.floor(Math.random() * articles.length);
 
-            header_article.innerHTML = `
-            <div class="titre-article">${articles[randomArticle].nom}</div>
-            <img src="../images/upload/${articles[randomArticle].image}" alt="">
-            <div class="content-prix">
-            <p>${articles[randomArticle].prix} F</p>
-            </div>
-            <div class="contener-add-panier">
-            <div class="add-panier add_panier" data-id="${randomArticle}">+</div>
-            `;
+            try {
+                  header_article.innerHTML = `
+                    <div class="titre-article">${articles[randomArticle].nom}</div>
+                    <img src="../images/upload/${articles[randomArticle].image}" alt="">
+                    <div class="content-prix">
+                    <p>${articles[randomArticle].prix} F</p>
+                    </div>
+                    <div class="contener-add-panier">
+                    <div class="add-panier add_panier" data-id="${randomArticle}">+</div>
+                   `;
+                   if(articles.length >= 8){
+                    nbrArticle = 7;
+                  }
+            } catch (error) {
+                console.log();
+            }
 
-            for (let i = 0; i < articles.length; i++) {
+            for (let i = nbrArticle ?? articles.length - 1; i >= 0 ; i--) {
                 let article = articles[i];
                 contenerArticles.innerHTML += `
                 <div class="carte-article">

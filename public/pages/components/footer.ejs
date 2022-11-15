@@ -35,10 +35,13 @@
     <% } else {%>
         <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> " class="link-abonne">
             <% if (user?.isabonne == 1) { %>
-                <button class="btn-abone abonner active">Déja abonne</button>
+                <button class="btn-abone abonner active">Déjà abonner</button>
                <% } else {%>
                    <button class="btn-abone abonner">Abonnez-vous !</button>
             <% } %> 
     <% } %> 
     </a>
+    <div class="copyright">
+        <p>fait par waly le dev <a href="https://walyledev.netlify.app/" target="_blank">lien portfolio</a></p>
+    </div>
 </footer>

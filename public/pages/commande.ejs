@@ -61,12 +61,6 @@
                                     class="important"> FCFA</span></p>
                             <p class="titre-form">Dite nous ou vous trouver</p>
                             <div class="input_infos">
-                                <input type="tel" name="numero" id="numero"
-                                    placeholder="Votre numero de telephone..." required>
-                                <!-- <div class="my-number">
-                                    <label for="num">Utiliser mon numero de telephone</label>
-                                    <input type="checkbox" name="num" id="num">
-                                </div> -->
                                 <input type="text" name="ville" id="ville" placeholder="Ville/Cartier de livraison"
                                     required>
                             </div>
@@ -75,8 +69,8 @@
                                 <input type="date" name="date" id="fixe-date" required>
                             </div>
                             <div class="contener-btn">
-                                <button id="send" type="submit">Evoye la demande</button>
-                                <a href="/home"><button id="restore" type="button">Annuler</button></a>
+                                <button id="send" class="restore" type="submit">Evoye la demande</button>
+                                <a href="/home"><button class="restore" type="button">Annuler</button></a>
                             </div>
                         </form>
                         <% } else { %>
@@ -86,23 +80,13 @@
                                 <p class="total">Total : <span class="important sold" data-solde="prix"></span><span
                                         class="important">
                                         FCFA</span></p>
-                                <p class="titre-form">Laisser nous un numero pour appeler</p>
-                                <div class="input_infos">
-                                    <input type="tel" name="numero" id="numero"
-                                        placeholder="Votre numero de telephone..." required>
-                                    <!-- <div class="my-number">
-                                        <label for="num">Utiliser mon numero de telephone</label>
-                                        <input type="checkbox" name="num" id="num">
-                                    </div> -->
-                                </div>
-
                                 <p>Quand venez-vous recuperer vos articles ?</p>
                                 <div class="fixe_date_contener">
                                     <input type="date" name="date" id="date" required>
                                 </div>
                                 <div class="contener-btn">
-                                    <button id="send" type="submit">Evoye la demande</button>
-                                    <button id="restore" type="button">Annuler</button>
+                                    <button id="send" class="restore" type="submit">Evoye la demande</button>
+                                    <a href="/home"><button class="restore" type="button">Annuler</button></a>
                                 </div>
                             </form>
                             <% } %>

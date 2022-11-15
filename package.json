@@ -4,8 +4,8 @@
   "description": "site ecommerce de gabon mont bouet",
   "main": "main.js",
   "scripts": {
-    "start": "node scripts/main.js",
-    "dev": "nodemon scripts/main.js",
+    "start": "node -r dotenv/config scripts/main.js",
+    "dev": "node -r dotenv/config scripts/main.js",
     "sass-index": "sass --watch public/styles/sass/style.scss public/styles/css/style.css",
     "sass-connexions": "sass --watch public/styles/sass/connexions.scss public/styles/css/connexions.css",
     "sass-commande": "sass --watch public/styles/sass/commande.scss public/styles/css/commande.css",
@@ -20,6 +20,7 @@
   "author": "waly le dev",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
@@ -32,7 +33,6 @@
     "node-localstorage": "^2.2.1",
     "nodemon": "^2.0.20",
     "qrcode-terminal": "^0.12.0",
-    "util.promisify": "^1.1.1",
-    "whatsapp-web.js": "^1.18.2"
+    "util.promisify": "^1.1.1"
   }
 }

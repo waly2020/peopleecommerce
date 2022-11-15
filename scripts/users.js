@@ -28,7 +28,7 @@ class User {
         var values = [];
 
         for (let prop in body) {
-            values.push(body[prop]);
+            values.push(body[prop].toLowerCase());
         }
         console.log(values);
 

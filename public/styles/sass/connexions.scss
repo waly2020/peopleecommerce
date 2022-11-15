@@ -12,7 +12,24 @@ body {
 .forms{
     width: 100%;
     min-height: 100vh;
-    @include flex-center;
+    @include flex-center($direction : column);
+    .error{
+        display: none;
+        &.active{
+            @include flex-center;
+        }
+        width: 300px;
+        height: 50px;
+        background: rgba(255, 0, 0, 0.367);
+        margin: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.529);
+        p{
+            font-size: 12px;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
     form{
         h2{
             color: $border-color;

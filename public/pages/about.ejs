@@ -23,21 +23,25 @@
             <div class="texte">
                 <h2 class="titre">Salut...</h2>
                 <p>
-                    Je suis... ,lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque omnis, aliquam quibusdam illum similique ab voluptas vel corporis temporibus modi corrupti commodi laudantium et tempora consequatur odit tenetur. Esse voluptatum dolor ea totam inventore ipsum provident praesentium impedit ipsam, unde ratione, odio aspernatur omnis quia cumque aut? Dicta molestias eligendi rerum, facere veritatis impedit, quos odit quibusdam aliquam laudantium porro cumque placeat labore sint quisquam, totam magni vitae nulla dignissimos?
+                    Je suis un jeune entrepreneur gabonais au nom de Astrid Obame, bienvenue sur mon site où vous pouvez commander et réserver des articles tel que des appareils électriques, des vêtement, des appareils et plein d'autres.
                 </p>
             </div>
             <div class="img">
-                <img src="../images/articles/hugo-boss-slim-fit-shirt-homme-taille-xl.jpg" alt="Astrid obame">
+                <img src="../images/background/about.png" alt="Astrid obame">
             </div>
         </section>
         <section class="presentation">
             <div class="img">
-                <img src="../images/articles/hugo-boss-slim-fit-shirt-homme-taille-xl.jpg" alt="Astrid obame">
+                <img src="../images/background/MontBouet.jpg" alt="Astrid obame">
             </div>
             <div class="texte">
-                <h2 class="titre">Marche Mont Bout est...</h2>
+                <h2 class="titre">Marche Mont Bout online est...</h2>
                 <p>
-                    Une plate-forme qui vous permet... ,lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque omnis, aliquam quibusdam illum similique ab voluptas vel corporis temporibus modi corrupti commodi laudantium et tempora consequatur odit tenetur. Esse voluptatum dolor ea totam inventore ipsum provident praesentium impedit ipsam, unde ratione, odio aspernatur omnis quia cumque aut? Dicta molestias eligendi rerum, facere veritatis impedit, quos odit quibusdam aliquam laudantium porro cumque placeat labore sint quisquam, totam magni vitae nulla dignissimos?
+                 Une plate-forme qui offre a de nombreux consommateurs d'articles, une grande facilite d'achat réduisant
+                 les déplacements a des prix promotionnels. <br>
+                 Notre site offre à nos consommateurs, la possibilité da savourer les avantages des achats en ligne
+                 par des livraisons à moitié le prix. <br>
+                 Ce site intervient sur tout le Gabon.
                 </p>
             </div>
         </section>
@@ -48,25 +52,25 @@
                     <div class="icone">
                         <img src="../images/svg/livraison.svg">
                     </div>
-                    <p class="desc">Vous faire livre vos articles.</p>
+                    <p class="desc">Vous faire livré vos articles.</p>
                 </div>
                 <div class="atg2">
                     <div class="icone">
                         <img src="../images/svg/livraison.svg">
                     </div>
-                    <p class="desc">Reserver vos article.</p>
+                    <p class="desc">Reservé vos articles.</p>
                 </div>
                 <div class="atg3">
                     <div class="icone">
                         <img src="../images/svg/livraison.svg">
                     </div>
-                    <p class="desc">Vous faire livre quand vous voulez et ou vous voulez.</p>
+                    <p class="desc">Vous faire livré quand vous voulez et ou vous voulez.</p>
                 </div>
                 <div class="atg4">
                     <div class="icone">
                         <img src="../images/svg/livraison.svg">
                     </div>
-                    <p class="desc">Recuperer les articles Reserver quand vous voulez.</p>
+                    <p class="desc">Récupérer les articles réserver quand vous voulez.</p>
                 </div>
             </div>
         </section>
@@ -74,21 +78,21 @@
     <section class="thanks">
         <div class="contente">
             <% if (user?.isabonne == 1) { %>
-                <h2>Merci d'avoir rejoins la communauté</h2>
+                <h2>Merci d'avoir rejoint la communauté</h2>
             <% } else {%>
-                <h2>N'oubliez pas de vous abonné</h2>
+                <h2>N'oubliez pas de vous abonner.</h2>
             <% } %> 
             
             <div class="btns">
                 <a href="/abonne/<%= user ? user.id : "null" %> /<%= user ? user.isabonne : "null" %> /<%= url %> ">
                     <% if (user?.isabonne == 1) { %>
-                        <button class="abonner active">Déja abonne</button>
+                        <button class="abonner btn-abone active">Déjà abonné</button>
                        <% } else {%>
-                           <button class="abonner">Abonnez-vous !</button>
-                    <% } %> 
+                           <button class="abonner btn-abone">Abonnez-vous !</button>
+                    <% } %>
                 </a>
                 <p>|</p>
-                <button class="contact">Contactez nous !</button></div>
+                <a href="/contacte"><button class="contact">Contactez nous !</button></div></a>
         </div>
     </section>
     <%- include("./components/footer") %>

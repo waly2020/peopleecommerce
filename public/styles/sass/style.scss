@@ -223,6 +223,10 @@ main {
                     @include flex-center;
                     border: solid 3px #707070;
                     border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 80%;
+                    }
                 }
 
                 p {

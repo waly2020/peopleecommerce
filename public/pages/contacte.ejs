@@ -17,11 +17,14 @@
     </header>
     <h2 class="titre-h2">Vous pensez quoi de ce site ?</h2>
     <main class="body">
-        <form action="#">
+        <div class="status <%= activeStatus %> <%= color %>">
+            <p><%= texte %></p>
+        </div>
+        <form action="/send-message" method="post">
             <div class="inputs">
                 <div class="input">
                     <label for="name">*Votre nom</label>
-                    <input type="text" name="name" id="name" placeholder="Jean" required>
+                    <input type="text" name="nom" id="name" placeholder="Jean" required>
                 </div>
                 <div class="input">
                     <label for="numero">*Votre numero de telephone</label>
@@ -29,7 +32,7 @@
                 </div>
             </div>
             <textarea name="message" id="message" placeholder="votre message..." required></textarea>
-            <button>Envoyé le message</button>
+            <button type="submit">Envoyé le message</button>
         </form>
     </main>
     <%- include("./components/footer") %>

@@ -4,6 +4,7 @@ const routeAdmin = express.Router();
 const multer = require("multer");
 const path = require("path");
 const $ = require("../scripts/fonctions");
+const bcrypt = require("bcrypt");
 
 const storage = multer.diskStorage({
     destination : path.join('public','images','upload'),
@@ -53,13 +54,92 @@ routeAdmin.post("/add/aricle",(req,res) =>{
     })
 })
 
-routeAdmin.get("/admin", (req, res) => {
-    // 
-    $.getTables((tables,bool) =>{
-        if(bool){
-            res.render("admin/admin",{tables});
+routeAdmin.post("/add-services",(req,res) =>{
+    upload(req,res,err =>{
+        if(err){
+
+            res.render("admin/error",{error : err});
+
+        }else{
+
+            if(req.file !== undefined){
+
+                let sql = `INSERT INTO services (nom,description,image) VALUES (?,?,?)`;
+
+                pool.query(sql,[req.body.nom,req.body.description,req.file.filename],(err)=>{
+                    if(err){
+                        res.render("admin/error",{error : err});
+                    }else{
+                        // res.render("admin/succes",{file : req.file.filename,article : req.body});
+                        res.redirect("/admin");
+                    }
+                })
+
+            }else{
+                res.render("admin/error",{error : "Le champ de l'image est vide"})
+            }
         }
-    },"users","articles");
+    })
+})
+
+routeAdmin.post("/add-admin/:name/:password",(req,res) =>{
+    let {name,password} = req.params;
+
+    let pass = bcrypt.hashSync(password,10);
+    console.log(pass);
+
+    let sql = `INSERT INTO admin (nom,password) VALUES (?,?)`;
+    pool.query(sql,[name,pass],(err =>{
+        if(err){
+            console.log(err);
+        }else{
+            res.send("admin ajouter");
+        }
+    }))
+});
+
+routeAdmin.post("/admin-login",(req,res) =>{
+    let {nom,password} = req.body;
+
+    let sql = `SELECT * FROM admin WHERE nom = ?`;
+
+    pool.query(sql,nom,(err,resultat) =>{
+        if(err){
+            res.render("admin/connexion",{error : "active", texte : `quelques chose ses mal passe veuillez ressayer plus tard :(`});
+            return;
+        }else{
+            // console.log(resultat[0]);
+           if(resultat.length){
+            if(bcrypt.compareSync(password,resultat[0].password)){
+                req.session.admin = resultat[0];
+                res.redirect("/admin");
+            }else{
+                res.render("admin/connexion",{error : "active", texte : "Mot de passe incorecte :("});
+            }
+           }else{
+            res.render("admin/connexion",{error : "active", texte : `${nom} n'existe pas :(`});
+        }
+        }
+    })
+})
+
+routeAdmin.get("/admin", (req, res) => {
+    //
+    if (req.session?.admin){
+        let admin = req.session.admin;
+        $.getTables((tables,bool) =>{
+            if(bool){
+                res.render("admin/admin",{tables,admin});
+            }
+        },"users","articles","contacte","commande","services");
+    }else{
+        res.redirect("/admin-connexion")
+    }
+    
+})
+
+routeAdmin.get("/admin-connexion",(req,res) =>{
+    res.render("admin/connexion",{error : "none", texte : ""});
 })
 
 routeAdmin.delete("/delete/:table/:id",(req,res) =>{

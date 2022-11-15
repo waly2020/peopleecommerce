@@ -6,7 +6,7 @@ const ejs = require("ejs");
 const routerPages = require("./pages");
 const routeAPI = require("./routes");
 const routeAdmin = require("../scripts-admin/routes");
-const chatbot = require("./chatbot");
+const routChatBot = require("./chatbot");
 
 
 server.use(express.static("public"));
@@ -28,7 +28,7 @@ server.use(session({
 server.use("/",routerPages);
 server.use("/",routeAPI);
 server.use("/",routeAdmin);
-server.use("/",chatbot);
+server.use("/",routChatBot);
 // page 404
 server.use((req,res,next) =>{
     res.status(404);
@@ -37,6 +37,6 @@ server.use((req,res,next) =>{
 
 const port = process.env.PORT;
 
-server.listen(10000,() => console.log("port " + 10000));
+server.listen(port,() => console.log("port " + port));
 
 module.exports = server;

@@ -1,22 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,400;0,700;1,100&display=swap");
 *, ::after, ::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat Alternates";
 }
 
 body {
   background: #232227;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 body > div {
   position: relative;
   width: 100%;
+  max-width: 600px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.livraison .contener-animation {
+.contener .contener-animation {
   width: 100%;
   padding: 10px;
   display: flex;
@@ -24,35 +30,80 @@ body > div {
   justify-content: center;
   align-items: center;
 }
-.livraison .contener-animation .texte {
+.contener .contener-animation .texte {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
 }
-.livraison .contener-animation .texte h2 {
-  color: greenyellow;
-  font-size: 2em;
+.contener .contener-animation .texte h2 {
+  color: #fff;
+  font-size: 1.3em;
 }
-.livraison .contener-animation .texte > * {
+.contener .contener-animation .texte > * {
   margin-bottom: 20px;
 }
-.livraison .contener-animation .texte a {
+.contener .contener-animation .texte a {
+  font-size: 12px;
   color: #aaa;
 }
-.livraison .contener-animation .texte a:hover {
+.contener .contener-animation .texte a:hover {
   color: royalblue;
 }
-.livraison .contener-animation .animation {
+.contener .contener-animation .animation {
   position: relative;
   width: 100%;
   max-width: 400px;
   height: 200px;
   overflow: hidden;
 }
-.livraison .contener-animation .animation .paysage {
+.contener .contener-animation .animation.reservation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contener .contener-animation .animation .error {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contener .contener-animation .animation .error img {
+  height: 100%;
+}
+.contener .contener-animation .animation .box {
+  position: relative;
+  height: 100%;
+  display: inline-block;
+}
+.contener .contener-animation .animation .box img {
+  height: 100%;
+}
+.contener .contener-animation .animation .box .hour {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: solid 3.4px #fff;
+  left: 63%;
+  background: #232227;
+  animation: rotate 0.8s linear infinite;
+}
+.contener .contener-animation .animation .box .hour span {
+  position: absolute;
+  display: inline-block;
+  width: 3px;
+  height: 50%;
+  left: 50%;
+  top: 30%;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+}
+.contener .contener-animation .animation .paysage {
   position: absolute;
   width: 300%;
   height: 100%;
@@ -60,61 +111,61 @@ body > div {
   animation: route 2s linear infinite;
   z-index: 300;
 }
-.livraison .contener-animation .animation .paysage .pierre {
+.contener .contener-animation .animation .paysage .pierre {
   position: absolute;
   width: 20px;
   height: 6px;
   border: solid 3px #888;
   bottom: -3px;
 }
-.livraison .contener-animation .animation .paysage .pierre.p1 {
+.contener .contener-animation .animation .paysage .pierre.p1 {
   left: 35%;
 }
-.livraison .contener-animation .animation .paysage .pierre.p2 {
+.contener .contener-animation .animation .paysage .pierre.p2 {
   left: 50%;
 }
-.livraison .contener-animation .animation .paysage .pierre.p3 {
+.contener .contener-animation .animation .paysage .pierre.p3 {
   left: 62%;
 }
-.livraison .contener-animation .animation .truck {
+.contener .contener-animation .animation .truck {
   position: absolute;
   bottom: 0;
   left: 30px;
   width: 100px;
 }
-.livraison .contener-animation .animation .truck .roues {
+.contener .contener-animation .animation .truck .roues {
   position: absolute;
   width: 15px;
   height: 15px;
   bottom: 4.3px;
   border-radius: 50%;
-  background: #fff;
+  background: #232227;
   z-index: 100;
   animation: rotate 0.5s linear infinite;
 }
-.livraison .contener-animation .animation .truck .roues::after, .livraison .contener-animation .animation .truck .roues::before {
+.contener .contener-animation .animation .truck .roues::after, .contener .contener-animation .animation .truck .roues::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 1px;
-  background: #888;
+  background: #fff;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.livraison .contener-animation .animation .truck .roues::after {
+.contener .contener-animation .animation .truck .roues::after {
   transform: translate(-50%, -50%) rotate(90deg);
 }
-.livraison .contener-animation .animation .truck .roues.r1 {
+.contener .contener-animation .animation .truck .roues.r1 {
   left: 75.3px;
 }
-.livraison .contener-animation .animation .truck .roues.r2 {
+.contener .contener-animation .animation .truck .roues.r2 {
   left: 32.9px;
 }
-.livraison .contener-animation .animation .truck .roues.r3 {
+.contener .contener-animation .animation .truck .roues.r3 {
   left: 5px;
 }
-.livraison .contener-animation .animation .truck img {
+.contener .contener-animation .animation .truck img {
   position: absolute;
   bottom: 0;
   width: 100%;

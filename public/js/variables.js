@@ -2,6 +2,7 @@ let contenerArticles = document.querySelector(".contener-articles.section");
 let dataLocalStorage = JSON.parse(localStorage.getItem("articles")) ?? [];
 let panierStorage = [...dataLocalStorage];
 let put_article = document.querySelectorAll(".put-article-to-panier");
+let btn_restore = document.querySelectorAll(".restore");
 
 let userId = document.querySelector(".user-bar-menu").getAttribute("data-userId");
 
@@ -32,3 +33,15 @@ const bar_menu = document.querySelector(".bar-menu");
 
 // boutons d'abonnement
 const link_abn = document.querySelectorAll(".link-abonne");
+/**
+ * 
+ * @param {HTMLElement} btn button
+ */
+function restore(btn){
+    btn.addEventListener("click", () =>{
+        localStorage.removeItem("articles");
+    })
+}
+btn_restore.forEach(btn =>{
+    restore(btn);
+})

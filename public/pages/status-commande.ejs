@@ -8,9 +8,9 @@
     <title><%= status %> </title>
 </head>
 <body>
-    <% if (status == "sucess") { %> 
+    <% if (status == "succes") { %> 
        <% if (commande == "livraison") { %>
-           <div class="livraison">
+           <div class="contener">
 
             <div class="contener-animation">
 
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="texte">
-                    <h2>Nous avons bien recu votre demande de <%= commande %>,nous vous contacterons d'ici peut... merci</h2>
+                    <h2>Nous avons bien reçu votre demande de <%= commande %>,nous vous contacterons d'ici peut... merci</h2>
                     <a href="/">
                         <p>Retour a l'acceuil</p>
                     </a>
@@ -42,14 +42,54 @@
 
            </div>
        <% } else { %>
-           <div class="reservation">
-               <%= commande %> 
+           <div class="contener">
+            <div class="contener-animation">
+
+                <div class="animation reservation">
+                   <div class="box">
+                    <div class="hour"><span></span></div>
+                    <img src="../images/svg/reservation-anime.svg">
+                   </div>
+                </div>
+                <div class="texte">
+                    <h2>Nous avons bien reçu votre demande de <%= commande %>,nous vous contacterons d'ici peu... merci</h2>
+                    <a href="/">
+                        <p>Retour a l'acceuil</p>
+                    </a>
+                    <a href="/boutique">
+                        <p>Aller dans la boutique</p>
+                    </a>
+                </div>
+
+            </div> 
            </div>
        <% } %>
     <% } else { %>
-        <div class="error">
-            <%= status %> 
-        </div>
+        <div class="contener">
+            <div class="contener-animation">
+
+                <div class="animation">
+                   <div class="error">
+                    <img src="../images/svg/error.svg">
+                   </div>
+                </div>
+                <div class="texte">
+                    <h2>
+                        Erreur lors de l'envoi de la demande
+                    </h2>
+                    <a href="/action/<%= commande %>">
+                      <p>cliquez ici pour réessayer</p>
+                    </a>
+                    <a href="/">
+                        <p>Retour a l'acceuil</p>
+                    </a>
+                    <a href="/boutique">
+                        <p>Aller dans la boutique</p>
+                    </a>
+                </div>
+
+            </div> 
+           </div>
     <% } %> 
 </body>
 </html>
