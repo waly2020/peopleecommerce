@@ -72,8 +72,6 @@ router.get("/home",(req,res) =>{
     pool.query(sql,[],(err,table) =>{
         if(err){
             console.log(err);
-        }else{
-            console.log("donne recupere");
         }
         res.render("pages/index",{ opp: req?.session?.opp ?? null, user: user,li : 1,url : "home",services : table ?? []});
     })
@@ -105,8 +103,6 @@ router.get("/services",(req,res) =>{
     pool.query(sql,[],(err,table) =>{
         if(err){
             console.log(err);
-        }else{
-            console.log("donne recupere");
         }
         res.render("pages/services",{ opp: req?.session?.opp ?? null, user: user,li : 3,url : "services",services : table ?? []});
     })

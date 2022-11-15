@@ -8,9 +8,7 @@ $.getData(data =>{
 })
 console.log("script api");
 put_article.forEach(btn =>{
-    console.log("boocle faite");
     btn.addEventListener("click", () =>{
-        console.log("evenement appeler");
         $.putArticles(btn.getAttribute("data-redirect"));
     })
 })
