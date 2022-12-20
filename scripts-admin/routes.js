@@ -6,6 +6,7 @@ const path = require("path");
 const $ = require("../scripts/fonctions");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
+const localStorage = require("../scripts/storage");
 
 const storage = multer.diskStorage({
     destination: path.join('public', 'images', 'upload'),
@@ -137,6 +138,9 @@ routeAdmin.delete("/delete/:table/:id", (req, rep) => {
                         console.log(err);
                     } else {
                         rep.send("ok");
+                        if (res[0].numero) {
+                            localStorage.removeItem(`articles-${res[0].id}`);
+                        }
                     }
                 })
             } else {

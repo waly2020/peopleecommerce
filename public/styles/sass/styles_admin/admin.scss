@@ -380,12 +380,18 @@ $sup-color : rgb(164, 7, 7);
     text-align: center;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
     background: #fff;
 
     &>* {
         margin-bottom: 20px;
+    }
+
+    .icone-sevice {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .icone {

@@ -9,7 +9,7 @@ let active = true;
 for (let i = 0; i < panierStorage.length; i++) {
     let article = panierStorage[i];
 
-    if(article){
+    if (article) {
         contenerArticleCommande.innerHTML += `
           <div class="img-article ${active == true ? "active" : ""}" data-position="${i + 1}">
                 
@@ -19,7 +19,7 @@ for (let i = 0; i < panierStorage.length; i++) {
 
         </div>
     `;
-    active = false;
+        active = false;
     }
 
 }
@@ -49,19 +49,19 @@ btn_slide_img.forEach(btn => {
 // fin animation page commande
 
 let sold = {
-    quantiter : (function(){
+    quantiter: (function () {
         let quant = 0;
-        for(let c of panierStorage){
-            if(c){
-                quant += c.quantiter
+        for (let c of panierStorage) {
+            if (c) {
+                quant += c.quantiter;
             }
         }
         return quant;
     })(),
-    prix : (function(){
+    prix: (function () {
         let prix = 0;
-        for(let c of panierStorage){
-            if(c){
+        for (let c of panierStorage) {
+            if (c) {
                 prix += (c.prix * c.quantiter)
             }
         }
@@ -69,23 +69,23 @@ let sold = {
     })(),
 }
 
-soldes.forEach(item =>{
+soldes.forEach(item => {
     item.textContent = sold[item.getAttribute("data-solde")];
 })
 
-send.addEventListener("click", e =>{
-    for (let i = 0; i < inputs.length; i++){
+send.addEventListener("click", e => {
+    for (let i = 0; i < inputs.length; i++) {
         let input = inputs[i];
-        if(input.value){
+        if (input.value) {
             canload = true;
-        }else{
+        } else {
             canload = false;
         }
     }
-    if(canload){
+    if (canload) {
         loader.classList.add("active");
     }
-    else{
+    else {
         e.preventDefault();
     }
 })

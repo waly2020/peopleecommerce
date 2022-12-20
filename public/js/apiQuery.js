@@ -1,6 +1,6 @@
 let nbrArticle = null;
 
-fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
+fetch("http://localhost:10000/api/get-articles").then(res => {
     if (res.ok) {
         res.json().then(articles => {
             // start for

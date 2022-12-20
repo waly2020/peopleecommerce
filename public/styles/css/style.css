@@ -835,10 +835,12 @@ header > .background {
 }
 .textes h1 {
   color: #fff;
-  font-size: 3em;
+  font-size: 2.5em;
+  word-break: normal !important;
 }
 .textes h1 span {
   font-size: 1.5em;
+  word-break: normal !important;
 }
 .textes p {
   color: #fff;
@@ -1127,6 +1129,10 @@ main {
 }
 .services .contener-services .service .icone-sevice {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .services .contener-services .service .icone-sevice .icone {
   width: 100px;

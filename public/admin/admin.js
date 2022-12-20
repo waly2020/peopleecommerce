@@ -47,7 +47,7 @@ active_form.addEventListener("click", () => {
 
 function suprimer(table, id) {
 
-    const url = `https://marche-mont-bouet.onrender.com/delete/${table}/${id}`;
+    const url = `http://localhost:10000/delete/${table}/${id}`;
     console.log("lancement du fech");
     fetch(url, { method: "DELETE" }).then(res => {
         if (res.ok) {

@@ -319,6 +319,12 @@
 .service > * {
   margin-bottom: 20px;
 }
+.service .icone-sevice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .service .icone {
   width: 100px;
   height: 100px;
