@@ -35,7 +35,7 @@ active_page.forEach((btn, key, array) => {
         active_aside.classList.remove("active");
         // fin aside
         key_forms = parseFloat(btn.getAttribute("data-form"));
-        localStorage.setItem("page",`${key}`);
+        localStorage.setItem("page", `${key}`);
     })
 });
 // activation du forlmulaire
@@ -45,25 +45,24 @@ active_form.addEventListener("click", () => {
     }
 });
 
-function suprimer(table,id){
+function suprimer(table, id) {
 
     const url = `https://marche-mont-bouet.onrender.com/delete/${table}/${id}`;
-
-    fetch (url,{method : "DELETE"}).then(res => {
-        if(res.ok){
+    console.log("lancement du fech");
+    fetch(url, { method: "DELETE" }).then(res => {
+        if (res.ok) {
             window.location.href = "/admin";
-            // document.onload();
-        }else{
+        } else {
             console.log("non sup");
         }
     })
 }
-see_image.forEach(btn =>{
-    btn.addEventListener("click", () =>{
-        for(let i = 0; i < article_users.length; i++){
+see_image.forEach(btn => {
+    btn.addEventListener("click", () => {
+        for (let i = 0; i < article_users.length; i++) {
             let page = article_users[i];
 
-            if(page.getAttribute("data-see") == btn.getAttribute("data-see")){
+            if (page.getAttribute("data-see") == btn.getAttribute("data-see")) {
                 page.classList.toggle("active");
                 break;
             }

@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat Alternates";
+  word-break: break-all;
 }
 
 /* margin de la page
@@ -650,6 +651,7 @@ header > .background {
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
   gap: 10px;
+  align-items: flex-start;
   margin: auto;
 }
 .body .contente-sevices .service {

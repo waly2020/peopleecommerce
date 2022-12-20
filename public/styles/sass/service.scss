@@ -2,28 +2,33 @@
 @import './components/navigation.scss';
 
 
-header{
-    @include style-header(#000000a9,550px);
-    .contente{
+header {
+    @include style-header(#000000a9, 550px);
+
+    .contente {
         grid-column: 1 / span 2;
         @include flex-center;
-        h1{
+
+        h1 {
             text-align: center;
             color: #fff;
             font-size: 5em;
         }
     }
-    & > .background{
+
+    &>.background {
         right: 0;
         bottom: 0;
         left: initial;
         top: initial;
     }
 }
-.body{
+
+.body {
     padding: 10px;
     margin-bottom: 40px;
-    .titre-h2-service{
+
+    .titre-h2-service {
         position: relative;
         width: 100%;
         max-width: 1230px;
@@ -31,7 +36,8 @@ header{
         padding-bottom: 7px;
         color: $main-color;
         font-size: 2em;
-        &::after{
+
+        &::after {
             content: "";
             position: absolute;
             width: 80px;
@@ -43,44 +49,52 @@ header{
         }
     }
 
-    .contente-sevices{
+    .contente-sevices {
         width: 100%;
         max-width: 1230px;
         min-height: 400px;
         display: grid;
-        grid-template-columns: repeat(auto-fill,300px);
+        grid-template-columns: repeat(auto-fill, 300px);
         gap: 10px;
+        align-items: flex-start;
         margin: auto;
-        .service{
+
+        .service {
             width: 300px;
             min-height: 300px;
             padding-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 0 3px 2px rgba(57, 57, 57, 0.274);
         }
-        .desc-service{
+
+        .desc-service {
             padding: 10px;
-            p{
+
+            p {
                 text-align: center;
                 color: #555;
             }
         }
-        .img-service{
+
+        .img-service {
             width: 100%;
             height: 280px;
             @include flex-center($direction : column);
-            .img{
+
+            .img {
                 width: 200px;
                 height: 200px;
                 border-radius: 50%;
                 border: solid 10px rgb(235, 200, 0);
                 @include flex-center;
                 margin-bottom: 10px;
-                img{
+
+                img {
                     width: 40%;
                 }
             }
-            p{
+
+            p {
                 font-weight: bold;
                 color: rgb(235, 200, 0);
             }
@@ -89,7 +103,7 @@ header{
 }
 
 @media screen and (max-width:745px) {
-    header .background{
+    header .background {
         width: auto;
         height: 100%;
     }

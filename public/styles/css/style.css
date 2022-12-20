@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat Alternates";
+  word-break: break-all;
 }
 
 /* margin de la page
@@ -1112,17 +1113,20 @@ main {
   grid-template-columns: repeat(auto-fill, 280px);
   gap: 40px;
   justify-content: center;
+  align-items: flex-start;
   padding: 40px 0;
 }
 .services .contener-services .service {
   width: 280px;
-  height: 320px;
+  min-height: 320px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   background: #fff;
+}
+.services .contener-services .service .icone-sevice {
+  margin-bottom: 30px;
 }
 .services .contener-services .service .icone-sevice .icone {
   width: 100px;

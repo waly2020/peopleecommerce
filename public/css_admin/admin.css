@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  word-break: break-all;
 }
 
 .suprimer {
@@ -307,12 +308,11 @@
 
 .service {
   width: 300px;
-  height: 300px;
+  min-height: 300px;
   padding: 0 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: #fff;
 }
@@ -437,6 +437,7 @@ main .pages .page .contente.modifier {
 main .pages .page .contente.modifier .contenu {
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
+  align-items: flex-start;
   gap: 25px;
 }
 main .pages .page .contente.modifier .forms {

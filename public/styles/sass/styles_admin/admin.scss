@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    word-break: break-all;
 }
 
 $text-color-1 : #4B49AC;
@@ -45,7 +46,8 @@ $sup-color : rgb(164, 7, 7);
     color: $text-color-1;
     @include line($width-line, $position);
 }
-.suprimer{
+
+.suprimer {
     padding: 5px 15px;
     border: none;
     outline: none;
@@ -54,6 +56,7 @@ $sup-color : rgb(164, 7, 7);
     border-radius: 4px;
     margin: 10px 20px;
 }
+
 // style messages
 .message {
     width: 300px;
@@ -73,44 +76,53 @@ $sup-color : rgb(164, 7, 7);
         }
     }
 }
+
 // style demande
-.demande{
+.demande {
     padding: 10px;
-    &.livraison{
-        .titre-demande{
+
+    &.livraison {
+        .titre-demande {
             background: rgba(255, 166, 0, 0.662);
         }
     }
-    &.reservation{
-        .titre-demande{
+
+    &.reservation {
+        .titre-demande {
             background: rgba(0, 128, 0, 0.656);
         }
     }
-    p{
+
+    p {
         margin-bottom: 10px;
         font-size: 14px;
         color: #555;
-        &.titre-demande{
+
+        &.titre-demande {
             padding: 10px 5px;
             font-size: 16px;
             color: #fff;
             font-weight: bold;
         }
     }
+
     background: #fff;
-    button{
+
+    button {
         margin: 0;
         border: none;
         outline: none;
         padding: 8px 15px;
         margin-right: 10px;
         cursor: pointer;
-        &.see-images{
+
+        &.see-images {
             background: royalblue;
             color: #fff;
         }
     }
-    .article-users{
+
+    .article-users {
         position: fixed;
         width: 100%;
         height: 100%;
@@ -118,7 +130,7 @@ $sup-color : rgb(164, 7, 7);
         left: 0;
         background: #fff;
         display: grid;
-        grid-template-columns: repeat(auto-fill,300px);
+        grid-template-columns: repeat(auto-fill, 300px);
         opacity: 0;
         gap: 10px;
         justify-content: center;
@@ -126,12 +138,15 @@ $sup-color : rgb(164, 7, 7);
         z-index: 100000;
         transform: scale(0);
         transition: opacity .5s;
-        &.active{
+
+        &.active {
             transform: scale(1);
             opacity: 1;
         }
+
         overflow-y: scroll;
-        .close-see{
+
+        .close-see {
             position: fixed;
             right: 5px;
             top: 5px;
@@ -149,16 +164,19 @@ $sup-color : rgb(164, 7, 7);
             opacity: .5;
             cursor: pointer;
         }
-        .img-see{
+
+        .img-see {
             position: relative;
             width: 100%;
             height: 300px;
             border: solid 2px #aaa;
             overflow: hidden;
-            img{
+
+            img {
                 width: 100%;
             }
-            p{
+
+            p {
                 position: absolute;
                 min-width: 30%;
                 height: 30px;
@@ -170,21 +188,25 @@ $sup-color : rgb(164, 7, 7);
                 font-weight: bold;
                 padding: 0 8px;
             }
-            .quantiter{
+
+            .quantiter {
                 right: 0;
                 top: 0;
             }
-            .prix-see{
+
+            .prix-see {
                 left: 0;
                 top: 0;
             }
-            .nom-see{
+
+            .nom-see {
                 bottom: 0;
                 left: 0;
             }
         }
     }
 }
+
 // style users
 .user {
     width: 300px;
@@ -353,12 +375,12 @@ $sup-color : rgb(164, 7, 7);
 // style service
 .service {
     width: 300px;
-    height: 300px;
+    min-height: 300px;
     padding: 0 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     background: #fff;
 
@@ -382,7 +404,8 @@ $sup-color : rgb(164, 7, 7);
             text-transform: uppercase;
             color: #555;
         }
-        img{
+
+        img {
             width: 80%;
         }
     }
@@ -437,7 +460,8 @@ main {
         .logo {
             width: 50px;
             height: 50px;
-            img{
+
+            img {
                 width: 100%;
                 height: 100%;
             }
@@ -481,6 +505,7 @@ main {
                         display: grid;
                         grid-template-columns: repeat(auto-fill, 300px);
                         // justify-items: center;
+                        align-items: flex-start;
                         gap: 25px;
                     }
 
@@ -556,16 +581,19 @@ main {
                                 align-items: center;
                                 overflow: hidden;
                                 box-shadow: 0 5px 0 rgb(46, 77, 171);
-                                & > *{
+
+                                &>* {
                                     position: absolute;
                                 }
-                                input{
+
+                                input {
                                     width: 100%;
                                     height: 100%;
                                     opacity: 0;
                                     cursor: pointer;
                                 }
-                                img{
+
+                                img {
                                     width: 30px;
                                 }
 

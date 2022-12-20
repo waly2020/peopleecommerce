@@ -11,16 +11,16 @@ class User {
      */
     find(users, callback) {
 
-        let field = ['name','numero'];
+        let field = ['name', 'numero'];
         let sql = `SELECT * FROM users WHERE ${field[0]} = ? AND ${field[1]} = ?`;
-         
-        pool.query(sql,users, (err, resultat) => {
+
+        pool.query(sql, users, (err, resultat) => {
             if (err) {
                 throw err;
-            }else{
+            } else {
                 callback(resultat[0]);
             }
-            
+
         })
     }
     create(body, callback) {
@@ -30,7 +30,6 @@ class User {
         for (let prop in body) {
             values.push(body[prop].toLowerCase());
         }
-        console.log(values);
 
         let sql = `INSERT INTO users (name,numero,image,isabonne) VALUES (?,?,'user-${Math.floor(Math.random() * 4)}.png',FALSE)`;
 
@@ -50,10 +49,10 @@ class User {
             if (resultat) {
                 callback(resultat);
                 return;
-            }else{
+            } else {
                 callback(null);
             }
-            
+
         })
     }
 }

@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node -r dotenv/config scripts/main.js",
-    "dev": "node -r dotenv/config scripts/main.js",
+    "dev": "nodemon -r dotenv/config scripts/main.js",
     "sass-index": "sass --watch public/styles/sass/style.scss public/styles/css/style.css",
     "sass-connexions": "sass --watch public/styles/sass/connexions.scss public/styles/css/connexions.css",
     "sass-commande": "sass --watch public/styles/sass/commande.scss public/styles/css/commande.css",

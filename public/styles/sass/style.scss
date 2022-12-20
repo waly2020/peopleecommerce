@@ -57,14 +57,14 @@ header {
     @include flex-center;
     transform-style: preserve-3d;
 
-    .header-article{
+    .header-article {
         position: relative;
         width: 100%;
-        
+
         max-width: 400px;
         @include flex-center;
 
-        .titre-article{
+        .titre-article {
             width: 200px;
             height: 50px;
             background: orange;
@@ -75,25 +75,28 @@ header {
             font-weight: bold;
             @include flex-center;
 
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
         }
 
-        & > div{
+        &>div {
             position: absolute;
             background: rosybrown;
         }
-        img{
+
+        img {
             width: 100%;
             max-width: 300px;
         }
-        .content-prix{
+
+        .content-prix {
             bottom: 60px;
             width: 200px;
             height: 50px;
             background: orange;
             border-radius: 12% 10% 10% 12% / 56% 44% 52% 44%;
             @include flex-center;
-            p{
+
+            p {
                 width: 190px;
                 height: 40px;
                 text-transform: uppercase;
@@ -105,7 +108,8 @@ header {
                 box-shadow: 0 0 3px 2px rgba(35, 34, 34, 0.205);
             }
         }
-        .contener-add-panier{
+
+        .contener-add-panier {
             width: 60px;
             height: 60px;
             bottom: 30px;
@@ -115,7 +119,8 @@ header {
             cursor: pointer;
             box-shadow: 0 0 3px 2px rgba(24, 24, 24, 0.51);
             @include flex-center;
-            .add-panier{
+
+            .add-panier {
                 width: 45px;
                 height: 45px;
                 background: rgb(2, 14, 67);
@@ -205,19 +210,22 @@ main {
         grid-template-columns: repeat(auto-fill, 280px);
         gap: 40px;
         justify-content: center;
+        align-items: flex-start;
         padding: 40px 0;
 
         .service {
             width: 280px;
-            height: 320px;
+            min-height: 320px;
             padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            // justify-content: space-between;
             align-items: center;
             background: #fff;
 
             .icone-sevice {
+                margin-bottom: 30px;
+
                 .icone {
                     width: 100px;
                     height: 100px;
@@ -225,7 +233,8 @@ main {
                     border: solid 3px #707070;
                     border-radius: 50%;
                     overflow: hidden;
-                    img{
+
+                    img {
                         width: 80%;
                     }
                 }
@@ -267,7 +276,8 @@ main {
         grid-template-rows: repeat(2, 1fr);
         height: 900px;
     }
-    header > .background{
+
+    header>.background {
         width: auto;
         height: 100%;
     }
@@ -280,13 +290,15 @@ main {
         max-width: 400px;
     }
 }
+
 @media screen and (max-width:690px) {
 
-   header > .background{
+    header>.background {
         width: auto;
         height: 100%;
     }
 }
+
 @media screen and (max-width:450px) {
 
     header .textes h1 {

@@ -7,7 +7,7 @@ fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
             let randomArticle = Math.floor(Math.random() * articles.length);
 
             try {
-                  header_article.innerHTML = `
+                header_article.innerHTML = `
                     <div class="titre-article">${articles[randomArticle].nom}</div>
                     <img src="../images/upload/${articles[randomArticle].image}" alt="">
                     <div class="content-prix">
@@ -16,14 +16,14 @@ fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
                     <div class="contener-add-panier">
                     <div class="add-panier add_panier" data-id="${randomArticle}">+</div>
                    `;
-                   if(articles.length >= 8){
+                if (articles.length >= 8) {
                     nbrArticle = 7;
-                  }
+                }
             } catch (error) {
-                console.log();
+                return
             }
 
-            for (let i = nbrArticle ?? articles.length - 1; i >= 0 ; i--) {
+            for (let i = nbrArticle ?? articles.length - 1; i >= 0; i--) {
                 let article = articles[i];
                 contenerArticles.innerHTML += `
                 <div class="carte-article">
@@ -53,12 +53,12 @@ fetch("https://marche-mont-bouet.onrender.com/api/get-articles").then(res => {
                                 articleid: articles[articleId].id,
                                 titre: articles[articleId].nom,
                                 prix: articles[articleId].prix,
-                                quantiter : 1,
-                                image : articles[articleId].image,
+                                quantiter: 1,
+                                image: articles[articleId].image,
                             };
                             localStorage.setItem("articles", JSON.stringify(panierStorage));
                             setQuantityHtml();
-                        }else{
+                        } else {
                             shadow_add_user.classList.add("active");
                             add_user.classList.add("active");
                         }

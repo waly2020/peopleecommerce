@@ -7,11 +7,11 @@ function routerFunc(router, render, url, params = {}) {
         let user = req?.session?.user ?? null;
         let reqParm = req?.params?.data ?? null;
 
-        res.render(render, { opp: req?.session?.opp ?? null, user: user, data: reqParm,...req.params, ...params});
+        res.render(render, { opp: req?.session?.opp ?? null, user: user, data: reqParm, ...req.params, ...params });
     })
 }
 
-function routerSession (req,res,render,params = {}){
+function routerSession(req, res, render, params = {}) {
     let user = req?.session?.user ?? null;
     let reqParm = req?.params?.data ?? null;
 
@@ -29,34 +29,32 @@ function getAllData(table, callback) {
     })
 }
 // -------------------
-function getTable (tableName,callback){
+function getTable(tableName, callback) {
 
     pool.query(`SELECT * FROM ${tableName}`, [], (err, resultat) => {
 
         if (err) {
-            console.log("n'as pas pue recuperer la data");
             return null;
-        }else{
-        console.log("recuperer :)");
-        callback(resultat);
+        } else {
+            callback(resultat);
         }
     })
 }
 // ----------------------------
-function getTables (callback,...tables){
+function getTables(callback, ...tables) {
 
-    let resultat = [],bool = false;
+    let resultat = [], bool = false;
 
-    for (let i = 0; i < tables.length; i++){
+    for (let i = 0; i < tables.length; i++) {
         let table = tables[i];
-        getAllData(table,rest =>{
+        getAllData(table, rest => {
             // resultat.push(rest);
             // resultat.length == tables.length
-            if(rest){
-                resultat.push({tableName : table,table : rest});
-                if(resultat.length === tables.length){
+            if (rest) {
+                resultat.push({ tableName: table, table: rest });
+                if (resultat.length === tables.length) {
                     bool = true;
-                    callback(resultat,bool);
+                    callback(resultat, bool);
                 }
             }
         })
@@ -67,12 +65,12 @@ function find(id, callback) {
 
     let field = 'id';
     let sql = `SELECT * FROM users WHERE ${field} = ?`;
-     
-    pool.query(sql,id, (err, resultat) => {
+
+    pool.query(sql, id, (err, resultat) => {
         if (err) {
             throw err;
         }
         callback(resultat[0]);
     })
 }
-module.exports = {routerFunc,getAllData,find,getTable,getTables,routerSession};
+module.exports = { routerFunc, getAllData, find, getTable, getTables, routerSession };
