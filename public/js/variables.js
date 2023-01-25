@@ -3,7 +3,9 @@ let dataLocalStorage = JSON.parse(localStorage.getItem("articles")) ?? [];
 let panierStorage = [...dataLocalStorage];
 let put_article = document.querySelectorAll(".put-article-to-panier");
 let btn_restore = document.querySelectorAll(".restore");
-
+// https://marche-mont-bouet.onrender.com/home
+// let host = "http://localhost:10000/";
+let host = " https://marche-mont-bouet.onrender.com/";
 let userId = document.querySelector(".user-bar-menu").getAttribute("data-userId");
 
 // contener article aleatoire
@@ -37,11 +39,11 @@ const link_abn = document.querySelectorAll(".link-abonne");
  * 
  * @param {HTMLElement} btn button
  */
-function restore(btn){
-    btn.addEventListener("click", () =>{
+function restore(btn) {
+    btn.addEventListener("click", () => {
         localStorage.removeItem("articles");
     })
 }
-btn_restore.forEach(btn =>{
+btn_restore.forEach(btn => {
     restore(btn);
 })

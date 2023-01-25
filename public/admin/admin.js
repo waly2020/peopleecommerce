@@ -7,6 +7,8 @@ let forms = document.querySelectorAll(".forms");
 let active_form = document.querySelector(".add-items");
 let see_image = document.querySelectorAll(".see-images");
 let article_users = document.querySelectorAll(".article-users");
+let host = "http://localhost:10000/";
+
 
 let key_forms = 0;
 let key_page = parseFloat(localStorage.getItem("page")) || 0;
@@ -47,7 +49,7 @@ active_form.addEventListener("click", () => {
 
 function suprimer(table, id) {
 
-    const url = `https://marche-mont-bouet.onrender.com/delete/${table}/${id}`;
+    const url = `${host}delete/${table}/${id}`;
     console.log("lancement du fech");
     fetch(url, { method: "DELETE" }).then(res => {
         if (res.ok) {
