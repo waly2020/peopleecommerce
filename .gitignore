@@ -1,6 +1,5 @@
 node_modules
 public/js/script.js
 corbeille
-public/images/upload
 .env
 scripts/pool.js

@@ -132,6 +132,7 @@ routeAdmin.delete("/delete/:table/:id", (req, rep) => {
 
     pool.query(`SELECT * FROM ${table} WHERE id = ${id}`, (err, res) => {
         fs.unlink(`./public/images/upload/${res[0].image}`, (err) => {
+            console.log("image supprimer");
             if (err) {
                 pool.query(sql, id, (err) => {
                     if (err) {
