@@ -130,30 +130,15 @@ routeAdmin.delete("/delete/:table/:id", (req, rep) => {
 
     let sql = `DELETE FROM ${table} WHERE id = ?`;
 
-    pool.query(`SELECT * FROM ${table} WHERE id = ${id}`, (err, res) => {
-        fs.unlink(`./public/images/upload/${res[0].image}`, (err) => {
-            console.log("image supprimer");
-            if (err) {
-                pool.query(sql, id, (err) => {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        rep.send("ok");
-                        if (res[0].numero) {
-                            localStorage.removeItem(`articles-${res[0].id}`);
-                        }
-                    }
-                })
-            } else {
-                pool.query(sql, id, (err) => {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        rep.send("ok");
-                    }
-                })
-            }
-        })
+    pool.query(sql, id, (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            rep.send("ok");
+            // if (res[0].numero) {
+            //     localStorage.removeItem(`articles-${res[0].id}`);
+            // }
+        }
     })
 
 })
