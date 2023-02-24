@@ -3,9 +3,10 @@ let dataLocalStorage = JSON.parse(localStorage.getItem("articles")) ?? [];
 let panierStorage = [...dataLocalStorage];
 let put_article = document.querySelectorAll(".put-article-to-panier");
 let btn_restore = document.querySelectorAll(".restore");
-// https://marche-mont-bouet.onrender.com/home
 // let host = "http://localhost:10000/";
-let host = " https://marche-mont-bouet.onrender.com/";
+//https://marche-mont-bouet-online.up.railway.app/
+// https://marche-mont-bouet.onrender.com/
+let host = "https://marche-mont-bouet-online.up.railway.app/";
 let userId = document.querySelector(".user-bar-menu").getAttribute("data-userId");
 
 // contener article aleatoire
