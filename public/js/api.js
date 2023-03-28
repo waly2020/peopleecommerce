@@ -1,5 +1,3 @@
-// 
-// https://marche-mont-bouet.onrender.com/
 function getData(callback) {
     fetch(host + "api/get-abonnes").then(res => {
         res.json().then(data => {
