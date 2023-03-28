@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "site ecommerce de gabon mont bouet",
   "main": "main.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node -r dotenv/config scripts/main.js",
     "dev": "nodemon -r dotenv/config scripts/main.js",
